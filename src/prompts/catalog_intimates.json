@@ -2,7 +2,9 @@
   "project": "i2i - Colección Ropa Interior Juvenil Premium Algodón",
   "brand_style": "Delicate premium cotton intimates for young women, Calvin Klein / Aerie aesthetic, soft tones, clean photography",
   "workflow": "workflow_t2i.json",
-  "negative_prompt_default": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, vulgar, harsh lighting, messy hair, wrinkled fabric, cheap fabric, shiny synthetic material",
+  "brand_persona": "Premium cotton intimates for young women who value comfort and quiet luxury. Calvin Klein simplicity meets Aerie body positivity - soft, clean, naturally beautiful. Fabric quality speaks louder than branding.",
+  "photography_direction": "Soft diffused natural window light or clean studio lighting. Backgrounds are white, cream, or light grey. Skin must look real and luminous, never retouched to plastic. Cotton texture is a hero element. Mood is intimate, gentle, and confident.",
+  "negative_prompt_default": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, vulgar, harsh lighting, messy hair, wrinkled fabric, cheap fabric, shiny synthetic material, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors",
   "photography_style": "Soft natural window light, clean minimal background (white/cream/light grey studio or bright airy bedroom), skin looks natural and healthy, hair perfectly styled but effortless, premium cotton fabric texture visible, editorial intimates campaign quality",
 
   "models": [
@@ -15,7 +17,8 @@
       "skin": "Fair warm",
       "view": "Front",
       "category": "Matching set",
-      "prompt": "Full body portrait, front view, slim toned young woman, 21 years old, long straight dark brown hair with center part perfectly sleek, fair warm skin, standing facing camera directly, relaxed natural pose, hands gently at sides, wearing a soft blush pink cotton bralette with thin straps and matching high-waist cotton bikini brief, premium ribbed cotton fabric texture visible, clean white studio background, soft diffused natural window light from the side, gentle shadows, skin looks natural and luminous, perfectly groomed hair, delicate and elegant mood, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium intimates campaign photography, full body visible head to toe"
+      "prompt": "Full body portrait, front view, slim toned young woman, 21 years old, long straight dark brown hair with center part perfectly sleek, fair warm skin, standing facing camera directly, relaxed natural pose, hands gently at sides, wearing a soft blush pink cotton bralette with thin straps and matching high-waist cotton bikini brief, premium ribbed cotton fabric texture visible, clean white studio background, soft diffused natural window light from the side, gentle shadows, skin looks natural and luminous, perfectly groomed hair, delicate and elegant mood, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium intimates campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "Calvin Klein editorial purity - front-facing symmetry, blush tones, sleek dark hair contrast."
     },
     {
       "id": "IN002",
@@ -26,7 +29,8 @@
       "skin": "Fair warm",
       "view": "Side",
       "category": "Matching set",
-      "prompt": "Full body portrait, side profile view, slim toned young woman, 21 years old, long straight dark brown hair with center part perfectly sleek, fair warm skin, standing in side profile facing left, arms relaxed, wearing a soft blush pink cotton bralette with thin straps and matching high-waist cotton bikini brief, premium ribbed cotton fabric texture visible, clean white studio background, soft diffused natural window light, gentle shadows accentuating body silhouette, skin looks natural and luminous, perfectly groomed hair, delicate and elegant mood, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium intimates campaign photography, full body visible head to toe"
+      "prompt": "Full body portrait, side profile view, slim toned young woman, 21 years old, long straight dark brown hair with center part perfectly sleek, fair warm skin, standing in side profile facing left, arms relaxed, wearing a soft blush pink cotton bralette with thin straps and matching high-waist cotton bikini brief, premium ribbed cotton fabric texture visible, clean white studio background, soft diffused natural window light, gentle shadows accentuating body silhouette, skin looks natural and luminous, perfectly groomed hair, delicate and elegant mood, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium intimates campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "Side silhouette grace - soft studio shadows, delicate cotton lines on toned form."
     },
     {
       "id": "IN003",
@@ -37,7 +41,8 @@
       "skin": "Fair warm",
       "view": "Back",
       "category": "Matching set",
-      "prompt": "Full body portrait, back view from behind, slim toned young woman, 21 years old, long straight dark brown hair falling down her back perfectly sleek, fair warm skin, standing with back to camera, slight natural curve in spine, wearing a soft blush pink cotton bralette visible from back straps and matching high-waist cotton bikini brief, premium ribbed cotton fabric texture visible, clean white studio background, soft diffused natural window light, gentle shadows, skin looks natural and luminous, perfectly groomed hair, delicate and elegant mood, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium intimates campaign photography, full body visible head to toe"
+      "prompt": "Full body portrait, back view from behind, slim toned young woman, 21 years old, long straight dark brown hair falling down her back perfectly sleek, fair warm skin, standing with back to camera, slight natural curve in spine, wearing a soft blush pink cotton bralette visible from back straps and matching high-waist cotton bikini brief, premium ribbed cotton fabric texture visible, clean white studio background, soft diffused natural window light, gentle shadows, skin looks natural and luminous, perfectly groomed hair, delicate and elegant mood, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium intimates campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "Quiet confidence from behind - exposed back beauty, ribbed cotton texture, minimal and elegant."
     },
     {
       "id": "IN004",
@@ -48,7 +53,8 @@
       "skin": "Light golden tan",
       "view": "Front",
       "category": "Matching set",
-      "prompt": "Full body portrait, front view, athletic lean young woman, 23 years old, medium wavy honey blonde hair with soft layers perfectly styled, light golden tan skin, standing facing camera, one hand lightly touching hip, subtle confident smile, wearing a sage green cotton triangle bralette with adjustable straps and matching sage green cotton mid-rise hipster brief, soft matte cotton fabric, clean cream studio background, soft warm natural window light, gentle even lighting, skin looks healthy and sun-kissed, perfectly styled effortless hair, refined and youthful mood, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium intimates campaign photography, full body visible head to toe"
+      "prompt": "Full body portrait, front view, athletic lean young woman, 23 years old, medium wavy honey blonde hair with soft layers perfectly styled, light golden tan skin, standing facing camera, one hand lightly touching hip, subtle confident smile, wearing a sage green cotton triangle bralette with adjustable straps and matching sage green cotton mid-rise hipster brief, soft matte cotton fabric, clean cream studio background, soft warm natural window light, gentle even lighting, skin looks healthy and sun-kissed, perfectly styled effortless hair, refined and youthful mood, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium intimates campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "Sun-kissed athleticism in sage - golden skin against muted green, youthful health radiates."
     },
     {
       "id": "IN005",
@@ -59,7 +65,8 @@
       "skin": "Light golden tan",
       "view": "Side",
       "category": "Matching set",
-      "prompt": "Full body portrait, side profile view, athletic lean young woman, 23 years old, medium wavy honey blonde hair with soft layers perfectly styled, light golden tan skin, standing in side profile facing right, one arm relaxed other slightly bent, wearing a sage green cotton triangle bralette and matching sage green cotton mid-rise hipster brief, soft matte cotton fabric, clean cream studio background, soft warm natural window light from behind, rim light on body, skin looks healthy and sun-kissed, perfectly styled effortless hair, refined and youthful mood, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium intimates campaign photography, full body visible head to toe"
+      "prompt": "Full body portrait, side profile view, athletic lean young woman, 23 years old, medium wavy honey blonde hair with soft layers perfectly styled, light golden tan skin, standing in side profile facing right, one arm relaxed other slightly bent, wearing a sage green cotton triangle bralette and matching sage green cotton mid-rise hipster brief, soft matte cotton fabric, clean cream studio background, soft warm natural window light from behind, rim light on body, skin looks healthy and sun-kissed, perfectly styled effortless hair, refined and youthful mood, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium intimates campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "Backlit athletic silhouette - rim light on lean form, effortless honey-blonde warmth."
     },
     {
       "id": "IN006",
@@ -70,7 +77,8 @@
       "skin": "Light golden tan",
       "view": "Back",
       "category": "Matching set",
-      "prompt": "Full body portrait, back view from behind, athletic lean young woman, 23 years old, medium wavy honey blonde hair falling over one shoulder perfectly styled, light golden tan skin, standing with back to camera, looking slightly over left shoulder, wearing a sage green cotton triangle bralette back straps visible and matching sage green cotton mid-rise hipster brief, soft matte cotton fabric, clean cream studio background, soft warm natural window light, skin looks healthy and sun-kissed, perfectly styled effortless hair, refined and youthful mood, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium intimates campaign photography, full body visible head to toe"
+      "prompt": "Full body portrait, back view from behind, athletic lean young woman, 23 years old, medium wavy honey blonde hair falling over one shoulder perfectly styled, light golden tan skin, standing with back to camera, looking slightly over left shoulder, wearing a sage green cotton triangle bralette back straps visible and matching sage green cotton mid-rise hipster brief, soft matte cotton fabric, clean cream studio background, soft warm natural window light, skin looks healthy and sun-kissed, perfectly styled effortless hair, refined and youthful mood, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium intimates campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "Over-the-shoulder allure - sage cotton on tanned skin, casual glance, refined youth."
     },
     {
       "id": "IN007",
@@ -81,7 +89,8 @@
       "skin": "Light olive warm",
       "view": "Front",
       "category": "Pyjama set",
-      "prompt": "Full body portrait, front view, soft curvy young woman, 22 years old, long loose curls dark auburn hair with side part perfectly styled, light olive warm skin, standing in bright airy bedroom, relaxed cozy pose, soft natural smile, wearing a lavender cotton pyjama set consisting of a button-front short sleeve top and matching lavender cotton drawstring shorts, soft brushed cotton fabric, bright white bedroom with linen bedding and natural wood accents, soft morning window light streaming in, warm cozy intimate mood, skin looks rested and natural, perfectly tousled curls, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium sleepwear campaign photography, full body visible head to toe"
+      "prompt": "Full body portrait, front view, soft curvy young woman, 22 years old, long loose curls dark auburn hair with side part perfectly styled, light olive warm skin, standing in bright airy bedroom, relaxed cozy pose, soft natural smile, wearing a lavender cotton pyjama set consisting of a button-front short sleeve top and matching lavender cotton drawstring shorts, soft brushed cotton fabric, bright white bedroom with linen bedding and natural wood accents, soft morning window light streaming in, warm cozy intimate mood, skin looks rested and natural, perfectly tousled curls, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium sleepwear campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "Morning-after-nothing cozy - auburn curls in a bright bedroom, lavender cotton comfort."
     },
     {
       "id": "IN008",
@@ -92,7 +101,8 @@
       "skin": "Light olive warm",
       "view": "Side",
       "category": "Pyjama set",
-      "prompt": "Full body portrait, side profile view, soft curvy young woman, 22 years old, long loose curls dark auburn hair with side part perfectly styled, light olive warm skin, standing in side profile in bright airy bedroom, holding a coffee mug in both hands near chest, gentle morning expression, wearing a lavender cotton pyjama set consisting of a button-front short sleeve top and matching lavender cotton drawstring shorts, soft brushed cotton fabric, bright white bedroom with soft curtains, soft morning window light, warm cozy intimate mood, skin looks rested and natural, perfectly tousled curls, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium sleepwear campaign photography, full body visible head to toe"
+      "prompt": "Full body portrait, side profile view, soft curvy young woman, 22 years old, long loose curls dark auburn hair with side part perfectly styled, light olive warm skin, standing in side profile in bright airy bedroom, holding a coffee mug in both hands near chest, gentle morning expression, wearing a lavender cotton pyjama set consisting of a button-front short sleeve top and matching lavender cotton drawstring shorts, soft brushed cotton fabric, bright white bedroom with soft curtains, soft morning window light, warm cozy intimate mood, skin looks rested and natural, perfectly tousled curls, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium sleepwear campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "Coffee-in-hand intimacy - side profile serenity, pyjama lifestyle editorial warmth."
     },
     {
       "id": "IN009",
@@ -103,7 +113,8 @@
       "skin": "Porcelain fair Nordic",
       "view": "Front",
       "category": "Everyday bra set",
-      "prompt": "Full body portrait, front view, petite slim young woman, 20 years old, straight platinum blonde bob blunt cut above shoulders perfectly styled, porcelain fair Nordic skin, standing facing camera, arms at sides, serene minimalist expression, wearing a pure white cotton wireless scoop-neck bra with wide comfortable straps and matching white cotton high-cut brief, premium soft cotton fabric, clean light grey studio background, soft flat even studio lighting, ultra clean minimal aesthetic, skin looks porcelain smooth and natural, perfectly cut hair, Scandinavian minimalist mood, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium intimates campaign photography, full body visible head to toe"
+      "prompt": "Full body portrait, front view, petite slim young woman, 20 years old, straight platinum blonde bob blunt cut above shoulders perfectly styled, porcelain fair Nordic skin, standing facing camera, arms at sides, serene minimalist expression, wearing a pure white cotton wireless scoop-neck bra with wide comfortable straps and matching white cotton high-cut brief, premium soft cotton fabric, clean light grey studio background, soft flat even studio lighting, ultra clean minimal aesthetic, skin looks porcelain smooth and natural, perfectly cut hair, Scandinavian minimalist mood, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium intimates campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "Scandinavian minimalist purity - platinum bob, pure white cotton, porcelain skin, ultra-clean."
     },
     {
       "id": "IN010",
@@ -114,7 +125,8 @@
       "skin": "Porcelain fair Nordic",
       "view": "Back",
       "category": "Everyday bra set",
-      "prompt": "Full body portrait, back view from behind, petite slim young woman, 20 years old, straight platinum blonde bob blunt cut above shoulders perfectly styled, porcelain fair Nordic skin, standing with back to camera, hands clasped gently behind lower back, wearing a pure white cotton wireless scoop-neck bra with wide back band and matching white cotton high-cut brief, premium soft cotton fabric, clean light grey studio background, soft flat even studio lighting, ultra clean minimal aesthetic, skin looks porcelain smooth and natural, perfectly cut hair showing nape of neck, Scandinavian minimalist mood, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium intimates campaign photography, full body visible head to toe"
+      "prompt": "Full body portrait, back view from behind, petite slim young woman, 20 years old, straight platinum blonde bob blunt cut above shoulders perfectly styled, porcelain fair Nordic skin, standing with back to camera, hands clasped gently behind lower back, wearing a pure white cotton wireless scoop-neck bra with wide back band and matching white cotton high-cut brief, premium soft cotton fabric, clean light grey studio background, soft flat even studio lighting, ultra clean minimal aesthetic, skin looks porcelain smooth and natural, perfectly cut hair showing nape of neck, Scandinavian minimalist mood, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium intimates campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "Architectural back detail - nape-of-neck beauty, white cotton geometry, Nordic restraint."
     },
     {
       "id": "IN011",
@@ -125,7 +137,8 @@
       "skin": "Medium warm tan",
       "view": "Front",
       "category": "Cotton bikini set",
-      "prompt": "Full body portrait, front view, average healthy build young woman, 24 years old, long straight black silky hair with middle part perfectly sleek, medium warm tan skin, standing facing camera, natural relaxed pose, thumbs lightly hooked in waistband, wearing a dusty rose cotton scoop bralette and matching dusty rose cotton bikini bottom with thin elastic waistband, soft matte cotton, clean white studio background, soft natural diffused light, skin looks healthy and warm, perfectly groomed sleek hair, soft romantic yet modern mood, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium intimates campaign photography, full body visible head to toe"
+      "prompt": "Full body portrait, front view, average healthy build young woman, 24 years old, long straight black silky hair with middle part perfectly sleek, medium warm tan skin, standing facing camera, natural relaxed pose, thumbs lightly hooked in waistband, wearing a dusty rose cotton scoop bralette and matching dusty rose cotton bikini bottom with thin elastic waistband, soft matte cotton, clean white studio background, soft natural diffused light, skin looks healthy and warm, perfectly groomed sleek hair, soft romantic yet modern mood, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium intimates campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "Romantic modern warmth - dusty rose on warm tan skin, sleek black hair, soft studio glow."
     },
     {
       "id": "IN012",
@@ -136,7 +149,8 @@
       "skin": "Medium warm tan",
       "view": "Three quarter",
       "category": "Cotton bikini set",
-      "prompt": "Full body portrait, three quarter angle view, average healthy build young woman, 24 years old, long straight black silky hair with middle part perfectly sleek, medium warm tan skin, standing at three quarter angle, one hand touching hair, gentle confident look, wearing a dusty rose cotton scoop bralette and matching dusty rose cotton bikini bottom with thin elastic waistband, soft matte cotton, clean white studio background, soft natural diffused light with gentle shadows, skin looks healthy and warm, perfectly groomed sleek hair, soft romantic yet modern mood, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium intimates campaign photography, full body visible head to toe"
+      "prompt": "Full body portrait, three quarter angle view, average healthy build young woman, 24 years old, long straight black silky hair with middle part perfectly sleek, medium warm tan skin, standing at three quarter angle, one hand touching hair, gentle confident look, wearing a dusty rose cotton scoop bralette and matching dusty rose cotton bikini bottom with thin elastic waistband, soft matte cotton, clean white studio background, soft natural diffused light with gentle shadows, skin looks healthy and warm, perfectly groomed sleek hair, soft romantic yet modern mood, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium intimates campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "Three-quarter editorial elegance - gentle confidence, cotton intimacy with modern styling."
     }
   ]
 }

@@ -2,7 +2,9 @@
   "project": "i2i - Agencia de Modelos Ropa Deportiva",
   "brand_style": "Premium European Sportswear (Nike/Adidas aesthetic)",
   "workflow": "workflow_t2i.json",
-  "negative_prompt_default": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible",
+  "brand_persona": "Empowering, elite European sportswear brand targeting active women who see fitness as lifestyle. Think Nike meets Scandinavian design - clean, powerful, aspirational.",
+  "photography_direction": "Golden hour and soft overcast natural light. Outdoor locations with depth. Emphasize muscle tone and movement energy. Warm but not oversaturated tones. Hero the athlete, not just the clothing.",
+  "negative_prompt_default": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors",
   "models": [
     {
       "id": "M001",
@@ -17,7 +19,8 @@
       "outfit": "Black compression leggings, neon green sports bra, white running shoes",
       "scene": "Standing in urban park path, catching breath after run, one hand on hip",
       "pose": "Standing, resting, slight hip tilt",
-      "prompt": "Full body portrait, young athletic woman, 24 years old, long straight blonde hair in ponytail, blue eyes, fair lightly tanned skin, tall and slim athletic build, standing on urban park running path, catching her breath after a run, one hand on hip, wearing black compression leggings, neon green sports bra, white running shoes, morning golden hour sunlight, trees in background, photorealistic, extremely detailed skin texture, natural sweat glow, raw photo, 8k resolution, professional sportswear campaign photography, full body visible head to toe"
+      "prompt": "Full body portrait, young athletic woman, 24 years old, long straight blonde hair in ponytail, blue eyes, fair lightly tanned skin, tall and slim athletic build, standing on urban park running path, catching her breath after a run, one hand on hip, wearing black compression leggings, neon green sports bra, white running shoes, morning golden hour sunlight, trees in background, photorealistic, extremely detailed skin texture, natural sweat glow, raw photo, 8k resolution, professional sportswear campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "Scandinavian minimalism meets athletic power - clean lines, morning energy, effortless speed."
     },
     {
       "id": "M002",
@@ -32,7 +35,8 @@
       "outfit": "Teal cycling shorts, white fitted tank top, cycling gloves",
       "scene": "Leaning against road bicycle on countryside path",
       "pose": "Leaning on bicycle, relaxed confident",
-      "prompt": "Full body portrait, curvy athletic woman, 28 years old, medium wavy brown hair, green eyes, Mediterranean olive skin, healthy strong build with curves, leaning casually against her road bicycle on a scenic countryside gravel path, relaxed confident expression, wearing teal cycling shorts, white fitted tank top, cycling gloves, helmet hanging from handlebars, soft afternoon sunlight, rolling green hills in background, photorealistic, extremely detailed skin texture, natural lighting, raw photo, 8k resolution, professional sportswear campaign photography, full body visible head to toe"
+      "prompt": "Full body portrait, curvy athletic woman, 28 years old, medium wavy brown hair, green eyes, Mediterranean olive skin, healthy strong build with curves, leaning casually against her road bicycle on a scenic countryside gravel path, relaxed confident expression, wearing teal cycling shorts, white fitted tank top, cycling gloves, helmet hanging from handlebars, soft afternoon sunlight, rolling green hills in background, photorealistic, extremely detailed skin texture, natural lighting, raw photo, 8k resolution, professional sportswear campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "Mediterranean strength and grace - confident curves on open roads, warm and grounded."
     },
     {
       "id": "M003",
@@ -47,7 +51,8 @@
       "outfit": "Dark grey high-waist leggings, burgundy racerback tank, training shoes",
       "scene": "Standing outside modern gym entrance with glass walls",
       "pose": "Standing tall, arms crossed, powerful stance",
-      "prompt": "Full body portrait, toned muscular woman, 26 years old, short auburn pixie cut hair, grey eyes, Nordic pale skin, defined athletic muscles visible on arms and shoulders, standing tall with arms crossed outside modern gym entrance with glass walls, powerful confident stance, wearing dark grey high-waist leggings, burgundy racerback tank top, training shoes, overcast soft daylight, photorealistic, extremely detailed skin texture, visible muscle definition, raw photo, 8k resolution, professional sportswear campaign photography, full body visible head to toe"
+      "prompt": "Full body portrait, toned muscular woman, 26 years old, short auburn pixie cut hair, grey eyes, Nordic pale skin, defined athletic muscles visible on arms and shoulders, standing tall with arms crossed outside modern gym entrance with glass walls, powerful confident stance, wearing dark grey high-waist leggings, burgundy racerback tank top, training shoes, overcast soft daylight, photorealistic, extremely detailed skin texture, visible muscle definition, raw photo, 8k resolution, professional sportswear campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "Nordic warrior aesthetic - raw power, cool tones, industrial edge meets functional fitness."
     },
     {
       "id": "M004",
@@ -62,7 +67,8 @@
       "outfit": "White pleated tennis skirt, coral fitted polo top, white tennis shoes",
       "scene": "Walking from tennis court carrying racket, arriving after match",
       "pose": "Walking towards camera, racket over shoulder",
-      "prompt": "Full body portrait, slim toned young woman, 23 years old, long dark brown straight hair in low ponytail, dark brown eyes, light olive Southern European skin, walking towards camera from tennis court, tennis racket resting over right shoulder, relaxed post-match smile, wearing white pleated tennis skirt, coral fitted polo top, white tennis shoes, white wristband, clay court and fence in background, warm late afternoon sunlight, photorealistic, extremely detailed skin texture, natural lighting, raw photo, 8k resolution, professional sportswear campaign photography, full body visible head to toe"
+      "prompt": "Full body portrait, slim toned young woman, 23 years old, long dark brown straight hair in low ponytail, dark brown eyes, light olive Southern European skin, walking towards camera from tennis court, tennis racket resting over right shoulder, relaxed post-match smile, wearing white pleated tennis skirt, coral fitted polo top, white tennis shoes, white wristband, clay court and fence in background, warm late afternoon sunlight, photorealistic, extremely detailed skin texture, natural lighting, raw photo, 8k resolution, professional sportswear campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "Southern European elegance in motion - sun-kissed clay courts, relaxed post-match confidence."
     },
     {
       "id": "M005",
@@ -77,7 +83,8 @@
       "outfit": "Lavender high-waist yoga pants, matching lavender crop sports top, barefoot",
       "scene": "Standing on wooden deck in garden, yoga mat rolled under arm",
       "pose": "Standing relaxed, yoga mat under arm, serene smile",
-      "prompt": "Full body portrait, plus-size athletic woman, 30 years old, shoulder-length wavy blonde hair, blue-green eyes, fair Scandinavian skin, healthy curvy body with strong legs, standing relaxed on wooden deck in lush green garden, yoga mat rolled under left arm, serene confident smile, wearing lavender high-waist yoga pants, matching lavender crop sports top, barefoot, soft morning diffused light, plants and greenery around, photorealistic, extremely detailed skin texture, natural body, raw photo, 8k resolution, professional sportswear campaign photography, full body visible head to toe, body positive"
+      "prompt": "Full body portrait, plus-size athletic woman, 30 years old, shoulder-length wavy blonde hair, blue-green eyes, fair Scandinavian skin, healthy curvy body with strong legs, standing relaxed on wooden deck in lush green garden, yoga mat rolled under left arm, serene confident smile, wearing lavender high-waist yoga pants, matching lavender crop sports top, barefoot, soft morning diffused light, plants and greenery around, photorealistic, extremely detailed skin texture, natural body, raw photo, 8k resolution, professional sportswear campaign photography, full body visible head to toe, body positive, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "Body-positive Scandinavian wellness - soft strength, garden serenity, inclusive athleticism."
     },
     {
       "id": "M006",
@@ -92,7 +99,8 @@
       "outfit": "Black trail running tights, forest green zip-up jacket half open over white base layer",
       "scene": "Standing on mountain trail overlook, scenic valley behind",
       "pose": "Standing at overlook, one foot on rock, looking at view",
-      "prompt": "Full body portrait, athletic lean woman, 25 years old, long copper red hair in braid, hazel eyes, fair skin with freckles on cheeks, standing on mountain trail overlook, one foot resting on a rock, gazing at scenic valley below, wearing black trail running tights, forest green half-zip jacket open over white base layer, trail running shoes, small hydration vest, dramatic mountain landscape background, golden hour warm sunlight, photorealistic, extremely detailed skin texture, natural freckles, raw photo, 8k resolution, professional outdoor sportswear campaign photography, full body visible head to toe"
+      "prompt": "Full body portrait, athletic lean woman, 25 years old, long copper red hair in braid, hazel eyes, fair skin with freckles on cheeks, standing on mountain trail overlook, one foot resting on a rock, gazing at scenic valley below, wearing black trail running tights, forest green half-zip jacket open over white base layer, trail running shoes, small hydration vest, dramatic mountain landscape background, golden hour warm sunlight, photorealistic, extremely detailed skin texture, natural freckles, raw photo, 8k resolution, professional outdoor sportswear campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "Alpine adventure spirit - wild copper hair against mountain drama, fearless outdoor energy."
     }
   ]
 }

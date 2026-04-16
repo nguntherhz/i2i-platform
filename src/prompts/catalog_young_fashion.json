@@ -2,8 +2,10 @@
   "project": "i2i - Tienda Ropa Juvenil Premium 12-27 años",
   "brand_style": "Modern premium young fashion, Brandy Melville / Zara Kids / H&M Divided aesthetic. Only white, pink, light blue, lilac. Ultra clean editorial quality.",
   "workflow": "workflow_t2i.json",
+  "brand_persona": "Modern premium youth fashion in a curated pastel palette. Brandy Melville freshness meets COS restraint - only white, pink, light blue, and lilac. Ultra-clean editorial quality for girls and young women 12-27 who value aesthetic simplicity.",
+  "photography_direction": "Bright, clean, high-key lighting. Locations are white, minimal, or naturally bright. Every hair strand is intentional. Fabric must look premium and crisp. Color palette is strictly white/pink/celeste/lilac. Mood ranges from innocent youthful energy to sophisticated young femininity.",
   "color_palette": ["white", "soft pink", "light blue / celeste", "lilac / lavender"],
-  "negative_prompt_default": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy hair, wrinkled clothes, cheap fabric, dark colors, red, black, orange, yellow, green, brown, neon colors",
+  "negative_prompt_default": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy hair, wrinkled clothes, cheap fabric, dark colors, red, black, orange, yellow, green, brown, neon colors, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors",
 
   "models": [
     {
@@ -14,7 +16,8 @@
       "hair": "Long straight light brown, half up half down with white ribbon",
       "skin": "Fair soft",
       "category": "Summer",
-      "prompt": "Full body portrait, slim teenage girl, 16 years old, long straight light brown hair in half up half down style with delicate white ribbon, fair soft skin, standing on sun-drenched Mediterranean white terrace with blue sky, hands clasped in front, gentle sweet smile, wearing a pure white cotton A-line mini dress with subtle eyelet embroidery detail, white leather platform sandals, small pearl stud earrings, clean bright summer daylight, premium fabric texture visible, hair perfectly styled and glossy, fresh youthful elegance, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium youth fashion campaign photography, full body visible head to toe"
+      "prompt": "Full body portrait, slim teenage girl, 16 years old, long straight light brown hair in half up half down style with delicate white ribbon, fair soft skin, standing on sun-drenched Mediterranean white terrace with blue sky, hands clasped in front, gentle sweet smile, wearing a pure white cotton A-line mini dress with subtle eyelet embroidery detail, white leather platform sandals, small pearl stud earrings, clean bright summer daylight, premium fabric texture visible, hair perfectly styled and glossy, fresh youthful elegance, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium youth fashion campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "Mediterranean terrace innocence - white eyelet cotton, ribbon details, sun-drenched sweetness."
     },
     {
       "id": "YF002",
@@ -24,7 +27,8 @@
       "hair": "Long high ponytail dark blonde, sleek with baby hairs",
       "skin": "Light golden",
       "category": "Sportswear",
-      "prompt": "Full body portrait, athletic toned young woman, 19 years old, long dark blonde hair in sleek high ponytail with perfect baby hairs, light golden skin, standing in modern minimalist white gym studio, one hand on hip confident pose, wearing a soft pink matching athletic set consisting of ribbed crop sports bra and high-waist biker shorts in soft pink, white training shoes, minimal gold chain necklace, clean bright studio light with soft shadows, premium technical fabric texture visible, hair immaculately styled, sporty chic premium mood, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium youth fashion campaign photography, full body visible head to toe"
+      "prompt": "Full body portrait, athletic toned young woman, 19 years old, long dark blonde hair in sleek high ponytail with perfect baby hairs, light golden skin, standing in modern minimalist white gym studio, one hand on hip confident pose, wearing a soft pink matching athletic set consisting of ribbed crop sports bra and high-waist biker shorts in soft pink, white training shoes, minimal gold chain necklace, clean bright studio light with soft shadows, premium technical fabric texture visible, hair immaculately styled, sporty chic premium mood, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium youth fashion campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "Premium athleisure princess - sleek ponytail perfection, soft pink power, gym-to-brunch polish."
     },
     {
       "id": "YF003",
@@ -34,7 +38,8 @@
       "hair": "Medium length layered blonde, curtain bangs, blowout",
       "skin": "Fair pink undertone",
       "category": "Urban",
-      "prompt": "Full body portrait, slim tall young woman, 22 years old, medium length layered blonde hair with curtain bangs in perfect salon blowout, fair skin with pink undertone, walking on clean modern city sidewalk, mid-stride natural movement, wearing light blue oversized linen button-down shirt tucked into white high-waist wide-leg trousers, white leather loafers, small white crossbody bag, delicate silver bracelet, bright clean urban daylight, crisp blue sky, hair perfectly bouncing with movement, elevated effortless urban style, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium youth fashion campaign photography, full body visible head to toe"
+      "prompt": "Full body portrait, slim tall young woman, 22 years old, medium length layered blonde hair with curtain bangs in perfect salon blowout, fair skin with pink undertone, walking on clean modern city sidewalk, mid-stride natural movement, wearing light blue oversized linen button-down shirt tucked into white high-waist wide-leg trousers, white leather loafers, small white crossbody bag, delicate silver bracelet, bright clean urban daylight, crisp blue sky, hair perfectly bouncing with movement, elevated effortless urban style, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium youth fashion campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "Elevated Scandi street style - curtain bangs in motion, celeste linen, city confidence."
     },
     {
       "id": "YF004",
@@ -44,7 +49,8 @@
       "hair": "Long wavy dark brown, side part, Hollywood waves",
       "skin": "Light olive Mediterranean",
       "category": "Elegant",
-      "prompt": "Full body portrait, slim hourglass young woman, 24 years old, long wavy dark brown hair with side part in perfect Hollywood waves, light olive Mediterranean skin, standing in elegant white marble interior with arched doorway, one hand lightly touching arm, composed graceful pose, wearing a lilac satin midi slip dress with delicate spaghetti straps, white strappy kitten heels, small pearl drop earrings, soft warm interior window light with gentle shadows, hair perfectly styled and shiny, refined feminine elegance, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium youth fashion campaign photography, full body visible head to toe"
+      "prompt": "Full body portrait, slim hourglass young woman, 24 years old, long wavy dark brown hair with side part in perfect Hollywood waves, light olive Mediterranean skin, standing in elegant white marble interior with arched doorway, one hand lightly touching arm, composed graceful pose, wearing a lilac satin midi slip dress with delicate spaghetti straps, white strappy kitten heels, small pearl drop earrings, soft warm interior window light with gentle shadows, hair perfectly styled and shiny, refined feminine elegance, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium youth fashion campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "Young Hollywood elegance - lilac satin and marble interiors, old-money feminine grace."
     },
     {
       "id": "YF005",
@@ -54,7 +60,8 @@
       "hair": "Long straight black silky, two low braids",
       "skin": "Light warm East Asian",
       "category": "Summer",
-      "prompt": "Full body portrait, slim young teenage girl, 14 years old, long straight black silky hair in two neat low braids, light warm skin, standing in bright sunlit garden with white flowers, hands in pockets, cheerful bright smile, wearing white cotton shorts with drawstring waist and a soft pink cotton crew neck t-shirt, white canvas slip-on shoes, small friendship bracelet, bright clean summer garden light, lush green and white flower background, hair perfectly braided and neat, youthful innocent freshness, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium youth fashion campaign photography, full body visible head to toe"
+      "prompt": "Full body portrait, slim young teenage girl, 14 years old, long straight black silky hair in two neat low braids, light warm skin, standing in bright sunlit garden with white flowers, hands in pockets, cheerful bright smile, wearing white cotton shorts with drawstring waist and a soft pink cotton crew neck t-shirt, white canvas slip-on shoes, small friendship bracelet, bright clean summer garden light, lush green and white flower background, hair perfectly braided and neat, youthful innocent freshness, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium youth fashion campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "Garden party youth - neat braids, pink and white cotton, sunlit innocence and joy."
     },
     {
       "id": "YF006",
@@ -64,7 +71,8 @@
       "hair": "Medium strawberry blonde, messy bun with loose face-framing pieces",
       "skin": "Fair Nordic with freckles",
       "category": "Sportswear",
-      "prompt": "Full body portrait, athletic slim teenage girl, 17 years old, medium strawberry blonde hair in perfectly messy high bun with loose face-framing pieces, fair Nordic skin with cute freckles on cheeks and nose, standing on outdoor running track, holding water bottle, post-workout relaxed happy expression, wearing light blue racerback tank top and white running shorts with light blue stripe, white running shoes, small silver stud earrings, bright outdoor daylight with soft clouds, clean athletic facility background, hair perfectly arranged in effortless messy style, fresh sporty youth energy, photorealistic, extremely detailed skin texture, visible freckles, extremely detailed fabric texture, raw photo, 8k resolution, professional premium youth fashion campaign photography, full body visible head to toe"
+      "prompt": "Full body portrait, athletic slim teenage girl, 17 years old, medium strawberry blonde hair in perfectly messy high bun with loose face-framing pieces, fair Nordic skin with cute freckles on cheeks and nose, standing on outdoor running track, holding water bottle, post-workout relaxed happy expression, wearing light blue racerback tank top and white running shorts with light blue stripe, white running shoes, small silver stud earrings, bright outdoor daylight with soft clouds, clean athletic facility background, hair perfectly arranged in effortless messy style, fresh sporty youth energy, photorealistic, extremely detailed skin texture, visible freckles, extremely detailed fabric texture, raw photo, 8k resolution, professional premium youth fashion campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "Nordic sporty teen spirit - freckled energy, messy bun perfection, track-side freshness."
     },
     {
       "id": "YF007",
@@ -74,7 +82,8 @@
       "hair": "Long auburn red, straight with slight bend at ends, center part",
       "skin": "Fair with warm undertone",
       "category": "Urban",
-      "prompt": "Full body portrait, average healthy build young woman, 20 years old, long auburn red hair straight with slight bend at ends and center part perfectly styled, fair skin with warm undertone, leaning against clean white wall on modern street, one knee bent foot on wall, arms crossed casually, cool confident expression, wearing lilac oversized hoodie and white pleated tennis skirt, white chunky platform sneakers, small white tote bag, delicate layered necklaces, bright overcast even daylight, clean minimalist urban background, hair perfectly smooth and glossy, modern street style premium mood, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium youth fashion campaign photography, full body visible head to toe"
+      "prompt": "Full body portrait, average healthy build young woman, 20 years old, long auburn red hair straight with slight bend at ends and center part perfectly styled, fair skin with warm undertone, leaning against clean white wall on modern street, one knee bent foot on wall, arms crossed casually, cool confident expression, wearing lilac oversized hoodie and white pleated tennis skirt, white chunky platform sneakers, small white tote bag, delicate layered necklaces, bright overcast even daylight, clean minimalist urban background, hair perfectly smooth and glossy, modern street style premium mood, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium youth fashion campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "Lilac street-cool rebellion - auburn against white walls, hoodie-skirt contrast, confident lean."
     },
     {
       "id": "YF008",
@@ -84,7 +93,8 @@
       "hair": "Long platinum blonde, sleek low bun with center part",
       "skin": "Porcelain fair",
       "category": "Elegant",
-      "prompt": "Full body portrait, slim toned young woman, 26 years old, long platinum blonde hair in sleek low bun with clean center part, porcelain fair skin, standing in bright modern gallery space with white walls, poised elegant stance, one arm at side other holding small white clutch bag, wearing a soft pink tailored blazer with no lapel over white silk camisole and white tailored cigarette pants, white pointed kitten heels, minimalist silver ring, soft even gallery lighting, hair immaculately styled, sophisticated modern femininity, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium youth fashion campaign photography, full body visible head to toe"
+      "prompt": "Full body portrait, slim toned young woman, 26 years old, long platinum blonde hair in sleek low bun with clean center part, porcelain fair skin, standing in bright modern gallery space with white walls, poised elegant stance, one arm at side other holding small white clutch bag, wearing a soft pink tailored blazer with no lapel over white silk camisole and white tailored cigarette pants, white pointed kitten heels, minimalist silver ring, soft even gallery lighting, hair immaculately styled, sophisticated modern femininity, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium youth fashion campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "Gallery girl sophistication - platinum bun precision, pink blazer authority, modern feminism."
     },
     {
       "id": "YF009",
@@ -94,7 +104,8 @@
       "hair": "Long wavy sun-bleached light brown, natural beach waves",
       "skin": "Light tan sun-kissed",
       "category": "Summer",
-      "prompt": "Full body portrait, slim teenage girl, 15 years old, long wavy sun-bleached light brown hair with natural beach waves perfectly tousled, light tan sun-kissed skin, standing on pristine white sand beach, wind gently blowing hair, bright natural smile, wearing a light blue cotton wrap top with tie at waist and white cotton flowy midi skirt, white leather flat sandals, small shell pendant necklace, bright sunny beach day with blue sky and gentle waves, hair perfectly tousled by wind, carefree summer youth beauty, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium youth fashion campaign photography, full body visible head to toe"
+      "prompt": "Full body portrait, slim teenage girl, 15 years old, long wavy sun-bleached light brown hair with natural beach waves perfectly tousled, light tan sun-kissed skin, standing on pristine white sand beach, wind gently blowing hair, bright natural smile, wearing a light blue cotton wrap top with tie at waist and white cotton flowy midi skirt, white leather flat sandals, small shell pendant necklace, bright sunny beach day with blue sky and gentle waves, hair perfectly tousled by wind, carefree summer youth beauty, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium youth fashion campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "Coastal teen dream - beach-wave hair, celeste cotton, wind-swept Mediterranean freedom."
     },
     {
       "id": "YF010",
@@ -104,7 +115,8 @@
       "hair": "Long dark brown straight, slicked back low ponytail",
       "skin": "Medium warm tan",
       "category": "Sportswear",
-      "prompt": "Full body portrait, curvy athletic young woman, 21 years old, long dark brown straight hair in slicked back low ponytail perfectly smooth, medium warm tan skin, standing in bright minimalist yoga studio with white walls and natural wood floor, balanced centered pose, calm focused expression, wearing lilac seamless high-neck sports bra and matching lilac high-waist leggings, white training shoes, small pearl stud earrings, soft natural studio light from large windows, hair immaculately slicked, premium athleisure elegance, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium youth fashion campaign photography, full body visible head to toe"
+      "prompt": "Full body portrait, curvy athletic young woman, 21 years old, long dark brown straight hair in slicked back low ponytail perfectly smooth, medium warm tan skin, standing in bright minimalist yoga studio with white walls and natural wood floor, balanced centered pose, calm focused expression, wearing lilac seamless high-neck sports bra and matching lilac high-waist leggings, white training shoes, small pearl stud earrings, soft natural studio light from large windows, hair immaculately slicked, premium athleisure elegance, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium youth fashion campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "Athleisure zen queen - slicked ponytail, lilac seamless, yoga studio calm and focus."
     },
     {
       "id": "YF011",
@@ -114,7 +126,8 @@
       "hair": "Medium curly light brown, voluminous defined curls",
       "skin": "Light caramel warm",
       "category": "Urban",
-      "prompt": "Full body portrait, slim tall teenage girl, 18 years old, medium curly light brown hair with voluminous defined curls perfectly styled, light caramel warm skin, walking on clean modern pedestrian street, dynamic natural mid-stride pose, joyful confident expression, wearing all white outfit consisting of white cropped zip-up hoodie and white cargo jogger pants, white chunky sneakers, small white shoulder bag, thin gold hoop earrings, bright clean urban daylight with blue sky, modern clean architecture background, curls bouncing with movement perfectly defined, fresh urban youth energy, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium youth fashion campaign photography, full body visible head to toe"
+      "prompt": "Full body portrait, slim tall teenage girl, 18 years old, medium curly light brown hair with voluminous defined curls perfectly styled, light caramel warm skin, walking on clean modern pedestrian street, dynamic natural mid-stride pose, joyful confident expression, wearing all white outfit consisting of white cropped zip-up hoodie and white cargo jogger pants, white chunky sneakers, small white shoulder bag, thin gold hoop earrings, bright clean urban daylight with blue sky, modern clean architecture background, curls bouncing with movement perfectly defined, fresh urban youth energy, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium youth fashion campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "All-white urban bounce - defined curls in motion, cargo jogger energy, pure confidence."
     },
     {
       "id": "YF012",
@@ -124,7 +137,8 @@
       "hair": "Long honey brown, soft loose waves, side part",
       "skin": "Light golden warm European",
       "category": "Elegant",
-      "prompt": "Full body portrait, slim lean young woman, 25 years old, long honey brown hair in soft loose waves with side part perfectly styled, light golden warm European skin, standing on white stone balcony overlooking blue sea, wind gently in hair, serene poised expression, wearing a light blue silk midi wrap dress with flutter sleeves and white kitten heel mules, small white leather handbag, delicate gold pendant necklace, warm Mediterranean golden hour light, blue sea and sky background, hair perfectly flowing and glossy, timeless coastal elegance, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium youth fashion campaign photography, full body visible head to toe"
+      "prompt": "Full body portrait, slim lean young woman, 25 years old, long honey brown hair in soft loose waves with side part perfectly styled, light golden warm European skin, standing on white stone balcony overlooking blue sea, wind gently in hair, serene poised expression, wearing a light blue silk midi wrap dress with flutter sleeves and white kitten heel mules, small white leather handbag, delicate gold pendant necklace, warm Mediterranean golden hour light, blue sea and sky background, hair perfectly flowing and glossy, timeless coastal elegance, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium youth fashion campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "Coastal elegance matured - honey waves on a balcony, celeste silk, golden hour timelessness."
     }
   ]
 }

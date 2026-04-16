@@ -2,7 +2,9 @@
   "project": "i2i - Agencia de Modelos Trajes de Baño Premium",
   "brand_style": "Premium European Swimwear (solid colors, high-end quality)",
   "workflow": "workflow_t2i.json",
-  "negative_prompt_default": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, cheap fabric, wrinkled swimsuit",
+  "brand_persona": "Luxury European resort swimwear for the modern traveler. Premium fabrics, solid sophisticated colors, and editorial elegance. Think La Perla meets COS - refined, sensual, never loud.",
+  "photography_direction": "Natural coastal and water light - bright Mediterranean sun, soft Scandinavian overcast, tropical dappled canopy. Water interaction is key. Skin should glow naturally. Hero the swimwear fabric and cut.",
+  "negative_prompt_default": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, cheap fabric, wrinkled swimsuit, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors",
   "models": [
     {
       "id": "SW001",
@@ -15,7 +17,8 @@
       "swimwear": "One-piece, elegant black, high-cut legs, open back",
       "scene": "Tropical beach, turquoise water",
       "pose": "Standing at shoreline, water touching ankles, looking over shoulder",
-      "prompt": "Full body portrait, slim toned woman, 24 years old, long platinum blonde straight hair flowing in wind, ice blue eyes, fair skin with golden tan, standing at tropical beach shoreline, turquoise crystal clear water touching her ankles, looking over shoulder at camera with confident expression, wearing elegant black one-piece swimsuit with high-cut legs and open back, pristine white sand, palm trees in distance, bright sunny day, photorealistic, extremely detailed skin texture, natural sun-kissed glow, water droplets on legs, raw photo, 8k resolution, professional luxury swimwear campaign photography, full body visible head to toe"
+      "prompt": "Full body portrait, slim toned woman, 24 years old, long platinum blonde straight hair flowing in wind, ice blue eyes, fair skin with golden tan, standing at tropical beach shoreline, turquoise crystal clear water touching her ankles, looking over shoulder at camera with confident expression, wearing elegant black one-piece swimsuit with high-cut legs and open back, pristine white sand, palm trees in distance, bright sunny day, photorealistic, extremely detailed skin texture, natural sun-kissed glow, water droplets on legs, raw photo, 8k resolution, professional luxury swimwear campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "Tropical noir elegance - platinum against black swimwear, cinematic beach glamour."
     },
     {
       "id": "SW002",
@@ -28,7 +31,8 @@
       "swimwear": "Two-piece bikini, deep burgundy, triangle top, high-waist bottom",
       "scene": "Rocky Mediterranean coast, blue sea",
       "pose": "Sitting on large flat rock, legs extended, leaning back on hands",
-      "prompt": "Full body portrait, curvy hourglass woman, 27 years old, long dark brown wavy hair, dark brown eyes, deep olive Mediterranean skin, sitting on large flat sunlit rock on Mediterranean rocky coast, legs extended forward, leaning back on hands, relaxed elegant pose, wearing deep burgundy two-piece bikini with triangle top and high-waist bottom, premium fabric with clean lines, blue sea and rocky cliffs in background, warm golden afternoon light, photorealistic, extremely detailed skin texture, natural body curves, raw photo, 8k resolution, professional luxury swimwear campaign photography, full body visible head to toe"
+      "prompt": "Full body portrait, curvy hourglass woman, 27 years old, long dark brown wavy hair, dark brown eyes, deep olive Mediterranean skin, sitting on large flat sunlit rock on Mediterranean rocky coast, legs extended forward, leaning back on hands, relaxed elegant pose, wearing deep burgundy two-piece bikini with triangle top and high-waist bottom, premium fabric with clean lines, blue sea and rocky cliffs in background, warm golden afternoon light, photorealistic, extremely detailed skin texture, natural body curves, raw photo, 8k resolution, professional luxury swimwear campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "Mediterranean goddess at rest - warm earth tones, timeless coastal sensuality."
     },
     {
       "id": "SW003",
@@ -41,7 +45,8 @@
       "swimwear": "One-piece, crisp white, minimalist cut, square neckline",
       "scene": "Scandinavian lake, wooden dock",
       "pose": "Standing at end of wooden dock, hands at sides, facing camera",
-      "prompt": "Full body portrait, athletic tall woman, 26 years old, short blonde bob haircut, grey-blue eyes, Nordic fair skin with light freckles on shoulders, standing at the end of a rustic wooden dock on calm Scandinavian lake, hands relaxed at sides, facing camera with serene expression, wearing crisp white minimalist one-piece swimsuit with square neckline, still lake reflecting pine forest and mountains, soft overcast Scandinavian summer light, photorealistic, extremely detailed skin texture, subtle freckles, raw photo, 8k resolution, professional luxury swimwear campaign photography, full body visible head to toe"
+      "prompt": "Full body portrait, athletic tall woman, 26 years old, short blonde bob haircut, grey-blue eyes, Nordic fair skin with light freckles on shoulders, standing at the end of a rustic wooden dock on calm Scandinavian lake, hands relaxed at sides, facing camera with serene expression, wearing crisp white minimalist one-piece swimsuit with square neckline, still lake reflecting pine forest and mountains, soft overcast Scandinavian summer light, photorealistic, extremely detailed skin texture, subtle freckles, raw photo, 8k resolution, professional luxury swimwear campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "Scandinavian summer purity - minimalist white against Nordic lake calm, serene and clean."
     },
     {
       "id": "SW004",
@@ -54,7 +59,8 @@
       "swimwear": "Two-piece bikini, emerald green, bandeau top, mid-rise bottom",
       "scene": "Lush tropical waterfall pool",
       "pose": "Walking out of water, mid-thigh deep, running hand through wet hair",
-      "prompt": "Full body portrait, lean athletic woman, 25 years old, long black curly hair wet and slicked back, dark brown eyes, rich dark brown glowing skin, walking out of natural tropical waterfall pool, water at mid-thigh level, one hand running through wet hair, confident radiant expression, wearing emerald green two-piece bikini with bandeau top and mid-rise bottom, premium matte fabric, lush tropical vegetation and small waterfall in background, dappled sunlight through canopy, photorealistic, extremely detailed skin texture, water droplets on skin, raw photo, 8k resolution, professional luxury swimwear campaign photography, full body visible head to toe"
+      "prompt": "Full body portrait, lean athletic woman, 25 years old, long black curly hair wet and slicked back, dark brown eyes, rich dark brown glowing skin, walking out of natural tropical waterfall pool, water at mid-thigh level, one hand running through wet hair, confident radiant expression, wearing emerald green two-piece bikini with bandeau top and mid-rise bottom, premium matte fabric, lush tropical vegetation and small waterfall in background, dappled sunlight through canopy, photorealistic, extremely detailed skin texture, water droplets on skin, raw photo, 8k resolution, professional luxury swimwear campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "Tropical emerald vitality - rich contrast, waterfall energy, radiant natural beauty."
     },
     {
       "id": "SW005",
@@ -67,7 +73,8 @@
       "swimwear": "One-piece, navy blue, plunging V-neckline, gold accent clasp",
       "scene": "Tuscan countryside, hillside pool overlooking vineyards",
       "pose": "Standing at edge of infinity pool, side profile, gazing at landscape",
-      "prompt": "Full body portrait, petite toned woman, 23 years old, medium auburn wavy hair, hazel green eyes, light skin with warm undertone, standing at the edge of an infinity pool on Tuscan hillside, side profile turned slightly toward camera, gazing at vineyard landscape, wearing navy blue one-piece swimsuit with plunging V-neckline and small gold accent clasp, premium ribbed fabric, rolling Tuscan hills with cypress trees and vineyards in background, warm late afternoon golden light, photorealistic, extremely detailed skin texture, elegant pose, raw photo, 8k resolution, professional luxury swimwear campaign photography, full body visible head to toe"
+      "prompt": "Full body portrait, petite toned woman, 23 years old, medium auburn wavy hair, hazel green eyes, light skin with warm undertone, standing at the edge of an infinity pool on Tuscan hillside, side profile turned slightly toward camera, gazing at vineyard landscape, wearing navy blue one-piece swimsuit with plunging V-neckline and small gold accent clasp, premium ribbed fabric, rolling Tuscan hills with cypress trees and vineyards in background, warm late afternoon golden light, photorealistic, extremely detailed skin texture, elegant pose, raw photo, 8k resolution, professional luxury swimwear campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "Tuscan countryside sophistication - wine country elegance translated to swimwear editorial."
     },
     {
       "id": "SW006",
@@ -80,7 +87,8 @@
       "swimwear": "Two-piece bikini, coral orange, halter top with support, classic bottom",
       "scene": "Greek island white sand beach, blue domed church in distance",
       "pose": "Walking along beach, carrying straw hat, wind in hair",
-      "prompt": "Full body portrait, plus-size curvy woman, 29 years old, long honey blonde highlighted brown hair flowing in sea breeze, amber eyes, warm beige Eastern European skin, walking along white sand Greek island beach, carrying straw sun hat in one hand, natural joyful smile, wearing coral orange two-piece bikini with halter top providing support and classic bottom, premium seamless fabric, blue Aegean sea and iconic white and blue Greek architecture in distance, bright Mediterranean sunlight, photorealistic, extremely detailed skin texture, natural body confidence, raw photo, 8k resolution, professional luxury swimwear campaign photography, full body visible head to toe, body positive"
+      "prompt": "Full body portrait, plus-size curvy woman, 29 years old, long honey blonde highlighted brown hair flowing in sea breeze, amber eyes, warm beige Eastern European skin, walking along white sand Greek island beach, carrying straw sun hat in one hand, natural joyful smile, wearing coral orange two-piece bikini with halter top providing support and classic bottom, premium seamless fabric, blue Aegean sea and iconic white and blue Greek architecture in distance, bright Mediterranean sunlight, photorealistic, extremely detailed skin texture, natural body confidence, raw photo, 8k resolution, professional luxury swimwear campaign photography, full body visible head to toe, body positive, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "Greek island joy - warm body confidence, Mediterranean color and cultural backdrop."
     },
     {
       "id": "SW007",
@@ -93,7 +101,8 @@
       "swimwear": "One-piece, deep red, cross-back straps, high-cut",
       "scene": "Maldives overwater bungalow deck",
       "pose": "Standing on overwater deck, arms resting on wooden railing, facing ocean",
-      "prompt": "Full body portrait, slim tall model woman, 22 years old, long straight jet black hair, vivid green eyes, porcelain pale skin, standing on overwater bungalow wooden deck in Maldives, arms resting casually on wooden railing, looking at camera over shoulder, wearing deep red one-piece swimsuit with elegant cross-back straps and high-cut legs, premium satin finish fabric, crystal clear turquoise lagoon below, thatched roof bungalow, tropical paradise, bright midday sun, photorealistic, extremely detailed skin texture, contrast of pale skin and red swimsuit, raw photo, 8k resolution, professional luxury swimwear campaign photography, full body visible head to toe"
+      "prompt": "Full body portrait, slim tall model woman, 22 years old, long straight jet black hair, vivid green eyes, porcelain pale skin, standing on overwater bungalow wooden deck in Maldives, arms resting casually on wooden railing, looking at camera over shoulder, wearing deep red one-piece swimsuit with elegant cross-back straps and high-cut legs, premium satin finish fabric, crystal clear turquoise lagoon below, thatched roof bungalow, tropical paradise, bright midday sun, photorealistic, extremely detailed skin texture, contrast of pale skin and red swimsuit, raw photo, 8k resolution, professional luxury swimwear campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "Maldives editorial luxury - high contrast porcelain and red, paradise isolation aesthetic."
     },
     {
       "id": "SW008",
@@ -106,7 +115,8 @@
       "swimwear": "Two-piece bikini, solid white, sporty cut top, cheeky bottom",
       "scene": "Alpine lake surrounded by mountains, grassy meadow shore",
       "pose": "Standing knee-deep in clear alpine lake, hands pushing hair back",
-      "prompt": "Full body portrait, athletic muscular woman, 28 years old, medium brown hair with caramel highlights in beach waves, brown eyes, golden tan skin, standing knee-deep in crystal clear alpine lake, hands pushing wet hair back, eyes closed enjoying the moment, wearing solid white two-piece bikini with sporty cut top and cheeky bottom, premium quick-dry fabric, dramatic snow-capped mountains and green meadow in background, bright clear sky, photorealistic, extremely detailed skin texture, water reflections on skin, toned abs and arms visible, raw photo, 8k resolution, professional luxury swimwear campaign photography, full body visible head to toe"
+      "prompt": "Full body portrait, athletic muscular woman, 28 years old, medium brown hair with caramel highlights in beach waves, brown eyes, golden tan skin, standing knee-deep in crystal clear alpine lake, hands pushing wet hair back, eyes closed enjoying the moment, wearing solid white two-piece bikini with sporty cut top and cheeky bottom, premium quick-dry fabric, dramatic snow-capped mountains and green meadow in background, bright clear sky, photorealistic, extremely detailed skin texture, water reflections on skin, toned abs and arms visible, raw photo, 8k resolution, professional luxury swimwear campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+      "look_reference": "Alpine fresh contrast - athletic Brazilian warmth against crisp mountain clarity."
     }
   ]
 }

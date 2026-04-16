@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>i2i Platform - Test Console</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0a; color: #e0e0e0; }
+
+    .header { background: #111; padding: 16px 24px; border-bottom: 1px solid #222; display: flex; justify-content: space-between; align-items: center; }
+    .header h1 { font-size: 20px; font-weight: 600; color: #fff; }
+    .header .status { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+    .header .status .dot { width: 8px; height: 8px; border-radius: 50%; }
+    .header .status .dot.ok { background: #4ade80; }
+    .header .status .dot.down { background: #f87171; }
+    .header .status .dot.loading { background: #fbbf24; }
+
+    .container { display: flex; height: calc(100vh - 53px); }
+
+    .sidebar { width: 320px; background: #111; border-right: 1px solid #222; overflow-y: auto; padding: 16px; flex-shrink: 0; }
+    .main { flex: 1; overflow-y: auto; padding: 24px; }
+
+    .section { margin-bottom: 20px; }
+    .section-title { font-size: 12px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+
+    label { display: block; font-size: 13px; color: #aaa; margin-bottom: 4px; }
+    select, input, textarea { width: 100%; padding: 8px 10px; background: #1a1a1a; border: 1px solid #333; border-radius: 6px; color: #fff; font-size: 13px; margin-bottom: 10px; }
+    select:focus, input:focus, textarea:focus { outline: none; border-color: #6366f1; }
+    textarea { resize: vertical; min-height: 80px; font-family: inherit; }
+
+    .btn { padding: 10px 16px; border: none; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer; width: 100%; transition: all 0.2s; }
+    .btn-primary { background: #6366f1; color: #fff; }
+    .btn-primary:hover { background: #5558e6; }
+    .btn-primary:disabled { background: #333; color: #666; cursor: not-allowed; }
+    .btn-secondary { background: #222; color: #ccc; border: 1px solid #333; }
+    .btn-secondary:hover { background: #2a2a2a; }
+    .btn-danger { background: #dc2626; color: #fff; }
+    .btn-small { padding: 6px 12px; font-size: 12px; width: auto; }
+
+    .btn-group { display: flex; gap: 8px; margin-bottom: 10px; }
+    .btn-group .btn { flex: 1; }
+
+    .upload-area { border: 2px dashed #333; border-radius: 8px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.2s; margin-bottom: 10px; }
+    .upload-area:hover { border-color: #6366f1; background: #1a1a2e; }
+    .upload-area img { max-width: 100%; max-height: 200px; border-radius: 4px; }
+    .upload-area p { color: #666; font-size: 13px; }
+
+    .range-group { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+    .range-group input[type="range"] { flex: 1; margin: 0; }
+    .range-group .range-value { font-size: 13px; color: #6366f1; min-width: 40px; text-align: right; }
+
+    .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+    .gallery-item { background: #111; border-radius: 8px; overflow: hidden; border: 1px solid #222; }
+    .gallery-item img { width: 100%; display: block; }
+    .gallery-item .info { padding: 12px; }
+    .gallery-item .info .title { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+    .gallery-item .info .meta { font-size: 12px; color: #666; }
+    .gallery-item .actions { padding: 0 12px 12px; display: flex; gap: 6px; }
+
+    .log { background: #0d0d0d; border: 1px solid #222; border-radius: 6px; padding: 12px; font-family: 'Courier New', monospace; font-size: 12px; max-height: 200px; overflow-y: auto; margin-bottom: 10px; }
+    .log .entry { margin-bottom: 4px; }
+    .log .entry.info { color: #6366f1; }
+    .log .entry.success { color: #4ade80; }
+    .log .entry.error { color: #f87171; }
+    .log .entry.warn { color: #fbbf24; }
+
+    .tabs { display: flex; gap: 0; margin-bottom: 16px; border-bottom: 1px solid #222; }
+    .tab { padding: 10px 20px; font-size: 14px; cursor: pointer; color: #666; border-bottom: 2px solid transparent; transition: all 0.2s; }
+    .tab.active { color: #fff; border-bottom-color: #6366f1; }
+    .tab:hover { color: #aaa; }
+
+    .panel { display: none; }
+    .panel.active { display: block; }
+
+    .lora-item { display: flex; align-items: center; gap: 8px; padding: 8px; background: #1a1a1a; border-radius: 6px; margin-bottom: 6px; }
+    .lora-item input[type="checkbox"] { flex-shrink: 0; }
+    .lora-item .lora-name { flex: 1; font-size: 13px; }
+    .lora-item input[type="range"] { width: 80px; }
+
+    .spinner { display: inline-block; width: 16px; height: 16px; border: 2px solid #333; border-top-color: #6366f1; border-radius: 50%; animation: spin 0.8s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .preset-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; margin-bottom: 10px; }
+    .preset { padding: 8px; background: #1a1a1a; border: 1px solid #222; border-radius: 6px; cursor: pointer; font-size: 12px; text-align: center; transition: all 0.2s; }
+    .preset:hover { border-color: #6366f1; background: #1a1a2e; }
+    .preset.active { border-color: #6366f1; background: #1a1a3e; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>i2i Platform</h1>
+    <div class="status">
+      <div class="dot loading" id="statusDot"></div>
+      <span id="statusText">Connecting...</span>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="sidebar">
+      <!-- Workflow Type -->
+      <div class="section">
+        <div class="section-title">Workflow</div>
+        <div class="btn-group">
+          <button class="btn btn-secondary" onclick="setWorkflow('t2i')" id="btn-t2i">T2I</button>
+          <button class="btn btn-secondary" onclick="setWorkflow('i2i')" id="btn-i2i">I2I</button>
+        </div>
+      </div>
+
+      <!-- Upload Image (I2I) -->
+      <div class="section" id="uploadSection" style="display:none">
+        <div class="section-title">Input Image</div>
+        <div class="upload-area" id="uploadArea" onclick="document.getElementById('fileInput').click()">
+          <p>Click to upload image</p>
+        </div>
+        <input type="file" id="fileInput" accept="image/*" style="display:none" onchange="handleUpload(event)">
+      </div>
+
+      <!-- Presets -->
+      <div class="section">
+        <div class="section-title">Presets</div>
+        <select id="presetCategory" onchange="loadPresets()">
+          <option value="">-- Select Category --</option>
+          <option value="sportswear">Sportswear</option>
+          <option value="swimwear">Swimwear</option>
+          <option value="casual">Casual Summer</option>
+          <option value="intimates">Intimates</option>
+          <option value="young_fashion">Young Fashion</option>
+          <option value="accessories">Accessories</option>
+          <option value="gym">Executive Gym</option>
+          <option value="i2i_scenes">I2I Scenes</option>
+        </select>
+        <div class="preset-grid" id="presetGrid"></div>
+      </div>
+
+      <!-- Prompts -->
+      <div class="section">
+        <div class="section-title">Prompts</div>
+        <label>Positive</label>
+        <textarea id="positivePrompt" rows="4">Full body portrait, beautiful young woman, 25 years old, photorealistic, extremely detailed skin texture, raw photo, 8k, vibrant natural colors, accurate color reproduction, neutral white balance</textarea>
+        <label>Negative</label>
+        <textarea id="negativePrompt" rows="3">deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, ugly, disfigured, cropped, cut off legs, sepia, desaturated, muted colors, vintage filter, faded colors</textarea>
+      </div>
+
+      <!-- Config -->
+      <div class="section">
+        <div class="section-title">Parameters</div>
+
+        <div class="range-group">
+          <label style="min-width:60px;margin:0">Denoise</label>
+          <input type="range" id="denoise" min="0" max="1" step="0.05" value="1.0" oninput="this.nextElementSibling.textContent=this.value">
+          <span class="range-value">1.0</span>
+        </div>
+
+        <div class="range-group">
+          <label style="min-width:60px;margin:0">Steps</label>
+          <input type="range" id="steps" min="4" max="12" step="1" value="6" oninput="this.nextElementSibling.textContent=this.value">
+          <span class="range-value">6</span>
+        </div>
+
+        <div style="display:flex;gap:8px">
+          <div style="flex:1">
+            <label>Width</label>
+            <input type="number" id="width" value="768" step="64">
+          </div>
+          <div style="flex:1">
+            <label>Height</label>
+            <input type="number" id="height" value="1024" step="64">
+          </div>
+        </div>
+
+        <label>Seed (0 = random)</label>
+        <input type="number" id="seed" value="0">
+
+        <label>Sampler</label>
+        <select id="sampler">
+          <option value="euler_ancestral" selected>euler_ancestral</option>
+          <option value="euler">euler</option>
+          <option value="sa_solver">sa_solver</option>
+          <option value="er_sde">er_sde</option>
+          <option value="lcm">lcm</option>
+        </select>
+
+        <label>Scheduler</label>
+        <select id="scheduler">
+          <option value="beta" selected>beta</option>
+          <option value="normal">normal</option>
+          <option value="sgm_uniform">sgm_uniform</option>
+          <option value="simple">simple</option>
+        </select>
+      </div>
+
+      <!-- LoRAs -->
+      <div class="section">
+        <div class="section-title">LoRAs</div>
+        <div id="loraList">
+          <div class="lora-item">
+            <input type="checkbox" id="lora_f2p">
+            <span class="lora-name">F2P Face</span>
+            <input type="range" min="0" max="1" step="0.1" value="0.7" id="lora_f2p_str">
+          </div>
+          <div class="lora-item">
+            <input type="checkbox" id="lora_skin">
+            <span class="lora-name">Skin Fix</span>
+            <input type="range" min="0" max="1" step="0.1" value="0.5" id="lora_skin_str">
+          </div>
+          <div class="lora-item">
+            <input type="checkbox" id="lora_consist">
+            <span class="lora-name">Consistency</span>
+            <input type="range" min="0" max="1" step="0.1" value="0.6" id="lora_consist_str">
+          </div>
+          <div class="lora-item">
+            <input type="checkbox" id="lora_snofs">
+            <span class="lora-name">SNOFS</span>
+            <input type="range" min="0" max="1" step="0.1" value="0.5" id="lora_snofs_str">
+          </div>
+        </div>
+      </div>
+
+      <!-- Generate -->
+      <div class="section">
+        <button class="btn btn-primary" id="generateBtn" onclick="generate()">Generate</button>
+      </div>
+
+      <!-- Log -->
+      <div class="section">
+        <div class="section-title">Log</div>
+        <div class="log" id="log"></div>
+        <button class="btn btn-secondary btn-small" onclick="freeMemory()">Free VRAM</button>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="tabs">
+        <div class="tab active" onclick="switchTab('gallery')">Gallery</div>
+        <div class="tab" onclick="switchTab('compare')">Compare</div>
+      </div>
+
+      <div class="panel active" id="galleryPanel">
+        <div class="gallery" id="gallery"></div>
+      </div>
+
+      <div class="panel" id="comparePanel">
+        <div style="display:flex;gap:16px;align-items:flex-start">
+          <div style="flex:1">
+            <div class="section-title">Original</div>
+            <div id="compareOriginal" style="background:#111;border-radius:8px;min-height:300px;display:flex;align-items:center;justify-content:center;color:#666">
+              Click an image in Gallery to set as original
+            </div>
+          </div>
+          <div style="flex:1">
+            <div class="section-title">Transformed</div>
+            <div id="compareTransformed" style="background:#111;border-radius:8px;min-height:300px;display:flex;align-items:center;justify-content:center;color:#666">
+              Generate a transformation to compare
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+const BASE_URL = 'https://t3a5h65dejiqek-8188.proxy.runpod.net';
+let currentWorkflow = 't2i';
+let uploadedImageName = null;
+let generatedImages = [];
+
+const LORA_MAP = {
+  lora_f2p: 'Qwen-Image-Edit-F2P.safetensors',
+  lora_skin: 'Skin_Fix_rank64.safetensors',
+  lora_consist: 'consistence_edit_v2.safetensors',
+  lora_snofs: 'qwen_snofs.safetensors'
+};
+
+const PRESETS = {
+  sportswear: [
+    {name: 'Running - Blonde', prompt: 'Full body portrait, young athletic woman, 24 years old, long straight blonde hair in ponytail, blue eyes, fair lightly tanned skin, tall and slim athletic build, standing on urban park running path, catching her breath after a run, one hand on hip, wearing black compression leggings, neon green sports bra, white running shoes, morning golden hour sunlight, photorealistic, extremely detailed skin texture, raw photo, 8k, vibrant natural colors, full body visible head to toe'},
+    {name: 'Cycling - Brunette', prompt: 'Full body portrait, curvy athletic woman, 28 years old, medium wavy brown hair, green eyes, Mediterranean olive skin, leaning casually against her road bicycle on scenic countryside gravel path, wearing teal cycling shorts, white fitted tank top, cycling gloves, soft afternoon sunlight, photorealistic, extremely detailed skin texture, 8k, vibrant natural colors, full body visible head to toe'},
+    {name: 'CrossFit - Auburn', prompt: 'Full body portrait, toned muscular woman, 26 years old, short auburn pixie cut hair, grey eyes, Nordic pale skin, standing tall with arms crossed outside modern gym, wearing dark grey high-waist leggings, burgundy racerback tank, photorealistic, extremely detailed skin texture, 8k, vibrant natural colors, full body visible head to toe'},
+  ],
+  swimwear: [
+    {name: 'Beach - Black One-piece', prompt: 'Full body portrait, slim toned woman, 24 years old, long platinum blonde straight hair, ice blue eyes, fair skin with golden tan, standing at tropical beach shoreline, turquoise water, wearing elegant black one-piece swimsuit with high-cut legs and open back, bright sunny day, photorealistic, extremely detailed skin texture, 8k, vibrant natural colors, full body visible head to toe'},
+    {name: 'Mediterranean - Burgundy Bikini', prompt: 'Full body portrait, curvy hourglass woman, 27 years old, long dark brown wavy hair, dark brown eyes, deep olive Mediterranean skin, sitting on large rock on rocky coast, wearing deep burgundy two-piece bikini with triangle top and high-waist bottom, warm golden light, photorealistic, extremely detailed skin texture, 8k, vibrant natural colors, full body visible head to toe'},
+    {name: 'Lake - White Minimal', prompt: 'Full body portrait, athletic tall woman, 26 years old, short blonde bob, grey-blue eyes, Nordic fair skin with freckles, standing at end of wooden dock on Scandinavian lake, wearing crisp white minimalist one-piece swimsuit, overcast summer light, photorealistic, extremely detailed skin texture, 8k, vibrant natural colors, full body visible head to toe'},
+  ],
+  casual: [
+    {name: 'European Street', prompt: 'Full body portrait, slim petite young woman, 20 years old, long straight honey blonde hair, light blue eyes, fair porcelain skin, walking casually down cobblestone European old town street, wearing high-waist light wash denim shorts, white cropped linen top, white canvas sneakers, warm summer afternoon light, photorealistic, extremely detailed skin texture, 8k, vibrant natural colors, full body visible head to toe'},
+    {name: 'Flower Market', prompt: 'Full body portrait, curvy soft young woman, 22 years old, long dark brown loose curls, warm brown eyes, warm caramel skin, standing at colorful outdoor flower market, holding small bouquet, wearing flowy midi sundress in terracotta with white floral print, tan leather sandals, photorealistic, extremely detailed skin texture, 8k, vibrant natural colors, full body visible head to toe'},
+    {name: 'Rooftop Urban', prompt: 'Full body portrait, slim athletic young woman, 21 years old, medium straight black hair with subtle highlights, dark almond-shaped eyes, light golden skin, leaning against railing on urban rooftop terrace, wearing olive cargo pants, fitted white tank top, chunky platform sandals, golden hour light, photorealistic, extremely detailed skin texture, 8k, vibrant natural colors, full body visible head to toe'},
+  ],
+  intimates: [
+    {name: 'Bralette Blush - Front', prompt: 'Full body portrait, front view, slim toned young woman, 21 years old, long straight dark brown hair center part, fair warm skin, standing facing camera, wearing soft blush pink cotton bralette and matching high-waist cotton bikini brief, clean white studio background, soft diffused window light, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, 8k, vibrant natural colors, full body visible head to toe'},
+    {name: 'Triangle Sage - Side', prompt: 'Full body portrait, side profile, athletic lean young woman, 23 years old, medium wavy honey blonde hair, light golden tan skin, standing in side profile, wearing sage green cotton triangle bralette and matching mid-rise hipster brief, cream studio background, warm natural light, photorealistic, extremely detailed skin texture, 8k, vibrant natural colors, full body visible head to toe'},
+    {name: 'Pyjama Lavender', prompt: 'Full body portrait, soft curvy young woman, 22 years old, long loose curls dark auburn hair, light olive warm skin, standing in bright airy bedroom, wearing lavender cotton pyjama set button-front top and matching shorts, bright white bedroom, soft morning window light, photorealistic, extremely detailed skin texture, 8k, vibrant natural colors, full body visible head to toe'},
+  ],
+  young_fashion: [
+    {name: 'Summer Dress White', prompt: 'Full body portrait, slim teenage girl, 16 years old, long straight light brown hair half up with white ribbon, fair soft skin, standing on Mediterranean white terrace, wearing pure white cotton A-line mini dress with eyelet embroidery, white platform sandals, clean bright summer daylight, photorealistic, extremely detailed skin texture, 8k, vibrant natural colors, full body visible head to toe'},
+    {name: 'Sport Set Pink', prompt: 'Full body portrait, athletic toned young woman, 19 years old, long dark blonde hair in sleek high ponytail, light golden skin, standing in white gym studio, wearing soft pink matching ribbed crop sports bra and high-waist biker shorts, white training shoes, photorealistic, extremely detailed skin texture, 8k, vibrant natural colors, full body visible head to toe'},
+    {name: 'Elegant Lilac', prompt: 'Full body portrait, slim hourglass young woman, 24 years old, long wavy dark brown hair with Hollywood waves, light olive Mediterranean skin, standing in white marble interior with arched doorway, wearing lilac satin midi slip dress with spaghetti straps, white strappy kitten heels, photorealistic, extremely detailed skin texture, 8k, vibrant natural colors, full body visible head to toe'},
+  ],
+  accessories: [
+    {name: 'Tote Tan Cognac', prompt: 'Full body portrait, slim tall young woman, 25 years old, long straight dark brown hair sleek blowout, light olive warm skin, standing on modern city sidewalk, holding structured tan cognac leather tote bag, wearing tailored cream wool coat over white silk blouse and black trousers, black pointed heels, photorealistic, extremely detailed leather texture on bag, 8k, vibrant natural colors, full body visible head to toe'},
+    {name: 'Crossbody Black Gold', prompt: 'Full body portrait, athletic lean young woman, 23 years old, medium wavy caramel blonde hair, fair golden skin, walking through elegant European shopping arcade, wearing fitted black turtleneck dress, small black leather crossbody bag with gold chain strap, black ankle boots, photorealistic, extremely detailed leather texture, 8k, vibrant natural colors, full body visible head to toe'},
+  ],
+  gym: [
+    {name: 'Squats Front', prompt: 'Full body portrait, front view, toned athletic woman, 32 years old, long dark brown hair in sleek high ponytail, light olive skin, performing barbell back squat with perfect form, wearing black premium compression leggings and white seamless sports bra, white training shoes, luxurious modern gym, dramatic lighting, photorealistic, extremely detailed skin texture, detailed muscle definition, 8k, vibrant natural colors, full body visible head to toe'},
+    {name: 'Stationary Bike', prompt: 'Full body portrait, athletic lean woman, 35 years old, short dark pixie cut, rich warm brown skin, riding premium stationary bike in spin class position, wearing deep navy cycling shorts and white performance crop top, sleek dark premium spin studio with purple accent lighting, photorealistic, extremely detailed skin texture, 8k, vibrant natural colors, full body visible head to toe'},
+    {name: 'Yoga Warrior', prompt: 'Full body portrait, lean flexible woman, 33 years old, long black straight hair flowing loose, medium warm tan skin, performing warrior III yoga pose balancing on one leg, wearing sage green premium leggings and matching sports bra, bright luxurious yoga studio with large windows, soft morning light, photorealistic, extremely detailed skin texture, 8k, vibrant natural colors, full body visible head to toe'},
+  ],
+  i2i_scenes: [
+    {name: 'Coffee Shop', prompt: 'The same woman sitting at a small round cafe table outdoors, legs crossed, holding cappuccino, wearing beige knit sweater and dark skinny jeans, same face same eyes same skin, cozy cafe terrace, morning light, vibrant natural colors, photorealistic, full body head to toe, 8k', denoise: 0.72},
+    {name: 'Beach Walk', prompt: 'The same woman walking along beach shoreline, wearing flowing white beach cover-up over turquoise bikini, barefoot on sand, same face same eyes same skin, golden sunset light, vibrant natural colors, photorealistic, full body head to toe, 8k', denoise: 0.72},
+    {name: 'Yoga Garden', prompt: 'The same woman doing warrior yoga pose on mat in garden, wearing black leggings and sage sports bra, same face same eyes same skin, lush green garden, soft morning light, vibrant natural colors, photorealistic, full body head to toe, 8k', denoise: 0.72},
+    {name: 'Roller Skating', prompt: 'The same woman roller skating on boardwalk, wearing denim shorts and cropped pink hoodie, same face same eyes same skin, palm-lined promenade, sunny day, vibrant natural colors, photorealistic, full body head to toe, 8k', denoise: 0.72},
+    {name: 'Restaurant Evening', prompt: 'The same woman sitting at elegant restaurant table, holding wine glass, wearing black off-shoulder cocktail dress, same face same eyes same skin, candlelit warm lighting, vibrant natural colors, photorealistic, full body head to toe, 8k', denoise: 0.72},
+    {name: 'Change Hair Blonde', prompt: 'The same woman with short platinum blonde pixie cut hair, same face, same outfit, same pose, same background, same skin, vibrant natural colors, photorealistic, 8k', denoise: 0.45},
+    {name: 'Change Hair Red', prompt: 'The same woman with long red curly hair, same face, same outfit, same pose, same background, same skin, vibrant natural colors, photorealistic, 8k', denoise: 0.45},
+    {name: 'Red Summer Dress', prompt: 'The same woman wearing a vibrant red summer dress with thin straps, same face, same body, same pose, same background, vibrant natural colors, photorealistic, 8k', denoise: 0.55},
+  ]
+};
+
+// --- Init ---
+async function init() {
+  checkHealth();
+  setWorkflow('t2i');
+  setInterval(checkHealth, 30000);
+}
+
+async function checkHealth() {
+  try {
+    const resp = await fetch(`${BASE_URL}/api/system_stats`, {signal: AbortSignal.timeout(5000)});
+    const data = await resp.json();
+    document.getElementById('statusDot').className = 'dot ok';
+    document.getElementById('statusText').textContent = `ComfyUI v${data.system.comfyui_version} | VRAM: ${Math.round(data.devices?.[0]?.vram_free/1024/1024 || 0)}MB free`;
+  } catch {
+    document.getElementById('statusDot').className = 'dot down';
+    document.getElementById('statusText').textContent = 'Disconnected';
+  }
+}
+
+// --- Workflow ---
+function setWorkflow(type) {
+  currentWorkflow = type;
+  document.getElementById('btn-t2i').className = type === 't2i' ? 'btn btn-primary' : 'btn btn-secondary';
+  document.getElementById('btn-i2i').className = type === 'i2i' ? 'btn btn-primary' : 'btn btn-secondary';
+  document.getElementById('uploadSection').style.display = type === 'i2i' ? 'block' : 'none';
+
+  if (type === 't2i') {
+    document.getElementById('denoise').value = '1.0';
+    document.getElementById('denoise').nextElementSibling.textContent = '1.0';
+  } else {
+    document.getElementById('denoise').value = '0.72';
+    document.getElementById('denoise').nextElementSibling.textContent = '0.72';
+  }
+}
+
+// --- Upload ---
+async function handleUpload(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  const area = document.getElementById('uploadArea');
+  area.innerHTML = '<div class="spinner"></div><p>Uploading...</p>';
+
+  try {
+    const formData = new FormData();
+    formData.append('image', file);
+    formData.append('type', 'input');
+    formData.append('overwrite', 'true');
+
+    const resp = await fetch(`${BASE_URL}/upload/image`, {method: 'POST', body: formData});
+    const data = await resp.json();
+    uploadedImageName = data.name;
+
+    const img = document.createElement('img');
+    img.src = URL.createObjectURL(file);
+    area.innerHTML = '';
+    area.appendChild(img);
+
+    log('Uploaded: ' + data.name, 'success');
+  } catch (e) {
+    area.innerHTML = '<p>Upload failed. Click to retry.</p>';
+    log('Upload error: ' + e.message, 'error');
+  }
+}
+
+// --- Presets ---
+function loadPresets() {
+  const category = document.getElementById('presetCategory').value;
+  const grid = document.getElementById('presetGrid');
+  grid.innerHTML = '';
+
+  if (!category || !PRESETS[category]) return;
+
+  PRESETS[category].forEach((p, i) => {
+    const div = document.createElement('div');
+    div.className = 'preset';
+    div.textContent = p.name;
+    div.onclick = () => {
+      document.getElementById('positivePrompt').value = p.prompt;
+      if (p.denoise !== undefined) {
+        document.getElementById('denoise').value = p.denoise;
+        document.getElementById('denoise').nextElementSibling.textContent = p.denoise;
+        if (p.denoise < 1) setWorkflow('i2i');
+      }
+      document.querySelectorAll('.preset').forEach(el => el.classList.remove('active'));
+      div.classList.add('active');
+    };
+    grid.appendChild(div);
+  });
+}
+
+// --- Build Payload ---
+function buildPayload() {
+  const prompts = {
+    positive: document.getElementById('positivePrompt').value,
+    negative: document.getElementById('negativePrompt').value
+  };
+
+  const config = {
+    width: parseInt(document.getElementById('width').value),
+    height: parseInt(document.getElementById('height').value),
+    steps: parseInt(document.getElementById('steps').value),
+    cfg: 1.0,
+    denoise: parseFloat(document.getElementById('denoise').value),
+    sampler: document.getElementById('sampler').value,
+    scheduler: document.getElementById('scheduler').value,
+    seed: parseInt(document.getElementById('seed').value) || Math.floor(Math.random() * 999999999)
+  };
+
+  // Collect active LoRAs
+  const loras = [];
+  Object.entries(LORA_MAP).forEach(([id, filename]) => {
+    if (document.getElementById(id).checked) {
+      const str = parseFloat(document.getElementById(id + '_str').value);
+      loras.push({name: filename, strength_model: str, strength_clip: str});
+    }
+  });
+
+  // Build ComfyUI workflow
+  const workflow = {};
+
+  workflow["1"] = {class_type: "CheckpointLoaderSimple", inputs: {ckpt_name: "Qwen-Rapid-AIO-NSFW-v18.1.safetensors"}};
+
+  let modelSource = "1";
+  let clipSource = "1";
+
+  loras.forEach((lora, i) => {
+    const nid = `${10 + i}`;
+    workflow[nid] = {
+      class_type: "LoraLoader",
+      inputs: {model: [modelSource, 0], clip: [clipSource, 1], lora_name: lora.name, strength_model: lora.strength_model, strength_clip: lora.strength_clip}
+    };
+    modelSource = nid;
+    clipSource = nid;
+  });
+
+  if (currentWorkflow === 'i2i' && uploadedImageName) {
+    workflow["7"] = {class_type: "LoadImage", inputs: {image: uploadedImageName, upload: "image"}};
+  }
+
+  const positiveNode = {class_type: "TextEncodeQwenImageEditPlus", inputs: {clip: [clipSource, 1], vae: ["1", 2], prompt: prompts.positive}};
+  if (currentWorkflow === 'i2i' && uploadedImageName) positiveNode.inputs.image1 = ["7", 0];
+  workflow["3"] = positiveNode;
+
+  workflow["4"] = {class_type: "TextEncodeQwenImageEditPlus", inputs: {clip: [clipSource, 1], vae: ["1", 2], prompt: prompts.negative}};
+  workflow["9"] = {class_type: "EmptyLatentImage", inputs: {width: config.width, height: config.height, batch_size: 1}};
+  workflow["2"] = {class_type: "KSampler", inputs: {model: [modelSource, 0], positive: ["3", 0], negative: ["4", 0], latent_image: ["9", 0], seed: config.seed, steps: config.steps, cfg: config.cfg, sampler_name: config.sampler, scheduler: config.scheduler, denoise: config.denoise}};
+  workflow["5"] = {class_type: "VAEDecode", inputs: {samples: ["2", 0], vae: ["1", 2]}};
+  workflow["6"] = {class_type: "SaveImage", inputs: {images: ["5", 0], filename_prefix: "app_output"}};
+
+  return {prompt: workflow};
+}
+
+// --- Generate ---
+async function generate() {
+  const btn = document.getElementById('generateBtn');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span> Generating...';
+
+  try {
+    if (currentWorkflow === 'i2i' && !uploadedImageName) {
+      throw new Error('Upload an image first for I2I');
+    }
+
+    const payload = buildPayload();
+    log('Queuing prompt...', 'info');
+
+    const resp = await fetch(`${BASE_URL}/api/prompt`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(payload)
+    });
+
+    const data = await resp.json();
+
+    if (data.node_errors && Object.keys(data.node_errors).length > 0) {
+      throw new Error('Node errors: ' + JSON.stringify(data.node_errors));
+    }
+
+    const promptId = data.prompt_id;
+    log(`Queued: ${promptId}`, 'info');
+
+    // Poll
+    const startTime = Date.now();
+    const timeout = 120000;
+
+    while (Date.now() - startTime < timeout) {
+      await new Promise(r => setTimeout(r, 2000));
+
+      const histResp = await fetch(`${BASE_URL}/api/history/${promptId}`);
+      const histData = await histResp.json();
+
+      if (histData[promptId]?.status?.status_str === 'success') {
+        const images = histData[promptId].outputs?.["6"]?.images || [];
+        if (images.length > 0) {
+          const filename = images[0].filename;
+          const imageUrl = `${BASE_URL}/view?filename=${encodeURIComponent(filename)}&type=output`;
+
+          addToGallery(imageUrl, filename, {
+            workflow: currentWorkflow,
+            prompt: document.getElementById('positivePrompt').value.substring(0, 80) + '...',
+            time: ((Date.now() - startTime) / 1000).toFixed(1) + 's'
+          });
+
+          log(`Done: ${filename} (${((Date.now() - startTime) / 1000).toFixed(1)}s)`, 'success');
+          break;
+        }
+      }
+
+      if (histData[promptId]?.status?.status_str === 'error') {
+        throw new Error('Generation failed');
+      }
+    }
+
+  } catch (e) {
+    log('Error: ' + e.message, 'error');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Generate';
+  }
+}
+
+// --- Gallery ---
+function addToGallery(imageUrl, filename, meta) {
+  const gallery = document.getElementById('gallery');
+
+  const item = document.createElement('div');
+  item.className = 'gallery-item';
+  item.innerHTML = `
+    <img src="${imageUrl}" loading="lazy">
+    <div class="info">
+      <div class="title">${filename}</div>
+      <div class="meta">${meta.workflow.toUpperCase()} | ${meta.time}</div>
+      <div class="meta" style="margin-top:4px">${meta.prompt}</div>
+    </div>
+    <div class="actions">
+      <button class="btn btn-secondary btn-small" onclick="useAsInput('${imageUrl}', '${filename}')">Use as I2I Input</button>
+      <button class="btn btn-secondary btn-small" onclick="setCompare('${imageUrl}')">Compare</button>
+      <a href="${imageUrl}" download="${filename}" class="btn btn-secondary btn-small">Download</a>
+    </div>
+  `;
+
+  gallery.prepend(item);
+  generatedImages.unshift({url: imageUrl, filename, meta});
+}
+
+function useAsInput(imageUrl, filename) {
+  setWorkflow('i2i');
+  uploadedImageName = filename;
+  document.getElementById('uploadArea').innerHTML = `<img src="${imageUrl}">`;
+  document.getElementById('presetCategory').value = 'i2i_scenes';
+  loadPresets();
+  log('Set as I2I input: ' + filename, 'info');
+}
+
+function setCompare(imageUrl) {
+  const panel = document.getElementById('compareOriginal');
+  panel.innerHTML = `<img src="${imageUrl}" style="width:100%;border-radius:8px">`;
+}
+
+// --- Tabs ---
+function switchTab(tab) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelector(`.tab[onclick*="${tab}"]`).classList.add('active');
+  document.getElementById(`${tab}Panel`).classList.add('active');
+}
+
+// --- Free Memory ---
+async function freeMemory() {
+  try {
+    await fetch(`${BASE_URL}/api/free`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({unload_models: true, free_memory: true})
+    });
+    log('VRAM freed', 'success');
+    checkHealth();
+  } catch (e) {
+    log('Free memory error: ' + e.message, 'error');
+  }
+}
+
+// --- Log ---
+function log(msg, type = 'info') {
+  const logEl = document.getElementById('log');
+  const time = new Date().toLocaleTimeString();
+  logEl.innerHTML += `<div class="entry ${type}">[${time}] ${msg}</div>`;
+  logEl.scrollTop = logEl.scrollHeight;
+}
+
+init();
+</script>
+</body>
+</html>
