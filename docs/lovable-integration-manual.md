@@ -26,37 +26,139 @@ Integrar el engine de contenido de Lovable con la API de ComfyUI para generar y 
 
 ---
 
+## Principio de Diseño
+
+**La API no tiene nada hardcodeado.** Tu plataforma envía TODOS los parámetros en cada request:
+- Prompts (positivo y negativo)
+- Configuración de imagen (tamaño, steps, denoise, sampler, etc.)
+- LoRAs a aplicar (nombre, strength) — opcionales
+- Imagen de entrada (para I2I)
+
+Esto permite:
+- Cambiar cualquier parámetro sin tocar la API
+- Agregar/cambiar LoRAs en caliente
+- Experimentar con diferentes configs desde la plataforma
+- La API es solo un ejecutor, toda la inteligencia está en tu plataforma
+
+---
+
 ## Conexión
 
 ```
-BASE_URL = https://t3a5h65dejiqek-8188.proxy.runpod.net
+BASE_URL_IMAGE = https://t3a5h65dejiqek-8188.proxy.runpod.net   // Pod imágenes
+BASE_URL_VIDEO = https://PENDIENTE.proxy.runpod.net              // Pod video
 ```
 
 - Sin autenticación (URL obscura como seguridad)
 - CORS habilitado
-- Timeout recomendado: 120s (primera ejecución carga modelo)
+- Timeout recomendado: 120s imagen, 300s video
 
 ---
 
-## Estructura del Template (formato Lovable)
+## Request que envía tu plataforma
 
-El engine ya maneja templates con esta estructura:
+Tu plataforma envía un JSON con TODOS los parámetros. La API construye el workflow de ComfyUI dinámicamente.
+
+### Formato del request
 
 ```json
 {
-  "id": "unique-id",
-  "metadata": {
-    "title": "Nombre del template",
-    "description": "Descripción",
-    "category": "Categoría"
+  "workflow_type": "t2i | i2i | i2v",
+  "prompts": {
+    "positive": "Full body portrait, young woman..., vibrant natural colors, photorealistic, 8k",
+    "negative": "deformed, watermark, low quality, blurry, sepia, desaturated"
   },
-  "category": "Categoría",
-  "workflow_type": "t2i | i2i",
-  "lora": null,
+  "image_config": {
+    "width": 768,
+    "height": 1024,
+    "steps": 6,
+    "cfg": 1.0,
+    "denoise": 1.0,
+    "sampler": "euler_ancestral",
+    "scheduler": "beta",
+    "seed": 0
+  },
+  "video_config": {
+    "width": 640,
+    "height": 640,
+    "num_frames": 81,
+    "fps": 24,
+    "steps": 4,
+    "cfg": 1.0,
+    "denoise": 1.0,
+    "sampler": "sa_solver",
+    "scheduler": "beta",
+    "seed": 0
+  },
+  "loras": [
+    {
+      "name": "Qwen-Image-Edit-F2P.safetensors",
+      "strength_model": 0.7,
+      "strength_clip": 0.7
+    }
+  ],
+  "input_image": null
+}
+```
+
+### Campos
+
+| Campo | Tipo | Requerido | Descripción |
+|-------|------|-----------|-------------|
+| `workflow_type` | string | Sí | `"t2i"`, `"i2i"`, o `"i2v"` |
+| `prompts.positive` | string | Sí | Lo que querés generar |
+| `prompts.negative` | string | Sí | Lo que querés evitar |
+| `image_config` | object | Para t2i/i2i | Config de imagen |
+| `video_config` | object | Para i2v | Config de video |
+| `loras` | array | No | Lista de LoRAs a aplicar. `[]` o `null` = sin LoRA |
+| `input_image` | File | Para i2i/i2v | Imagen de entrada |
+
+### LoRAs dinámicas
+
+Las LoRAs se envían en el request. Tu plataforma decide cuáles usar según la categoría, template, o lo que quieras. La API las aplica en cadena.
+
+```json
+"loras": [
+  {"name": "Qwen-Image-Edit-F2P.safetensors", "strength_model": 0.7, "strength_clip": 0.7},
+  {"name": "otro_lora.safetensors", "strength_model": 0.5, "strength_clip": 0.5}
+]
+```
+
+**Sin LoRA:**
+```json
+"loras": []
+```
+
+**Agregar nueva LoRA al sistema:**
+Tu plataforma puede enviar un request para instalar una LoRA nueva:
+```
+POST /api/lora/install
+{
+  "url": "https://huggingface.co/repo/resolve/main/lora.safetensors",
+  "name": "mi_lora.safetensors"
+}
+```
+(Este endpoint lo implementamos como un script en el pod, no es nativo de ComfyUI)
+
+### Template en tu plataforma
+
+Los templates en tu plataforma guardan los valores default:
+
+```json
+{
+  "id": "sportswear-M001",
+  "metadata": {
+    "title": "Sportswear Model - Running",
+    "description": "Athletic woman in premium sportswear",
+    "category": "Sportswear"
+  },
+  "category": "Sportswear",
+  "workflow_type": "t2i",
+  "loras": [],
   "workflow_params": {
     "prompts": {
-      "positive": "prompt positivo...",
-      "negative": "prompt negativo..."
+      "positive": "Full body portrait, young athletic woman...",
+      "negative": "deformed, watermark, low quality..."
     },
     "image_config": {
       "width": 768,
@@ -71,10 +173,7 @@ El engine ya maneja templates con esta estructura:
 }
 ```
 
-**Campos nuevos respecto al template existente de video:**
-- `workflow_type`: `"t2i"` (texto a imagen) o `"i2i"` (imagen a imagen)
-- `lora`: `null` o `{"name": "archivo.safetensors", "strength_model": 0.7, "strength_clip": 0.7}`
-- `image_config`: reemplaza `video_config` para flujos de imagen
+Pero al momento de ejecutar, tu plataforma puede sobreescribir cualquier campo antes de enviar a la API.
 
 ---
 
@@ -82,45 +181,47 @@ El engine ya maneja templates con esta estructura:
 
 ### Paso 1: Función para construir el payload de ComfyUI
 
-El engine debe convertir un template Lovable en el JSON que ComfyUI espera.
+Recibe el request completo de tu plataforma y construye el JSON de ComfyUI. Soporta 0, 1 o múltiples LoRAs en cadena. **Todos los parámetros vienen del request, nada hardcodeado.**
 
 ```javascript
-function buildComfyUIPayload(template, options = {}) {
-  const { inputImage = null, seed = 0 } = options;
-  const { prompts, image_config } = template.workflow_params;
-  const lora = template.lora;
+function buildComfyUIPayload(request, options = {}) {
+  const { inputImage = null } = options;
+  const { workflow_type, prompts, image_config, loras = [] } = request;
+  const seed = image_config?.seed || 0;
   const actualSeed = seed > 0 ? seed : Math.floor(Math.random() * 999999999);
 
   const workflow = {};
 
-  // Nodo 1: Cargar modelo base
+  // Nodo 1: Checkpoint base (siempre)
   workflow["1"] = {
     class_type: "CheckpointLoaderSimple",
     inputs: { ckpt_name: "Qwen-Rapid-AIO-NSFW-v18.1.safetensors" }
   };
 
-  // Determinar fuente de model/clip (directo o via LoRA)
+  // LoRAs en cadena: cada una toma model/clip del nodo anterior
   let modelSource = "1";
   let clipSource = "1";
 
-  // Nodo 10: LoRA (opcional)
-  if (lora && lora.name) {
-    workflow["10"] = {
-      class_type: "LoraLoader",
-      inputs: {
-        model: ["1", 0],
-        clip: ["1", 1],
-        lora_name: lora.name,
-        strength_model: lora.strength_model,
-        strength_clip: lora.strength_clip
-      }
-    };
-    modelSource = "10";
-    clipSource = "10";
+  if (loras && loras.length > 0) {
+    loras.forEach((lora, index) => {
+      const nodeId = `${10 + index}`; // 10, 11, 12...
+      workflow[nodeId] = {
+        class_type: "LoraLoader",
+        inputs: {
+          model: [modelSource, 0],
+          clip: [clipSource, 1],
+          lora_name: lora.name,
+          strength_model: lora.strength_model || 0.7,
+          strength_clip: lora.strength_clip || 0.7
+        }
+      };
+      modelSource = nodeId;
+      clipSource = nodeId;
+    });
   }
 
   // Nodo 7: Imagen de entrada (solo I2I)
-  if (template.workflow_type === "i2i" && inputImage) {
+  if (workflow_type === "i2i" && inputImage) {
     workflow["7"] = {
       class_type: "LoadImage",
       inputs: { image: inputImage, upload: "image" }
@@ -136,7 +237,7 @@ function buildComfyUIPayload(template, options = {}) {
       prompt: prompts.positive
     }
   };
-  if (template.workflow_type === "i2i" && inputImage) {
+  if (workflow_type === "i2i" && inputImage) {
     positiveNode.inputs.image1 = ["7", 0];
   }
   workflow["3"] = positiveNode;
@@ -161,7 +262,7 @@ function buildComfyUIPayload(template, options = {}) {
     }
   };
 
-  // Nodo 2: Sampler
+  // Nodo 2: KSampler
   workflow["2"] = {
     class_type: "KSampler",
     inputs: {
@@ -178,24 +279,56 @@ function buildComfyUIPayload(template, options = {}) {
     }
   };
 
-  // Nodo 5: Decodificar
+  // Nodo 5: Decode
   workflow["5"] = {
     class_type: "VAEDecode",
     inputs: { samples: ["2", 0], vae: ["1", 2] }
   };
 
-  // Nodo 6: Guardar
+  // Nodo 6: Save
   workflow["6"] = {
     class_type: "SaveImage",
-    inputs: {
-      images: ["5", 0],
-      filename_prefix: template.id
-    }
+    inputs: { images: ["5", 0], filename_prefix: "output" }
   };
 
   return { prompt: workflow };
 }
 ```
+
+**Cómo se encadenan las LoRAs:**
+
+```
+Sin LoRA:       Checkpoint [1] ──────────────────────> KSampler [2]
+Con 1 LoRA:     Checkpoint [1] ──> LoRA_A [10] ──────> KSampler [2]
+Con 2 LoRAs:    Checkpoint [1] ──> LoRA_A [10] ──> LoRA_B [11] ──> KSampler [2]
+```
+
+**Ejemplo de request desde tu plataforma:**
+
+```json
+{
+  "workflow_type": "i2i",
+  "prompts": {
+    "positive": "The same woman at beach wearing white bikini, same face, photorealistic, 8k, vibrant natural colors",
+    "negative": "different face, deformed, blurry, sepia, desaturated"
+  },
+  "image_config": {
+    "width": 768,
+    "height": 1024,
+    "steps": 8,
+    "cfg": 1.0,
+    "denoise": 0.65,
+    "sampler": "euler_ancestral",
+    "scheduler": "beta",
+    "seed": 0
+  },
+  "loras": [
+    {"name": "Qwen-Image-Edit-F2P.safetensors", "strength_model": 0.7, "strength_clip": 0.7}
+  ]
+}
+```
+
+Tu plataforma controla todo. Quiere más LoRAs? Las agrega al array. Quiere cambiar denoise? Lo cambia. Quiere otro sampler? Lo cambia. La API solo ejecuta.
 
 ### Paso 2: Función para subir imagen (solo I2I)
 
