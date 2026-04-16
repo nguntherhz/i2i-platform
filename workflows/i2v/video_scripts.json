@@ -1,0 +1,84 @@
+{
+  "description": "Guiones de video para I2V. Cada script describe una transición/acción de 3-5 segundos a partir de una imagen estática.",
+  "workflow": "workflow_i2v.json",
+  "specs": {
+    "resolution": "640x640",
+    "frames": 81,
+    "fps": 24,
+    "duration": "~3.4 seconds",
+    "model": "wan2.2-i2v-rapid-aio.safetensors"
+  },
+
+  "scripts": [
+    {
+      "id": "VS01",
+      "name": "Office to Home - Undressing jacket",
+      "category": "Lifestyle transition",
+      "input_description": "Executive woman standing, front view, wearing business suit",
+      "prompt": "The woman arrives home, takes off her blazer while walking through the door, hangs it on a hook, relaxed expression, warm home interior lighting, smooth natural movement"
+    },
+    {
+      "id": "VS02",
+      "name": "Beach to City - Walking transition",
+      "category": "Scene transition",
+      "input_description": "Woman standing at beach in summer outfit",
+      "prompt": "The woman walks forward confidently, the beach background gradually transitions to a modern city street, her outfit changes from beach wear to urban casual clothing, smooth cinematic transition, natural walking movement"
+    },
+    {
+      "id": "VS03",
+      "name": "Sportswear to Sleepwear",
+      "category": "Outfit transition",
+      "input_description": "Athletic woman standing in gym clothes",
+      "prompt": "The woman stretches her arms up, then pulls off her sports top revealing a soft cotton sleep camisole underneath, relaxes her shoulders, yawns gently, bedroom background fades in with warm lamp light, smooth cozy transition"
+    },
+    {
+      "id": "VS04",
+      "name": "Standing to Sitting",
+      "category": "Pose transition",
+      "input_description": "Woman standing in any outfit",
+      "prompt": "The woman gracefully sits down on a nearby chair, crossing her legs elegantly, places her hands on her knee, settles into a relaxed comfortable seated pose, smooth natural body movement, same outfit same background"
+    },
+    {
+      "id": "VS05",
+      "name": "Sitting to Lying Down",
+      "category": "Pose transition",
+      "input_description": "Woman sitting on couch or bed",
+      "prompt": "The woman slowly leans to the side and lies down on the couch, stretches her legs out, puts one arm behind her head, relaxed comfortable pose, smooth natural movement, same outfit, warm interior lighting"
+    },
+    {
+      "id": "VS06",
+      "name": "City Walking Confidence",
+      "category": "Dynamic action",
+      "input_description": "Woman standing on city street in urban outfit",
+      "prompt": "The woman starts walking forward with confidence, hair bouncing with each step, slight smile, city life moving around her, pedestrians passing in background, dynamic camera slightly following her, smooth forward walking motion"
+    },
+    {
+      "id": "VS07",
+      "name": "Yoga Flow Sequence",
+      "category": "Dynamic action",
+      "input_description": "Woman in yoga outfit on mat",
+      "prompt": "The woman flows through a yoga sequence, raising arms overhead into mountain pose, then slowly bending forward into forward fold, smooth graceful continuous movement, peaceful garden background, soft morning light"
+    },
+    {
+      "id": "VS08",
+      "name": "Hair Flip and Smile",
+      "category": "Beauty moment",
+      "input_description": "Woman front view, any outfit",
+      "prompt": "The woman flips her hair to one side with a graceful head movement, then looks directly at camera and gives a warm genuine smile, wind catches her hair gently, soft golden light illuminating her face, cinematic beauty shot"
+    },
+    {
+      "id": "VS09",
+      "name": "Poolside Entry",
+      "category": "Scene action",
+      "input_description": "Woman in swimwear standing near pool",
+      "prompt": "The woman walks to the edge of the pool, sits down on the edge, dips her feet in the water creating small ripples, leans back on her hands enjoying the sun, smooth relaxed movement, crystal clear pool water, bright sunny day"
+    },
+    {
+      "id": "VS10",
+      "name": "Morning Routine - Coffee",
+      "category": "Lifestyle moment",
+      "input_description": "Woman in sleepwear or casual morning outfit",
+      "prompt": "The woman reaches for a coffee mug on the kitchen counter, picks it up with both hands, brings it close to her face, takes a sip with closed eyes savoring the moment, opens eyes with a satisfied smile, warm kitchen morning light streaming through window"
+    }
+  ]
+}

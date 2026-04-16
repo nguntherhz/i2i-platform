@@ -1,0 +1,113 @@
+{
+  "1": {
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": { "title": "Load Wan 2.2 I2V" },
+    "inputs": {
+      "ckpt_name": "wan2.2-i2v-rapid-aio.safetensors"
+    }
+  },
+  "12": {
+    "class_type": "CLIPVisionLoader",
+    "_meta": { "title": "CLIP Vision" },
+    "inputs": {
+      "clip_vision_name": "clip-vision_vit-h.safetensors"
+    }
+  },
+  "10": {
+    "class_type": "LoadImage",
+    "_meta": { "title": "Input Image" },
+    "inputs": {
+      "image": "INPUT_IMAGE",
+      "upload": "image"
+    }
+  },
+  "5": {
+    "class_type": "CLIPTextEncode",
+    "_meta": { "title": "Positive Prompt - Video Action" },
+    "inputs": {
+      "clip": ["1", 1],
+      "text": "VIDEO_PROMPT_HERE"
+    }
+  },
+  "4": {
+    "class_type": "CLIPTextEncode",
+    "_meta": { "title": "Negative" },
+    "inputs": {
+      "clip": ["1", 1],
+      "text": ""
+    }
+  },
+  "11": {
+    "class_type": "CLIPVisionEncode",
+    "_meta": { "title": "Encode Image for Video" },
+    "inputs": {
+      "clip_vision": ["12", 0],
+      "image": ["10", 0],
+      "crop": "center"
+    }
+  },
+  "9": {
+    "class_type": "WanImageToVideo",
+    "_meta": { "title": "Image to Video" },
+    "inputs": {
+      "positive": ["5", 0],
+      "negative": ["4", 0],
+      "vae": ["1", 2],
+      "clip_vision_output": ["11", 0],
+      "start_image": ["10", 0],
+      "width": 640,
+      "height": 640,
+      "length": 81,
+      "batch_size": 1
+    }
+  },
+  "2": {
+    "class_type": "ModelSamplingSD3",
+    "_meta": { "title": "Model Sampling" },
+    "inputs": {
+      "model": ["1", 0],
+      "shift": 8.0
+    }
+  },
+  "3": {
+    "class_type": "KSampler",
+    "_meta": { "title": "Sampler" },
+    "inputs": {
+      "model": ["2", 0],
+      "positive": ["9", 0],
+      "negative": ["9", 1],
+      "latent_image": ["9", 2],
+      "seed": 0,
+      "steps": 4,
+      "cfg": 1.0,
+      "sampler_name": "sa_solver",
+      "scheduler": "beta",
+      "denoise": 1.0
+    }
+  },
+  "7": {
+    "class_type": "VAEDecode",
+    "_meta": { "title": "Decode" },
+    "inputs": {
+      "samples": ["3", 0],
+      "vae": ["1", 2]
+    }
+  },
+  "8": {
+    "class_type": "VHS_VideoCombine",
+    "_meta": { "title": "Save Video" },
+    "inputs": {
+      "images": ["7", 0],
+      "frame_rate": 24,
+      "loop_count": 0,
+      "filename_prefix": "i2v_output",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": true,
+      "trim_to_audio": false,
+      "pingpong": false,
+      "save_output": true
+    }
+  }
+}
