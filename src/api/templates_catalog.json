@@ -1,0 +1,320 @@
+{
+  "templates": [
+    {
+      "id": "t2i-sportswear-001",
+      "metadata": {
+        "title": "Sportswear Model - Running",
+        "description": "Athletic woman in premium sportswear on park running path",
+        "category": "Sportswear"
+      },
+      "category": "Sportswear",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, young athletic woman, 24 years old, long straight blonde hair in ponytail, blue eyes, fair lightly tanned skin, tall and slim athletic build, standing on urban park running path, catching her breath after a run, one hand on hip, wearing black compression leggings, neon green sports bra, white running shoes, morning golden hour sunlight, trees in background, photorealistic, extremely detailed skin texture, natural sweat glow, raw photo, 8k resolution, professional sportswear campaign photography, full body visible head to toe",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "t2i-swimwear-001",
+      "metadata": {
+        "title": "Swimwear Model - Beach Walk",
+        "description": "Woman walking along tropical beach shoreline in elegant one-piece",
+        "category": "Swimwear"
+      },
+      "category": "Swimwear",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, slim toned woman, 24 years old, long platinum blonde straight hair flowing in wind, ice blue eyes, fair skin with golden tan, standing at tropical beach shoreline, turquoise crystal clear water touching her ankles, looking over shoulder at camera with confident expression, wearing elegant black one-piece swimsuit with high-cut legs and open back, pristine white sand, palm trees in distance, bright sunny day, photorealistic, extremely detailed skin texture, natural sun-kissed glow, water droplets on legs, raw photo, 8k resolution, professional luxury swimwear campaign photography, full body visible head to toe",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, cheap fabric, wrinkled swimsuit"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "t2i-casual-001",
+      "metadata": {
+        "title": "Casual Summer - European Street",
+        "description": "Young woman walking casually on cobblestone European street",
+        "category": "Casual Summer"
+      },
+      "category": "Casual Summer",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, slim petite young woman, 20 years old, long straight honey blonde hair, light blue eyes, fair porcelain skin, walking casually down cobblestone European old town street with cafe terraces, one hand in back pocket of shorts, natural genuine smile, wearing high-waist light wash denim shorts, white cropped linen top, white canvas sneakers, small crossbody bag, warm summer afternoon light, photorealistic, extremely detailed skin texture, youthful fresh look, raw photo, 8k resolution, professional fashion campaign photography, full body visible head to toe",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, vulgar, provocative"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "t2i-intimates-001",
+      "metadata": {
+        "title": "Intimates - Bralette Set Front View",
+        "description": "Young woman in premium cotton bralette set, studio lighting",
+        "category": "Intimates"
+      },
+      "category": "Intimates",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, front view, slim toned young woman, 21 years old, long straight dark brown hair with center part perfectly sleek, fair warm skin, standing facing camera directly, relaxed natural pose, hands gently at sides, wearing a soft blush pink cotton bralette with thin straps and matching high-waist cotton bikini brief, premium ribbed cotton fabric texture visible, clean white studio background, soft diffused natural window light from the side, gentle shadows, skin looks natural and luminous, perfectly groomed hair, delicate and elegant mood, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium intimates campaign photography, full body visible head to toe",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy hair, wrinkled clothes, cheap fabric, vulgar, harsh lighting"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "t2i-young-fashion-001",
+      "metadata": {
+        "title": "Young Fashion - Summer Dress White",
+        "description": "Teen girl in white eyelet dress on Mediterranean terrace",
+        "category": "Young Fashion"
+      },
+      "category": "Young Fashion",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, slim teenage girl, 16 years old, long straight light brown hair in half up half down style with delicate white ribbon, fair soft skin, standing on sun-drenched Mediterranean white terrace with blue sky, hands clasped in front, gentle sweet smile, wearing a pure white cotton A-line mini dress with subtle eyelet embroidery detail, white leather platform sandals, small pearl stud earrings, clean bright summer daylight, premium fabric texture visible, hair perfectly styled and glossy, fresh youthful elegance, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium youth fashion campaign photography, full body visible head to toe",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy hair, wrinkled clothes, cheap fabric, dark colors, red, black, orange, yellow, green, brown, neon colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "t2i-accessories-001",
+      "metadata": {
+        "title": "Accessories - Structured Tote Tan",
+        "description": "Elegant woman with premium leather tote bag on city sidewalk",
+        "category": "Accessories"
+      },
+      "category": "Accessories",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, slim tall young woman, 25 years old, long straight dark brown hair in sleek blowout, light olive warm skin, standing on clean modern city sidewalk, one hand holding a structured tan cognac leather tote bag by the handles at her side, other arm relaxed, composed elegant expression, wearing a tailored cream wool coat over white silk blouse and black tailored trousers, black pointed-toe heels, the leather tote bag is the hero product with visible stitching and premium grain texture, bright clean daylight, modern architecture background, hair perfectly styled and glossy, photorealistic, extremely detailed leather texture on bag, extremely detailed skin texture, raw photo, 8k resolution, professional luxury accessories campaign photography, full body visible head to toe",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy hair, wrinkled clothes, cheap leather, fake leather, shiny plastic"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "t2i-gym-001",
+      "metadata": {
+        "title": "Executive Gym - Squats",
+        "description": "Athletic executive woman performing barbell squats in premium gym",
+        "category": "Executive Gym"
+      },
+      "category": "Executive Gym",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, front view, toned athletic woman, 32 years old, long dark brown hair in sleek high ponytail, light olive skin, performing barbell back squat at bottom position with perfect form, thighs parallel to floor, barbell across upper back, focused determined expression, wearing black premium compression leggings and white seamless sports bra, white training shoes, in luxurious modern gym with dark floors and clean equipment, dramatic focused lighting, defined muscles visible on legs and arms, hair perfectly tied without flyaways, photorealistic, extremely detailed skin texture, detailed muscle definition, raw photo, 8k resolution, professional premium fitness campaign photography, full body visible head to toe",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy gym, dirty equipment, sweat stains, cheap fabric, men, male"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "i2i-change-hair-001",
+      "metadata": {
+        "title": "Change Hair Color/Style",
+        "description": "Transform hair on existing image while preserving identity",
+        "category": "I2I Transform"
+      },
+      "category": "I2I Transform",
+      "workflow_type": "i2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "The same woman with short platinum blonde pixie cut hair, same face, same outfit, same pose, same background, same skin, photorealistic",
+          "negative": "different face, different person, different body, different outfit, different clothing, deformed, bad anatomy, blurry, low quality, watermark, artifacts"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 0.45,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "i2i-change-outfit-001",
+      "metadata": {
+        "title": "Change Outfit",
+        "description": "Replace clothing on existing image while preserving identity",
+        "category": "I2I Transform"
+      },
+      "category": "I2I Transform",
+      "workflow_type": "i2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "The same woman wearing a red summer dress with white polka dots, same face, same body, same pose, same background, photorealistic",
+          "negative": "different face, different person, different body, different skin tone, deformed, bad anatomy, blurry, low quality, watermark, artifacts"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 0.55,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "i2i-restyle-001",
+      "metadata": {
+        "title": "Full Restyle - Scene + Body + Outfit",
+        "description": "Complete transformation: new scene, outfit, and body adjustments",
+        "category": "I2I Transform"
+      },
+      "category": "I2I Transform",
+      "workflow_type": "i2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "The same woman but at a tropical beach, wearing a white bikini, barefoot on white sand, ocean waves behind, same face same eyes same skin tone, photorealistic, extremely detailed skin texture, full body head to toe, 8k",
+          "negative": "different face, different person, different eyes, different skin color, deformed, bad anatomy, blurry, low quality, watermark, artifacts, ugly, disfigured, extra limbs"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 8,
+          "cfg": 1.0,
+          "denoise": 0.75,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "i2i-supercatalog-001",
+      "metadata": {
+        "title": "Super Catalog - Coffee Shop",
+        "description": "Transform model into coffee shop scene with new outfit and pose",
+        "category": "I2I Super Catalog"
+      },
+      "category": "I2I Super Catalog",
+      "workflow_type": "i2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "The same woman sitting at a small round cafe table outdoors, legs crossed, holding a cappuccino cup with both hands, wearing a beige knit sweater and dark skinny jeans, ankle boots, same face same eyes same skin, cozy cafe terrace with plants, morning soft light, photorealistic, full body head to toe, 8k",
+          "negative": "different face, different person, different eyes, different nose, different mouth, different skin color, different age, deformed, bad anatomy, bad proportions, blurry, low quality, watermark, artifacts, ugly, disfigured, extra limbs, missing limbs"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 8,
+          "cfg": 1.0,
+          "denoise": 0.72,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "i2i-lora-face-001",
+      "metadata": {
+        "title": "I2I with Face Consistency LoRA",
+        "description": "Transform with F2P LoRA for better face preservation",
+        "category": "I2I with LoRA"
+      },
+      "category": "I2I with LoRA",
+      "workflow_type": "i2i",
+      "lora": {
+        "name": "Qwen-Image-Edit-F2P.safetensors",
+        "strength_model": 0.7,
+        "strength_clip": 0.7
+      },
+      "workflow_params": {
+        "prompts": {
+          "positive": "The same woman in a completely new scene, same face same eyes same skin, photorealistic, extremely detailed, full body head to toe, 8k",
+          "negative": "different face, different person, different eyes, different skin color, deformed, bad anatomy, blurry, low quality, watermark, artifacts"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 8,
+          "cfg": 1.0,
+          "denoise": 0.65,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    }
+  ]
+}
