@@ -460,6 +460,251 @@ async function freeMemory() {
 
 ---
 
+## Flujo I2V (Image-to-Video)
+
+El engine también soporta generación de video a partir de una imagen estática. Esto corre en un **pod separado** dedicado a video.
+
+### Template I2V
+
+```json
+{
+  "id": "i2v-walking-001",
+  "metadata": {
+    "title": "Walking Confidence",
+    "description": "Woman starts walking forward with hair bouncing",
+    "category": "I2V Lifestyle"
+  },
+  "category": "I2V Lifestyle",
+  "workflow_type": "i2v",
+  "lora": null,
+  "workflow_params": {
+    "prompts": {
+      "positive": "The woman starts walking forward confidently, hair bouncing with each step, slight smile, smooth natural motion",
+      "negative": ""
+    },
+    "video_config": {
+      "width": 640,
+      "height": 640,
+      "num_frames": 81,
+      "fps": 24,
+      "steps": 4,
+      "cfg": 1.0,
+      "denoise": 1.0,
+      "sampler": "sa_solver",
+      "scheduler": "beta"
+    }
+  }
+}
+```
+
+### Diferencias con T2I/I2I
+
+| Aspecto | T2I / I2I | I2V |
+|---------|-----------|-----|
+| `workflow_type` | `"t2i"` / `"i2i"` | `"i2v"` |
+| Config | `image_config` | `video_config` |
+| Output | `.png` | `.mp4` |
+| Pod | Pod de imágenes | Pod de video (separado) |
+| Base URL | `BASE_URL_IMAGE` | `BASE_URL_VIDEO` |
+| Modelo | Qwen NSFW v18.1 | Wan 2.2 I2V |
+| Tiempo | ~5s | ~30-40s |
+
+### buildComfyUIPayload para I2V
+
+```javascript
+function buildComfyUIPayloadI2V(template, options = {}) {
+  const { inputImage, seed = 0 } = options;
+  const { prompts, video_config } = template.workflow_params;
+  const actualSeed = seed > 0 ? seed : Math.floor(Math.random() * 999999999);
+
+  return {
+    prompt: {
+      "1": {
+        class_type: "CheckpointLoaderSimple",
+        inputs: { ckpt_name: "wan2.2-i2v-rapid-aio.safetensors" }
+      },
+      "12": {
+        class_type: "CLIPVisionLoader",
+        inputs: { clip_name: "clip-vision_vit-h.safetensors" }
+      },
+      "10": {
+        class_type: "LoadImage",
+        inputs: { image: inputImage, upload: "image" }
+      },
+      "5": {
+        class_type: "CLIPTextEncode",
+        inputs: { clip: ["1", 1], text: prompts.positive }
+      },
+      "4": {
+        class_type: "CLIPTextEncode",
+        inputs: { clip: ["1", 1], text: prompts.negative || "" }
+      },
+      "11": {
+        class_type: "CLIPVisionEncode",
+        inputs: { clip_vision: ["12", 0], image: ["10", 0], crop: "center" }
+      },
+      "9": {
+        class_type: "WanImageToVideo",
+        inputs: {
+          positive: ["5", 0],
+          negative: ["4", 0],
+          vae: ["1", 2],
+          clip_vision_output: ["11", 0],
+          start_image: ["10", 0],
+          width: video_config.width,
+          height: video_config.height,
+          length: video_config.num_frames,
+          batch_size: 1
+        }
+      },
+      "2": {
+        class_type: "ModelSamplingSD3",
+        inputs: { model: ["1", 0], shift: 8.0 }
+      },
+      "3": {
+        class_type: "KSampler",
+        inputs: {
+          model: ["2", 0],
+          positive: ["9", 0],
+          negative: ["9", 1],
+          latent_image: ["9", 2],
+          seed: actualSeed,
+          steps: video_config.steps,
+          cfg: video_config.cfg,
+          sampler_name: video_config.sampler,
+          scheduler: video_config.scheduler,
+          denoise: video_config.denoise
+        }
+      },
+      "7": {
+        class_type: "VAEDecode",
+        inputs: { samples: ["3", 0], vae: ["1", 2] }
+      },
+      "8": {
+        class_type: "VHS_VideoCombine",
+        inputs: {
+          images: ["7", 0],
+          frame_rate: video_config.fps,
+          loop_count: 0,
+          filename_prefix: template.id,
+          format: "video/h264-mp4",
+          pix_fmt: "yuv420p",
+          crf: 19,
+          save_metadata: true,
+          trim_to_audio: false,
+          pingpong: false,
+          save_output: true
+        }
+      }
+    }
+  };
+}
+```
+
+### Función unificada de generación
+
+```javascript
+async function generate(template, options = {}) {
+  // Seleccionar base URL según tipo de workflow
+  const baseUrl = template.workflow_type === "i2v" ? BASE_URL_VIDEO : BASE_URL_IMAGE;
+
+  // Subir imagen si es I2I o I2V
+  let uploadedImageName = null;
+  if ((template.workflow_type === "i2i" || template.workflow_type === "i2v") && options.inputImage) {
+    uploadedImageName = await uploadImage(options.inputImage, baseUrl);
+  }
+
+  // Construir payload según tipo
+  let payload;
+  switch (template.workflow_type) {
+    case "t2i":
+    case "i2i":
+      payload = buildComfyUIPayload(template, { inputImage: uploadedImageName, seed: options.seed });
+      break;
+    case "i2v":
+      payload = buildComfyUIPayloadI2V(template, { inputImage: uploadedImageName, seed: options.seed });
+      break;
+    default:
+      throw new Error(`Unknown workflow_type: ${template.workflow_type}`);
+  }
+
+  // Ejecutar
+  const queueResponse = await fetch(`${baseUrl}/api/prompt`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
+  });
+
+  const queueData = await queueResponse.json();
+  if (queueData.node_errors && Object.keys(queueData.node_errors).length > 0) {
+    throw new Error(`ComfyUI error: ${JSON.stringify(queueData.node_errors)}`);
+  }
+
+  const promptId = queueData.prompt_id;
+
+  // Polling (timeout más largo para video)
+  const timeout = template.workflow_type === "i2v" ? 300000 : 120000;
+  const startTime = Date.now();
+
+  while (Date.now() - startTime < timeout) {
+    const historyResponse = await fetch(`${baseUrl}/api/history/${promptId}`);
+    const historyData = await historyResponse.json();
+
+    if (historyData[promptId]?.status?.status_str === "success") {
+      const outputs = historyData[promptId].outputs;
+
+      // Video output está en nodo "8", imagen en nodo "6"
+      const outputNode = template.workflow_type === "i2v" ? "8" : "6";
+      const outputKey = template.workflow_type === "i2v" ? "gifs" : "images";
+      const files = outputs[outputNode]?.[outputKey] || outputs[outputNode]?.images || [];
+
+      if (files.length > 0) {
+        const filename = files[0].filename;
+        return {
+          success: true,
+          promptId,
+          filename,
+          type: template.workflow_type === "i2v" ? "video" : "image",
+          downloadUrl: `${baseUrl}/view?filename=${encodeURIComponent(filename)}&type=output`
+        };
+      }
+    }
+
+    if (historyData[promptId]?.status?.status_str === "error") {
+      throw new Error(`Generation failed: ${promptId}`);
+    }
+
+    await new Promise(r => setTimeout(r, 2000));
+  }
+
+  throw new Error(`Timeout: ${promptId}`);
+}
+```
+
+### Categorías I2V disponibles
+
+| ID | Categoría | Descripción |
+|----|-----------|-------------|
+| i2v-walking-001 | Lifestyle | Caminar con confianza |
+| i2v-office-home-001 | Lifestyle transition | Oficina a casa, sacarse blazer |
+| i2v-beach-city-001 | Scene transition | Playa a ciudad |
+| i2v-sport-sleep-001 | Outfit transition | Ropa deportiva a pijama |
+| i2v-stand-sit-001 | Pose transition | Parada a sentada |
+| i2v-sit-lie-001 | Pose transition | Sentada a acostada |
+| i2v-yoga-001 | Dynamic action | Secuencia de yoga |
+| i2v-hair-flip-001 | Beauty moment | Flip de pelo + sonrisa |
+| i2v-pool-001 | Scene action | Entrar a la piscina |
+| i2v-coffee-001 | Lifestyle moment | Tomar café en la mañana |
+
+### Configuración de URLs
+
+```javascript
+const BASE_URL_IMAGE = "https://t3a5h65dejiqek-8188.proxy.runpod.net";  // Pod imágenes
+const BASE_URL_VIDEO = "https://PENDIENTE-VIDEO-POD.proxy.runpod.net";   // Pod video (por configurar)
+```
+
+---
+
 ## Manejo de Errores
 
 | Error | Causa | Acción |
