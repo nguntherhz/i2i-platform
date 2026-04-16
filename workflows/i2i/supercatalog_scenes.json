@@ -1,0 +1,122 @@
+{
+  "description": "Super Catálogo de escenas. Usar con workflow_supercatalog.json. Cada escena transforma a la modelo de la imagen de entrada a una nueva pose, outfit y escenario manteniendo su identidad facial.",
+  "workflow": "workflow_supercatalog.json",
+  "usage": "Cargar imagen original, seleccionar escena, reemplazar SCENE_PROMPT_HERE con el prompt de la escena.",
+
+  "scenes": {
+    "casual_lifestyle": [
+      {
+        "id": "CL01",
+        "name": "Walking city streets",
+        "prompt": "The same woman walking down a vibrant city street, mid-stride dynamic pose, wearing ripped boyfriend jeans and a white oversized t-shirt, white sneakers, crossbody bag, hair flowing with movement, same face same eyes same skin, shop windows and pedestrians in background, natural street photography, photorealistic, full body head to toe, 8k"
+      },
+      {
+        "id": "CL02",
+        "name": "Coffee shop",
+        "prompt": "The same woman sitting at a small round cafe table outdoors, legs crossed, holding a cappuccino cup with both hands, wearing a beige knit sweater and dark skinny jeans, ankle boots, same face same eyes same skin, cozy cafe terrace with plants, morning soft light, photorealistic, full body head to toe, 8k"
+      },
+      {
+        "id": "CL03",
+        "name": "Shopping bags",
+        "prompt": "The same woman standing on sidewalk holding colorful shopping bags in both hands, happy excited expression, wearing a flowy midi skirt in dusty pink and a fitted white blouse, strappy sandals, same face same eyes same skin, luxury shopping district storefronts in background, bright afternoon, photorealistic, full body head to toe, 8k"
+      },
+      {
+        "id": "CL04",
+        "name": "Sitting on bench reading",
+        "prompt": "The same woman sitting on a wooden park bench, legs tucked to one side, reading a book, wearing a denim jacket over a floral dress, white canvas shoes, same face same eyes same skin, green park with trees and sunlight filtering through leaves, peaceful mood, photorealistic, full body head to toe, 8k"
+      },
+      {
+        "id": "CL05",
+        "name": "Leaning on wall",
+        "prompt": "The same woman leaning casually against a textured brick wall, one foot flat on the wall behind, arms crossed, wearing black leather jacket over white tee, dark jeans, black boots, same face same eyes same skin, urban alley with graffiti art, editorial street style, photorealistic, full body head to toe, 8k"
+      },
+      {
+        "id": "CL06",
+        "name": "Crouching down",
+        "prompt": "The same woman crouching down on her heels, knees together, reaching forward to pet a small dog, wearing a casual sundress in yellow, white sneakers, same face same eyes same skin, city park pathway, warm sunny day, photorealistic, full body head to toe, 8k"
+      }
+    ],
+
+    "beach_summer": [
+      {
+        "id": "BS01",
+        "name": "Beach walking shoreline",
+        "prompt": "The same woman walking along the beach shoreline, water touching her bare feet, wearing a flowing white beach cover-up over a turquoise bikini, carrying sandals in one hand, same face same eyes same skin, golden sunset light, waves and wet sand reflections, photorealistic, full body head to toe, 8k"
+      },
+      {
+        "id": "BS02",
+        "name": "Pool lounging",
+        "prompt": "The same woman sitting on the edge of a turquoise infinity pool, legs dangling in water, leaning back on hands, wearing a coral one-piece swimsuit, sunglasses on head, same face same eyes same skin, tropical resort palm trees in background, bright midday sun, photorealistic, full body head to toe, 8k"
+      },
+      {
+        "id": "BS03",
+        "name": "Beach lying down",
+        "prompt": "The same woman lying on a white beach towel on sand, propped up on elbows, looking at camera, wearing a black bikini, straw hat beside her, same face same eyes same skin, clear blue sky and ocean in background, warm sunlight, photorealistic, full body head to toe, 8k"
+      },
+      {
+        "id": "BS04",
+        "name": "Looking at horizon",
+        "prompt": "The same woman standing at the edge of a cliff overlooking the ocean, back slightly to camera, head turned to look at the horizon, wearing a loose white linen shirt and denim shorts, barefoot, same face same eyes same skin, dramatic ocean sunset with orange and pink sky, wind in hair, photorealistic, full body head to toe, 8k"
+      }
+    ],
+
+    "sports_active": [
+      {
+        "id": "SA01",
+        "name": "Yoga pose",
+        "prompt": "The same woman doing a warrior II yoga pose on a yoga mat in a serene garden, wearing black yoga leggings and a sage green sports bra, barefoot, focused calm expression, same face same eyes same skin, lush green garden with morning dew, soft natural light, photorealistic, full body head to toe, 8k"
+      },
+      {
+        "id": "SA02",
+        "name": "Roller skating",
+        "prompt": "The same woman roller skating on a boardwalk promenade, dynamic movement mid-stride, wearing high-waist denim shorts and a cropped pastel pink hoodie, white inline roller skates, same face same eyes same skin, palm-lined beachfront promenade, sunny day, motion and energy, photorealistic, full body head to toe, 8k"
+      },
+      {
+        "id": "SA03",
+        "name": "Cycling",
+        "prompt": "The same woman riding a vintage pastel blue bicycle on a tree-lined path, wearing a white sundress and sneakers, basket with flowers on the handlebars, hair blowing in wind, same face same eyes same skin, dappled sunlight through trees, European countryside feel, photorealistic, full body head to toe, 8k"
+      },
+      {
+        "id": "SA04",
+        "name": "Running in park",
+        "prompt": "The same woman jogging in a park, mid-stride captured in motion, wearing black running tights and a neon coral running top, running shoes, hair in ponytail bouncing, same face same eyes same skin, morning park path with trees, golden morning light, athletic energy, photorealistic, full body head to toe, 8k"
+      }
+    ],
+
+    "camera_angles": [
+      {
+        "id": "CA01",
+        "name": "Side view walking",
+        "prompt": "The same woman captured from the side in full profile, walking to the right, wearing a camel trench coat over black turtleneck and dark trousers, heels, same face same eyes same skin, clean minimalist urban background, side view 90 degrees, fashion editorial style, photorealistic, full body head to toe, 8k"
+      },
+      {
+        "id": "CA02",
+        "name": "Back view looking over shoulder",
+        "prompt": "The same woman photographed from behind, looking over her right shoulder at camera, wearing a backless emerald green dress, heels, hair swept to one side, same face same eyes same skin, elegant marble staircase background, warm ambient lighting, photorealistic, full body head to toe, 8k"
+      },
+      {
+        "id": "CA03",
+        "name": "Three quarter view",
+        "prompt": "The same woman standing at three quarter angle, one hand in pocket, relaxed confident pose, wearing a tailored light grey blazer suit with white sneakers, same face same eyes same skin, modern minimalist white gallery space, soft even lighting, fashion editorial, photorealistic, full body head to toe, 8k"
+      },
+      {
+        "id": "CA04",
+        "name": "Low angle power shot",
+        "prompt": "The same woman photographed from a low angle looking up, powerful stance with hands on hips, wearing a red power blazer and black fitted pants, pointed heels, same face same eyes same skin, dramatic sky with clouds behind, empowering editorial shot, photorealistic, full body head to toe, 8k"
+      }
+    ],
+
+    "evening_elegant": [
+      {
+        "id": "EE01",
+        "name": "Restaurant dinner",
+        "prompt": "The same woman sitting at an elegant restaurant table, one arm resting on table, holding wine glass, wearing a black off-shoulder cocktail dress, delicate gold jewelry, hair styled up, same face same eyes same skin, candlelit restaurant with warm ambient lighting, bokeh background, photorealistic, full body head to toe, 8k"
+      },
+      {
+        "id": "EE02",
+        "name": "Rooftop evening",
+        "prompt": "The same woman standing on a rooftop terrace at twilight, leaning on glass railing, city lights twinkling behind, wearing a sleek silver satin slip dress and strappy heels, same face same eyes same skin, dramatic city skyline at blue hour, wind gently in hair, photorealistic, full body head to toe, 8k"
+      }
+    ]
+  }
+}
