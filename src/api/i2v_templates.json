@@ -1,0 +1,144 @@
+{
+  "templates": [
+    {
+      "id": "i2v-walking-001",
+      "metadata": {"title": "Walking Confidence", "description": "Woman walks forward with hair bouncing, city life around", "category": "I2V Lifestyle"},
+      "category": "I2V Lifestyle",
+      "workflow_type": "i2v",
+      "loras": [],
+      "workflow_params": {
+        "prompts": {
+          "positive": "The woman starts walking forward confidently, hair bouncing with each step, slight smile, city life moving around her, smooth forward walking motion",
+          "negative": ""
+        },
+        "video_config": {"width": 640, "height": 640, "num_frames": 81, "fps": 24, "steps": 4, "cfg": 1.0, "denoise": 1.0, "sampler": "sa_solver", "scheduler": "beta", "seed": 0}
+      }
+    },
+    {
+      "id": "i2v-office-home-001",
+      "metadata": {"title": "Office to Home", "description": "Woman arrives home and takes off blazer", "category": "I2V Lifestyle Transition"},
+      "category": "I2V Lifestyle Transition",
+      "workflow_type": "i2v",
+      "loras": [],
+      "workflow_params": {
+        "prompts": {
+          "positive": "The woman arrives home, takes off her blazer while walking through the door, hangs it on a hook, relaxed expression, warm home interior lighting, smooth natural movement",
+          "negative": ""
+        },
+        "video_config": {"width": 640, "height": 640, "num_frames": 81, "fps": 24, "steps": 4, "cfg": 1.0, "denoise": 1.0, "sampler": "sa_solver", "scheduler": "beta", "seed": 0}
+      }
+    },
+    {
+      "id": "i2v-beach-city-001",
+      "metadata": {"title": "Beach to City", "description": "Beach transitions to city street, outfit changes", "category": "I2V Scene Transition"},
+      "category": "I2V Scene Transition",
+      "workflow_type": "i2v",
+      "loras": [],
+      "workflow_params": {
+        "prompts": {
+          "positive": "The woman walks forward confidently, the beach background gradually transitions to a modern city street, her outfit changes from beach wear to urban casual clothing, smooth cinematic transition, natural walking movement",
+          "negative": ""
+        },
+        "video_config": {"width": 640, "height": 640, "num_frames": 81, "fps": 24, "steps": 4, "cfg": 1.0, "denoise": 1.0, "sampler": "sa_solver", "scheduler": "beta", "seed": 0}
+      }
+    },
+    {
+      "id": "i2v-sport-sleep-001",
+      "metadata": {"title": "Sportswear to Sleepwear", "description": "Changes from gym clothes to cozy pajamas", "category": "I2V Outfit Transition"},
+      "category": "I2V Outfit Transition",
+      "workflow_type": "i2v",
+      "loras": [],
+      "workflow_params": {
+        "prompts": {
+          "positive": "The woman stretches her arms up, then pulls off her sports top revealing a soft cotton sleep camisole underneath, relaxes her shoulders, yawns gently, bedroom background fades in with warm lamp light, smooth cozy transition",
+          "negative": ""
+        },
+        "video_config": {"width": 640, "height": 640, "num_frames": 81, "fps": 24, "steps": 4, "cfg": 1.0, "denoise": 1.0, "sampler": "sa_solver", "scheduler": "beta", "seed": 0}
+      }
+    },
+    {
+      "id": "i2v-stand-sit-001",
+      "metadata": {"title": "Standing to Sitting", "description": "Woman gracefully sits down on chair", "category": "I2V Pose Transition"},
+      "category": "I2V Pose Transition",
+      "workflow_type": "i2v",
+      "loras": [],
+      "workflow_params": {
+        "prompts": {
+          "positive": "The woman gracefully sits down on a nearby chair, crossing her legs elegantly, places her hands on her knee, settles into a relaxed comfortable seated pose, smooth natural body movement, same outfit same background",
+          "negative": ""
+        },
+        "video_config": {"width": 640, "height": 640, "num_frames": 81, "fps": 24, "steps": 4, "cfg": 1.0, "denoise": 1.0, "sampler": "sa_solver", "scheduler": "beta", "seed": 0}
+      }
+    },
+    {
+      "id": "i2v-sit-lie-001",
+      "metadata": {"title": "Sitting to Lying Down", "description": "Woman lies down from sitting position", "category": "I2V Pose Transition"},
+      "category": "I2V Pose Transition",
+      "workflow_type": "i2v",
+      "loras": [],
+      "workflow_params": {
+        "prompts": {
+          "positive": "The woman slowly leans to the side and lies down on the couch, stretches her legs out, puts one arm behind her head, relaxed comfortable pose, smooth natural movement, same outfit, warm interior lighting",
+          "negative": ""
+        },
+        "video_config": {"width": 640, "height": 640, "num_frames": 81, "fps": 24, "steps": 4, "cfg": 1.0, "denoise": 1.0, "sampler": "sa_solver", "scheduler": "beta", "seed": 0}
+      }
+    },
+    {
+      "id": "i2v-yoga-001",
+      "metadata": {"title": "Yoga Flow", "description": "Woman flows through yoga poses", "category": "I2V Dynamic Action"},
+      "category": "I2V Dynamic Action",
+      "workflow_type": "i2v",
+      "loras": [],
+      "workflow_params": {
+        "prompts": {
+          "positive": "The woman flows through a yoga sequence, raising arms overhead into mountain pose, then slowly bending forward into forward fold, smooth graceful continuous movement, peaceful garden background, soft morning light",
+          "negative": ""
+        },
+        "video_config": {"width": 640, "height": 640, "num_frames": 81, "fps": 24, "steps": 4, "cfg": 1.0, "denoise": 1.0, "sampler": "sa_solver", "scheduler": "beta", "seed": 0}
+      }
+    },
+    {
+      "id": "i2v-hair-flip-001",
+      "metadata": {"title": "Hair Flip and Smile", "description": "Graceful hair flip then looks at camera smiling", "category": "I2V Beauty Moment"},
+      "category": "I2V Beauty Moment",
+      "workflow_type": "i2v",
+      "loras": [],
+      "workflow_params": {
+        "prompts": {
+          "positive": "The woman flips her hair to one side with a graceful head movement, then looks directly at camera and gives a warm genuine smile, wind catches her hair gently, soft golden light illuminating her face, cinematic beauty shot",
+          "negative": ""
+        },
+        "video_config": {"width": 640, "height": 640, "num_frames": 81, "fps": 24, "steps": 4, "cfg": 1.0, "denoise": 1.0, "sampler": "sa_solver", "scheduler": "beta", "seed": 0}
+      }
+    },
+    {
+      "id": "i2v-pool-001",
+      "metadata": {"title": "Poolside Entry", "description": "Woman sits at pool edge and dips feet in water", "category": "I2V Scene Action"},
+      "category": "I2V Scene Action",
+      "workflow_type": "i2v",
+      "loras": [],
+      "workflow_params": {
+        "prompts": {
+          "positive": "The woman walks to the edge of the pool, sits down on the edge, dips her feet in the water creating small ripples, leans back on her hands enjoying the sun, smooth relaxed movement, crystal clear pool water, bright sunny day",
+          "negative": ""
+        },
+        "video_config": {"width": 640, "height": 640, "num_frames": 81, "fps": 24, "steps": 4, "cfg": 1.0, "denoise": 1.0, "sampler": "sa_solver", "scheduler": "beta", "seed": 0}
+      }
+    },
+    {
+      "id": "i2v-coffee-001",
+      "metadata": {"title": "Morning Coffee", "description": "Woman picks up coffee mug and sips it", "category": "I2V Lifestyle Moment"},
+      "category": "I2V Lifestyle Moment",
+      "workflow_type": "i2v",
+      "loras": [],
+      "workflow_params": {
+        "prompts": {
+          "positive": "The woman reaches for a coffee mug on the kitchen counter, picks it up with both hands, brings it close to her face, takes a sip with closed eyes savoring the moment, opens eyes with a satisfied smile, warm kitchen morning light streaming through window",
+          "negative": ""
+        },
+        "video_config": {"width": 640, "height": 640, "num_frames": 81, "fps": 24, "steps": 4, "cfg": 1.0, "denoise": 1.0, "sampler": "sa_solver", "scheduler": "beta", "seed": 0}
+      }
+    }
+  ]
+}
