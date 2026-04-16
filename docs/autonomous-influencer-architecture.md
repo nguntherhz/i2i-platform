@@ -198,30 +198,55 @@ Maneja la presencia en redes.
 }
 ```
 
-## Stack Técnico
+## Stack Técnico — 100% Self-Hosted
+
+**Principio: Sin dependencia de APIs cloud para la base.** Todo corre en tu infraestructura.
 
 ```
 ┌─────────────────────────────────────────────────────┐
 │                    PLATAFORMA                        │
 │                                                      │
-│  ┌─────────┐  ┌──────────┐  ┌──────────────────┐   │
-│  │ Lovable  │  │ Claude   │  │ i2i ComfyUI API  │   │
-│  │ Engine   │  │ API      │  │ (Image/Video)    │   │
-│  │          │  │          │  │                   │   │
-│  │ Orquesta │  │ Piensa   │  │ Genera media     │   │
-│  │ todo     │  │ como ella│  │                   │   │
-│  └────┬─────┘  └────┬─────┘  └────┬──────────────┘  │
-│       │              │             │                  │
-│  ┌────┴──────────────┴─────────────┴──────────────┐  │
-│  │              DATABASE / STATE                   │  │
-│  │  Identities, Memory, Calendar, Analytics        │  │
-│  └─────────────────────┬───────────────────────────┘  │
-│                        │                              │
-│  ┌─────────────────────┴───────────────────────────┐  │
-│  │           SOCIAL APIs                            │  │
-│  │  Instagram Graph API, TikTok API, Pinterest API  │  │
-│  └──────────────────────────────────────────────────┘  │
+│  ┌─────────┐  ┌──────────────┐  ┌────────────────┐ │
+│  │ Lovable  │  │ LLM LOCAL    │  │ i2i ComfyUI   │ │
+│  │ Engine   │  │ (Qwen3/Llama)│  │ API           │ │
+│  │          │  │              │  │ (Image/Video)  │ │
+│  │ Orquesta │  │ Piensa como  │  │ Genera media   │ │
+│  │ todo     │  │ ella (local) │  │                │ │
+│  └────┬─────┘  └──────┬───────┘  └────┬───────────┘ │
+│       │               │               │              │
+│  ┌────┴───────────────┴───────────────┴────────────┐ │
+│  │              DATABASE / STATE                    │ │
+│  │  Identities, Memory, Calendar, Analytics         │ │
+│  └─────────────────────┬───────────────────────────┘ │
+│                        │                             │
+│  ┌─────────────────────┴───────────────────────────┐ │
+│  │           SOCIAL APIs                            │ │
+│  │  Instagram Graph API, TikTok API, Pinterest API  │ │
+│  └──────────────────────────────────────────────────┘ │
 └─────────────────────────────────────────────────────┘
+```
+
+### LLM Local para Personalidad AI
+
+| Opción | VRAM | Calidad | Deploy |
+|--------|------|---------|--------|
+| **Qwen3 14B** (recomendado) | 10GB | Muy buena, excelente en español/inglés | vLLM o Ollama |
+| Llama 3.1 8B | 6GB | Buena para captions simples | Ollama |
+| Llama 3.1 70B Q4 | 24GB | Excelente, casi cloud | vLLM en pod dedicado |
+| Mistral 7B | 5GB | Buena, rápida | Ollama |
+
+**Deploy recomendado:**
+- **Opción A:** Ollama en el pod de imágenes (cuando Qwen imagen no está generando, liberar VRAM y cargar LLM)
+- **Opción B:** Pod pequeño dedicado solo a LLM (GPU barata, A4000 16GB es suficiente)
+- **Opción C:** CPU-only con Llama.cpp en cualquier server (sin GPU, más lento pero gratis)
+
+**API local del LLM:**
+```
+POST http://localhost:11434/api/generate  (Ollama)
+POST http://localhost:8000/v1/chat/completions  (vLLM, compatible con OpenAI format)
+```
+
+Mismo formato que OpenAI pero corriendo en tu pod. Tu engine no sabe la diferencia.
 ```
 
 ## Flujo completo de una publicación
@@ -234,16 +259,16 @@ Maneja la presencia en redes.
    - Calendar: ¿Hay algo planeado para hoy?
    - Trends: ¿Qué está trending en fitness?
 
-3. Claude API (con system prompt de Mia):
+3. LLM Local (con system prompt de Mia):
    - Input: "Genera el plan de contenido de hoy. Ayer publicaste sobre yoga. Tienes campaña de Gymshark activa."
    - Output: "Hoy quiero mostrar mi nueva colección Gymshark Vital Seamless haciendo sentadillas en el gym"
 
-4. Claude API genera prompt de imagen:
+4. LLM Local genera prompt de imagen:
    - "Full body portrait, Mia (chestnut wavy hair, amber eyes, olive skin), doing goblet squat in modern gym, wearing sage green Gymshark Vital Seamless leggings and matching sports bra..."
 
 5. i2i API genera imagen (T2I o I2I si usa imagen base)
 
-6. Claude API escribe caption:
+6. LLM Local escribe caption:
    - "Obsessed with this new @gymshark Vital Seamless set 😍 The sage green is everything. Who else squats on Wednesdays? 🏋️‍♀️ #GymsharkVitalSeamless #LegDay #FitnessMotivation"
 
 7. Lovable Engine publica via Instagram Graph API
