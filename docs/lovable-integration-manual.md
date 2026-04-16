@@ -814,20 +814,259 @@ async function generate(template, options = {}) {
 }
 ```
 
-### Categorías I2V disponibles
+### Request I2V desde tu plataforma
 
-| ID | Categoría | Descripción |
-|----|-----------|-------------|
-| i2v-walking-001 | Lifestyle | Caminar con confianza |
-| i2v-office-home-001 | Lifestyle transition | Oficina a casa, sacarse blazer |
-| i2v-beach-city-001 | Scene transition | Playa a ciudad |
-| i2v-sport-sleep-001 | Outfit transition | Ropa deportiva a pijama |
-| i2v-stand-sit-001 | Pose transition | Parada a sentada |
-| i2v-sit-lie-001 | Pose transition | Sentada a acostada |
-| i2v-yoga-001 | Dynamic action | Secuencia de yoga |
-| i2v-hair-flip-001 | Beauty moment | Flip de pelo + sonrisa |
-| i2v-pool-001 | Scene action | Entrar a la piscina |
-| i2v-coffee-001 | Lifestyle moment | Tomar café en la mañana |
+```json
+{
+  "workflow_type": "i2v",
+  "prompts": {
+    "positive": "The woman starts walking forward confidently, hair bouncing with each step, slight smile, smooth natural motion",
+    "negative": ""
+  },
+  "video_config": {
+    "width": 640,
+    "height": 640,
+    "num_frames": 81,
+    "fps": 24,
+    "steps": 4,
+    "cfg": 1.0,
+    "denoise": 1.0,
+    "sampler": "sa_solver",
+    "scheduler": "beta",
+    "seed": 0
+  },
+  "loras": [],
+  "input_image": "(File object)"
+}
+```
+
+### Flujo I2V completo en JavaScript
+
+```javascript
+async function generateVideo(request, inputImageFile) {
+  const baseUrl = BASE_URL_VIDEO;
+
+  // 1. Subir imagen al pod de video
+  const formData = new FormData();
+  formData.append("image", inputImageFile);
+  formData.append("type", "input");
+  formData.append("overwrite", "true");
+
+  const uploadResp = await fetch(`${baseUrl}/upload/image`, { method: "POST", body: formData });
+  const uploadData = await uploadResp.json();
+  const imageName = uploadData.name;
+
+  // 2. Construir payload I2V
+  const payload = buildComfyUIPayloadI2V(request, { inputImage: imageName });
+
+  // 3. Ejecutar
+  const queueResp = await fetch(`${baseUrl}/api/prompt`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
+  });
+  const queueData = await queueResp.json();
+
+  if (queueData.node_errors && Object.keys(queueData.node_errors).length > 0) {
+    throw new Error(`ComfyUI error: ${JSON.stringify(queueData.node_errors)}`);
+  }
+
+  const promptId = queueData.prompt_id;
+
+  // 4. Polling (timeout largo para video: 5 minutos)
+  const timeout = 300000;
+  const startTime = Date.now();
+
+  while (Date.now() - startTime < timeout) {
+    const histResp = await fetch(`${baseUrl}/api/history/${promptId}`);
+    const histData = await histResp.json();
+
+    if (histData[promptId]?.status?.status_str === "success") {
+      const outputs = histData[promptId].outputs;
+      // Video output: nodo "8" (VHS_VideoCombine), campo "gifs" o "videos"
+      const videoNode = outputs["8"];
+      const files = videoNode?.gifs || videoNode?.videos || videoNode?.images || [];
+
+      if (files.length > 0) {
+        const filename = files[0].filename;
+        return {
+          success: true,
+          promptId,
+          filename,
+          type: "video",
+          downloadUrl: `${baseUrl}/view?filename=${encodeURIComponent(filename)}&type=output`
+        };
+      }
+    }
+
+    if (histData[promptId]?.status?.status_str === "error") {
+      throw new Error(`Video generation failed: ${promptId}`);
+    }
+
+    await new Promise(r => setTimeout(r, 3000)); // Poll cada 3s para video
+  }
+
+  throw new Error(`Video timeout: ${promptId}`);
+}
+```
+
+### Templates I2V (10 guiones)
+
+```json
+[
+  {
+    "id": "i2v-walking-001",
+    "metadata": {"title": "Walking Confidence", "description": "Woman walks forward with hair bouncing", "category": "I2V Lifestyle"},
+    "category": "I2V Lifestyle",
+    "workflow_type": "i2v",
+    "loras": [],
+    "workflow_params": {
+      "prompts": {
+        "positive": "The woman starts walking forward confidently, hair bouncing with each step, slight smile, city life moving around her, smooth forward walking motion",
+        "negative": ""
+      },
+      "video_config": {"width": 640, "height": 640, "num_frames": 81, "fps": 24, "steps": 4, "cfg": 1.0, "denoise": 1.0, "sampler": "sa_solver", "scheduler": "beta", "seed": 0}
+    }
+  },
+  {
+    "id": "i2v-office-home-001",
+    "metadata": {"title": "Office to Home", "description": "Woman arrives home, takes off blazer", "category": "I2V Lifestyle Transition"},
+    "category": "I2V Lifestyle Transition",
+    "workflow_type": "i2v",
+    "loras": [],
+    "workflow_params": {
+      "prompts": {
+        "positive": "The woman arrives home, takes off her blazer while walking through the door, hangs it on a hook, relaxed expression, warm home interior lighting, smooth natural movement",
+        "negative": ""
+      },
+      "video_config": {"width": 640, "height": 640, "num_frames": 81, "fps": 24, "steps": 4, "cfg": 1.0, "denoise": 1.0, "sampler": "sa_solver", "scheduler": "beta", "seed": 0}
+    }
+  },
+  {
+    "id": "i2v-beach-city-001",
+    "metadata": {"title": "Beach to City", "description": "Beach background transitions to city street", "category": "I2V Scene Transition"},
+    "category": "I2V Scene Transition",
+    "workflow_type": "i2v",
+    "loras": [],
+    "workflow_params": {
+      "prompts": {
+        "positive": "The woman walks forward confidently, the beach background gradually transitions to a modern city street, her outfit changes from beach wear to urban casual clothing, smooth cinematic transition, natural walking movement",
+        "negative": ""
+      },
+      "video_config": {"width": 640, "height": 640, "num_frames": 81, "fps": 24, "steps": 4, "cfg": 1.0, "denoise": 1.0, "sampler": "sa_solver", "scheduler": "beta", "seed": 0}
+    }
+  },
+  {
+    "id": "i2v-sport-sleep-001",
+    "metadata": {"title": "Sportswear to Sleepwear", "description": "Changes from gym clothes to pajamas", "category": "I2V Outfit Transition"},
+    "category": "I2V Outfit Transition",
+    "workflow_type": "i2v",
+    "loras": [],
+    "workflow_params": {
+      "prompts": {
+        "positive": "The woman stretches her arms up, then pulls off her sports top revealing a soft cotton sleep camisole underneath, relaxes her shoulders, yawns gently, bedroom background fades in with warm lamp light, smooth cozy transition",
+        "negative": ""
+      },
+      "video_config": {"width": 640, "height": 640, "num_frames": 81, "fps": 24, "steps": 4, "cfg": 1.0, "denoise": 1.0, "sampler": "sa_solver", "scheduler": "beta", "seed": 0}
+    }
+  },
+  {
+    "id": "i2v-stand-sit-001",
+    "metadata": {"title": "Standing to Sitting", "description": "Woman gracefully sits down on chair", "category": "I2V Pose Transition"},
+    "category": "I2V Pose Transition",
+    "workflow_type": "i2v",
+    "loras": [],
+    "workflow_params": {
+      "prompts": {
+        "positive": "The woman gracefully sits down on a nearby chair, crossing her legs elegantly, places her hands on her knee, settles into a relaxed comfortable seated pose, smooth natural body movement, same outfit same background",
+        "negative": ""
+      },
+      "video_config": {"width": 640, "height": 640, "num_frames": 81, "fps": 24, "steps": 4, "cfg": 1.0, "denoise": 1.0, "sampler": "sa_solver", "scheduler": "beta", "seed": 0}
+    }
+  },
+  {
+    "id": "i2v-sit-lie-001",
+    "metadata": {"title": "Sitting to Lying Down", "description": "Woman lies down on couch from sitting", "category": "I2V Pose Transition"},
+    "category": "I2V Pose Transition",
+    "workflow_type": "i2v",
+    "loras": [],
+    "workflow_params": {
+      "prompts": {
+        "positive": "The woman slowly leans to the side and lies down on the couch, stretches her legs out, puts one arm behind her head, relaxed comfortable pose, smooth natural movement, same outfit, warm interior lighting",
+        "negative": ""
+      },
+      "video_config": {"width": 640, "height": 640, "num_frames": 81, "fps": 24, "steps": 4, "cfg": 1.0, "denoise": 1.0, "sampler": "sa_solver", "scheduler": "beta", "seed": 0}
+    }
+  },
+  {
+    "id": "i2v-yoga-001",
+    "metadata": {"title": "Yoga Flow", "description": "Woman flows through yoga sequence", "category": "I2V Dynamic Action"},
+    "category": "I2V Dynamic Action",
+    "workflow_type": "i2v",
+    "loras": [],
+    "workflow_params": {
+      "prompts": {
+        "positive": "The woman flows through a yoga sequence, raising arms overhead into mountain pose, then slowly bending forward into forward fold, smooth graceful continuous movement, peaceful garden background, soft morning light",
+        "negative": ""
+      },
+      "video_config": {"width": 640, "height": 640, "num_frames": 81, "fps": 24, "steps": 4, "cfg": 1.0, "denoise": 1.0, "sampler": "sa_solver", "scheduler": "beta", "seed": 0}
+    }
+  },
+  {
+    "id": "i2v-hair-flip-001",
+    "metadata": {"title": "Hair Flip and Smile", "description": "Graceful hair flip then looks at camera", "category": "I2V Beauty Moment"},
+    "category": "I2V Beauty Moment",
+    "workflow_type": "i2v",
+    "loras": [],
+    "workflow_params": {
+      "prompts": {
+        "positive": "The woman flips her hair to one side with a graceful head movement, then looks directly at camera and gives a warm genuine smile, wind catches her hair gently, soft golden light illuminating her face, cinematic beauty shot",
+        "negative": ""
+      },
+      "video_config": {"width": 640, "height": 640, "num_frames": 81, "fps": 24, "steps": 4, "cfg": 1.0, "denoise": 1.0, "sampler": "sa_solver", "scheduler": "beta", "seed": 0}
+    }
+  },
+  {
+    "id": "i2v-pool-001",
+    "metadata": {"title": "Poolside Entry", "description": "Woman sits at pool edge and dips feet", "category": "I2V Scene Action"},
+    "category": "I2V Scene Action",
+    "workflow_type": "i2v",
+    "loras": [],
+    "workflow_params": {
+      "prompts": {
+        "positive": "The woman walks to the edge of the pool, sits down on the edge, dips her feet in the water creating small ripples, leans back on her hands enjoying the sun, smooth relaxed movement, crystal clear pool water, bright sunny day",
+        "negative": ""
+      },
+      "video_config": {"width": 640, "height": 640, "num_frames": 81, "fps": 24, "steps": 4, "cfg": 1.0, "denoise": 1.0, "sampler": "sa_solver", "scheduler": "beta", "seed": 0}
+    }
+  },
+  {
+    "id": "i2v-coffee-001",
+    "metadata": {"title": "Morning Coffee", "description": "Woman picks up coffee and sips", "category": "I2V Lifestyle Moment"},
+    "category": "I2V Lifestyle Moment",
+    "workflow_type": "i2v",
+    "loras": [],
+    "workflow_params": {
+      "prompts": {
+        "positive": "The woman reaches for a coffee mug on the kitchen counter, picks it up with both hands, brings it close to her face, takes a sip with closed eyes savoring the moment, opens eyes with a satisfied smile, warm kitchen morning light streaming through window",
+        "negative": ""
+      },
+      "video_config": {"width": 640, "height": 640, "num_frames": 81, "fps": 24, "steps": 4, "cfg": 1.0, "denoise": 1.0, "sampler": "sa_solver", "scheduler": "beta", "seed": 0}
+    }
+  }
+]
+```
+
+### Parámetros ajustables de video
+
+| Parámetro | Default | Rango | Efecto |
+|-----------|---------|-------|--------|
+| `width` | 640 | 480-1024 | Ancho del video |
+| `height` | 640 | 480-1024 | Alto del video |
+| `num_frames` | 81 | 41-161 | Duración (81=3.4s, 161=6.7s a 24fps) |
+| `fps` | 24 | 12-30 | Frames por segundo |
+| `steps` | 4 | 4-8 | Calidad (más = mejor pero más lento) |
+| `seed` | 0 | 0-999999999 | 0=random, fijo=reproducible |
 
 ### Configuración de URLs
 
@@ -835,6 +1074,15 @@ async function generate(template, options = {}) {
 const BASE_URL_IMAGE = "https://t3a5h65dejiqek-8188.proxy.runpod.net";  // Pod imágenes
 const BASE_URL_VIDEO = "https://PENDIENTE-VIDEO-POD.proxy.runpod.net";   // Pod video (por configurar)
 ```
+
+### Notas I2V
+- El pod de video es **separado** del de imágenes (diferente GPU, modelo, URL)
+- El modelo Wan 2.2 I2V (22GB) no cabe junto con Qwen (27GB) en la misma GPU
+- Primera ejecución de video: ~120s (carga modelo). Siguientes: ~30-40s
+- El prompt de video describe **movimiento/acción**, no apariencia (esa viene de la imagen)
+- El `negative` generalmente se deja vacío para video
+- Para videos más largos, aumentar `num_frames` (81→161 = ~6.7s)
+- LoRAs en video: mismo sistema que imagen, se pasan en el array `loras`
 
 ---
 
