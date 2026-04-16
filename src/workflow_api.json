@@ -1,0 +1,77 @@
+{
+  "1": {
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": { "title": "Load Qwen NSFW v18.1" },
+    "inputs": {
+      "ckpt_name": "Qwen-Rapid-AIO-NSFW-v18.1.safetensors"
+    }
+  },
+  "7": {
+    "class_type": "LoadImage",
+    "_meta": { "title": "Input Image" },
+    "inputs": {
+      "image": "INPUT_IMAGE",
+      "upload": "image"
+    }
+  },
+  "3": {
+    "class_type": "TextEncodeQwenImageEditPlus",
+    "_meta": { "title": "Positive Prompt" },
+    "inputs": {
+      "clip": ["1", 1],
+      "vae": ["1", 2],
+      "prompt": "visible pussy always, sysdeep_undress, remove all clothes, undress, without clothes, The same girl, the same features, naked, the same skin, the same face, the same position, the same eyes, the same mouth, the same body, the same lighting. Naked, beautiful, radiant, AiArtV, extremely detailed skin texture, natural anatomy, high resolution, raw photo, realistic shadows, photorealistic skin pores, professional digital photography",
+      "image1": ["7", 0]
+    }
+  },
+  "4": {
+    "class_type": "TextEncodeQwenImageEditPlus",
+    "_meta": { "title": "Negative Prompt" },
+    "inputs": {
+      "clip": ["1", 1],
+      "vae": ["1", 2],
+      "prompt": "different clothing, different face, different hair, different skin, different position, different proportions, different head, different lighting, poor quality, ugly, different details, different height, different arrangement, with clothes, with a dress, with fabrics, with pants, with a blouse, with jeans, deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines"
+    }
+  },
+  "9": {
+    "class_type": "EmptyLatentImage",
+    "_meta": { "title": "Output Size" },
+    "inputs": {
+      "width": 768,
+      "height": 1024,
+      "batch_size": 1
+    }
+  },
+  "2": {
+    "class_type": "KSampler",
+    "_meta": { "title": "Sampler" },
+    "inputs": {
+      "model": ["1", 0],
+      "positive": ["3", 0],
+      "negative": ["4", 0],
+      "latent_image": ["9", 0],
+      "seed": 0,
+      "steps": 6,
+      "cfg": 1.0,
+      "sampler_name": "euler_ancestral",
+      "scheduler": "beta",
+      "denoise": 0.65
+    }
+  },
+  "5": {
+    "class_type": "VAEDecode",
+    "_meta": { "title": "Decode" },
+    "inputs": {
+      "samples": ["2", 0],
+      "vae": ["1", 2]
+    }
+  },
+  "6": {
+    "class_type": "SaveImage",
+    "_meta": { "title": "Output" },
+    "inputs": {
+      "images": ["5", 0],
+      "filename_prefix": "i2i_undress"
+    }
+  }
+}

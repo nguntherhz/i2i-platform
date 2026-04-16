@@ -1,0 +1,68 @@
+{
+  "1": {
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": { "title": "Load Qwen NSFW v18.1" },
+    "inputs": {
+      "ckpt_name": "Qwen-Rapid-AIO-NSFW-v18.1.safetensors"
+    }
+  },
+  "3": {
+    "class_type": "TextEncodeQwenImageEditPlus",
+    "_meta": { "title": "Positive Prompt" },
+    "inputs": {
+      "clip": ["1", 1],
+      "vae": ["1", 2],
+      "prompt": "POSITIVE_PROMPT_HERE"
+    }
+  },
+  "4": {
+    "class_type": "TextEncodeQwenImageEditPlus",
+    "_meta": { "title": "Negative Prompt" },
+    "inputs": {
+      "clip": ["1", 1],
+      "vae": ["1", 2],
+      "prompt": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured"
+    }
+  },
+  "9": {
+    "class_type": "EmptyLatentImage",
+    "_meta": { "title": "Output Size" },
+    "inputs": {
+      "width": 768,
+      "height": 1024,
+      "batch_size": 1
+    }
+  },
+  "2": {
+    "class_type": "KSampler",
+    "_meta": { "title": "Sampler" },
+    "inputs": {
+      "model": ["1", 0],
+      "positive": ["3", 0],
+      "negative": ["4", 0],
+      "latent_image": ["9", 0],
+      "seed": 0,
+      "steps": 6,
+      "cfg": 1.0,
+      "sampler_name": "euler_ancestral",
+      "scheduler": "beta",
+      "denoise": 1.0
+    }
+  },
+  "5": {
+    "class_type": "VAEDecode",
+    "_meta": { "title": "Decode" },
+    "inputs": {
+      "samples": ["2", 0],
+      "vae": ["1", 2]
+    }
+  },
+  "6": {
+    "class_type": "SaveImage",
+    "_meta": { "title": "Output" },
+    "inputs": {
+      "images": ["5", 0],
+      "filename_prefix": "t2i_output"
+    }
+  }
+}
