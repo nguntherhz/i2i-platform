@@ -1,0 +1,104 @@
+{
+  "description": "Workflow templates listos para enviar a POST /api/prompt. Reemplazar los campos marcados con {{VARIABLE}}.",
+
+  "t2i": {
+    "name": "Text to Image",
+    "params": {
+      "{{POSITIVE_PROMPT}}": "Descripción de la persona/escena",
+      "{{NEGATIVE_PROMPT}}": "Lo que no quieres (opcional, tiene default)",
+      "{{WIDTH}}": "768 (default)",
+      "{{HEIGHT}}": "1024 (default)",
+      "{{SEED}}": "0 para random, o número fijo para reproducir",
+      "{{STEPS}}": "6 (default)",
+      "{{DENOISE}}": "1.0 (siempre 1.0 para T2I)"
+    },
+    "workflow": {
+      "1": {"class_type": "CheckpointLoaderSimple", "inputs": {"ckpt_name": "Qwen-Rapid-AIO-NSFW-v18.1.safetensors"}},
+      "3": {"class_type": "TextEncodeQwenImageEditPlus", "inputs": {"clip": ["1", 1], "vae": ["1", 2], "prompt": "{{POSITIVE_PROMPT}}"}},
+      "4": {"class_type": "TextEncodeQwenImageEditPlus", "inputs": {"clip": ["1", 1], "vae": ["1", 2], "prompt": "{{NEGATIVE_PROMPT}}"}},
+      "9": {"class_type": "EmptyLatentImage", "inputs": {"width": "{{WIDTH}}", "height": "{{HEIGHT}}", "batch_size": 1}},
+      "2": {"class_type": "KSampler", "inputs": {"model": ["1", 0], "positive": ["3", 0], "negative": ["4", 0], "latent_image": ["9", 0], "seed": "{{SEED}}", "steps": "{{STEPS}}", "cfg": 1.0, "sampler_name": "euler_ancestral", "scheduler": "beta", "denoise": 1.0}},
+      "5": {"class_type": "VAEDecode", "inputs": {"samples": ["2", 0], "vae": ["1", 2]}},
+      "6": {"class_type": "SaveImage", "inputs": {"images": ["5", 0], "filename_prefix": "t2i_output"}}
+    }
+  },
+
+  "i2i_outfit": {
+    "name": "Change Outfit",
+    "params": {
+      "{{INPUT_IMAGE}}": "Nombre del archivo subido via /upload/image",
+      "{{OUTFIT_PROMPT}}": "Descripción de la nueva ropa. Incluir 'same face, same body'",
+      "{{SEED}}": "0 para random",
+      "{{DENOISE}}": "0.55 (default). 0.45-0.65 según intensidad del cambio"
+    },
+    "workflow": {
+      "1": {"class_type": "CheckpointLoaderSimple", "inputs": {"ckpt_name": "Qwen-Rapid-AIO-NSFW-v18.1.safetensors"}},
+      "7": {"class_type": "LoadImage", "inputs": {"image": "{{INPUT_IMAGE}}", "upload": "image"}},
+      "3": {"class_type": "TextEncodeQwenImageEditPlus", "inputs": {"clip": ["1", 1], "vae": ["1", 2], "prompt": "{{OUTFIT_PROMPT}}", "image1": ["7", 0]}},
+      "4": {"class_type": "TextEncodeQwenImageEditPlus", "inputs": {"clip": ["1", 1], "vae": ["1", 2], "prompt": "different face, different person, different body, different skin tone, deformed, bad anatomy, blurry, low quality, watermark, artifacts"}},
+      "9": {"class_type": "EmptyLatentImage", "inputs": {"width": 768, "height": 1024, "batch_size": 1}},
+      "2": {"class_type": "KSampler", "inputs": {"model": ["1", 0], "positive": ["3", 0], "negative": ["4", 0], "latent_image": ["9", 0], "seed": "{{SEED}}", "steps": 6, "cfg": 1.0, "sampler_name": "euler_ancestral", "scheduler": "beta", "denoise": "{{DENOISE}}"}},
+      "5": {"class_type": "VAEDecode", "inputs": {"samples": ["2", 0], "vae": ["1", 2]}},
+      "6": {"class_type": "SaveImage", "inputs": {"images": ["5", 0], "filename_prefix": "i2i_outfit"}}
+    }
+  },
+
+  "i2i_hair": {
+    "name": "Change Hair",
+    "params": {
+      "{{INPUT_IMAGE}}": "Nombre del archivo subido",
+      "{{HAIR_PROMPT}}": "Descripción del nuevo pelo. Incluir 'same face, same outfit'",
+      "{{SEED}}": "0 para random",
+      "{{DENOISE}}": "0.45 (default)"
+    },
+    "workflow": {
+      "1": {"class_type": "CheckpointLoaderSimple", "inputs": {"ckpt_name": "Qwen-Rapid-AIO-NSFW-v18.1.safetensors"}},
+      "7": {"class_type": "LoadImage", "inputs": {"image": "{{INPUT_IMAGE}}", "upload": "image"}},
+      "3": {"class_type": "TextEncodeQwenImageEditPlus", "inputs": {"clip": ["1", 1], "vae": ["1", 2], "prompt": "{{HAIR_PROMPT}}", "image1": ["7", 0]}},
+      "4": {"class_type": "TextEncodeQwenImageEditPlus", "inputs": {"clip": ["1", 1], "vae": ["1", 2], "prompt": "different face, different person, different body, different outfit, different clothing, deformed, bad anatomy, blurry, low quality, watermark, artifacts"}},
+      "9": {"class_type": "EmptyLatentImage", "inputs": {"width": 768, "height": 1024, "batch_size": 1}},
+      "2": {"class_type": "KSampler", "inputs": {"model": ["1", 0], "positive": ["3", 0], "negative": ["4", 0], "latent_image": ["9", 0], "seed": "{{SEED}}", "steps": 6, "cfg": 1.0, "sampler_name": "euler_ancestral", "scheduler": "beta", "denoise": "{{DENOISE}}"}},
+      "5": {"class_type": "VAEDecode", "inputs": {"samples": ["2", 0], "vae": ["1", 2]}},
+      "6": {"class_type": "SaveImage", "inputs": {"images": ["5", 0], "filename_prefix": "i2i_hair"}}
+    }
+  },
+
+  "i2i_restyle": {
+    "name": "Full Restyle (body + scene + outfit)",
+    "params": {
+      "{{INPUT_IMAGE}}": "Nombre del archivo subido",
+      "{{RESTYLE_PROMPT}}": "Descripción completa: nuevo cuerpo, ropa, escena. Incluir 'same face, same eyes, same skin tone'",
+      "{{SEED}}": "0 para random",
+      "{{DENOISE}}": "0.75 (default). 0.65-0.80 según intensidad"
+    },
+    "workflow": {
+      "1": {"class_type": "CheckpointLoaderSimple", "inputs": {"ckpt_name": "Qwen-Rapid-AIO-NSFW-v18.1.safetensors"}},
+      "7": {"class_type": "LoadImage", "inputs": {"image": "{{INPUT_IMAGE}}", "upload": "image"}},
+      "3": {"class_type": "TextEncodeQwenImageEditPlus", "inputs": {"clip": ["1", 1], "vae": ["1", 2], "prompt": "{{RESTYLE_PROMPT}}", "image1": ["7", 0]}},
+      "4": {"class_type": "TextEncodeQwenImageEditPlus", "inputs": {"clip": ["1", 1], "vae": ["1", 2], "prompt": "different face, different person, different eyes, different skin color, deformed, bad anatomy, blurry, low quality, watermark, artifacts, ugly, disfigured, extra limbs"}},
+      "9": {"class_type": "EmptyLatentImage", "inputs": {"width": 768, "height": 1024, "batch_size": 1}},
+      "2": {"class_type": "KSampler", "inputs": {"model": ["1", 0], "positive": ["3", 0], "negative": ["4", 0], "latent_image": ["9", 0], "seed": "{{SEED}}", "steps": 8, "cfg": 1.0, "sampler_name": "euler_ancestral", "scheduler": "beta", "denoise": "{{DENOISE}}"}},
+      "5": {"class_type": "VAEDecode", "inputs": {"samples": ["2", 0], "vae": ["1", 2]}},
+      "6": {"class_type": "SaveImage", "inputs": {"images": ["5", 0], "filename_prefix": "restyle"}}
+    }
+  },
+
+  "i2i_supercatalog": {
+    "name": "Super Catalog (pose + scene + outfit from image)",
+    "params": {
+      "{{INPUT_IMAGE}}": "Nombre del archivo subido",
+      "{{SCENE_PROMPT}}": "Descripción de la escena/pose/outfit deseada. Incluir 'same face same eyes same skin'",
+      "{{SEED}}": "0 para random"
+    },
+    "workflow": {
+      "1": {"class_type": "CheckpointLoaderSimple", "inputs": {"ckpt_name": "Qwen-Rapid-AIO-NSFW-v18.1.safetensors"}},
+      "7": {"class_type": "LoadImage", "inputs": {"image": "{{INPUT_IMAGE}}", "upload": "image"}},
+      "3": {"class_type": "TextEncodeQwenImageEditPlus", "inputs": {"clip": ["1", 1], "vae": ["1", 2], "prompt": "{{SCENE_PROMPT}}", "image1": ["7", 0]}},
+      "4": {"class_type": "TextEncodeQwenImageEditPlus", "inputs": {"clip": ["1", 1], "vae": ["1", 2], "prompt": "different face, different person, different eyes, different nose, different mouth, different skin color, different age, deformed, bad anatomy, bad proportions, blurry, low quality, watermark, artifacts, ugly, disfigured, extra limbs, missing limbs"}},
+      "9": {"class_type": "EmptyLatentImage", "inputs": {"width": 768, "height": 1024, "batch_size": 1}},
+      "2": {"class_type": "KSampler", "inputs": {"model": ["1", 0], "positive": ["3", 0], "negative": ["4", 0], "latent_image": ["9", 0], "seed": "{{SEED}}", "steps": 8, "cfg": 1.0, "sampler_name": "euler_ancestral", "scheduler": "beta", "denoise": 0.72}},
+      "5": {"class_type": "VAEDecode", "inputs": {"samples": ["2", 0], "vae": ["1", 2]}},
+      "6": {"class_type": "SaveImage", "inputs": {"images": ["5", 0], "filename_prefix": "catalog"}}
+    }
+  }
+}
