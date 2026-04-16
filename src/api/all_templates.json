@@ -1,0 +1,2344 @@
+{
+  "templates": [
+    {
+      "id": "sportswear-M001",
+      "metadata": {
+        "title": "Sofia",
+        "description": "Black compression leggings, neon green sports bra, white running shoes",
+        "category": "sportswear"
+      },
+      "category": "sportswear",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, young athletic woman, 24 years old, long straight blonde hair in ponytail, blue eyes, fair lightly tanned skin, tall and slim athletic build, standing on urban park running path, catching her breath after a run, one hand on hip, wearing black compression leggings, neon green sports bra, white running shoes, morning golden hour sunlight, trees in background, photorealistic, extremely detailed skin texture, natural sweat glow, raw photo, 8k resolution, professional sportswear campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "sportswear-M002",
+      "metadata": {
+        "title": "Elena",
+        "description": "Teal cycling shorts, white fitted tank top, cycling gloves",
+        "category": "sportswear"
+      },
+      "category": "sportswear",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, curvy athletic woman, 28 years old, medium wavy brown hair, green eyes, Mediterranean olive skin, healthy strong build with curves, leaning casually against her road bicycle on a scenic countryside gravel path, relaxed confident expression, wearing teal cycling shorts, white fitted tank top, cycling gloves, helmet hanging from handlebars, soft afternoon sunlight, rolling green hills in background, photorealistic, extremely detailed skin texture, natural lighting, raw photo, 8k resolution, professional sportswear campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "sportswear-M003",
+      "metadata": {
+        "title": "Astrid",
+        "description": "Dark grey high-waist leggings, burgundy racerback tank, training shoes",
+        "category": "sportswear"
+      },
+      "category": "sportswear",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, toned muscular woman, 26 years old, short auburn pixie cut hair, grey eyes, Nordic pale skin, defined athletic muscles visible on arms and shoulders, standing tall with arms crossed outside modern gym entrance with glass walls, powerful confident stance, wearing dark grey high-waist leggings, burgundy racerback tank top, training shoes, overcast soft daylight, photorealistic, extremely detailed skin texture, visible muscle definition, raw photo, 8k resolution, professional sportswear campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "sportswear-M004",
+      "metadata": {
+        "title": "Lucia",
+        "description": "White pleated tennis skirt, coral fitted polo top, white tennis shoes",
+        "category": "sportswear"
+      },
+      "category": "sportswear",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, slim toned young woman, 23 years old, long dark brown straight hair in low ponytail, dark brown eyes, light olive Southern European skin, walking towards camera from tennis court, tennis racket resting over right shoulder, relaxed post-match smile, wearing white pleated tennis skirt, coral fitted polo top, white tennis shoes, white wristband, clay court and fence in background, warm late afternoon sunlight, photorealistic, extremely detailed skin texture, natural lighting, raw photo, 8k resolution, professional sportswear campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "sportswear-M005",
+      "metadata": {
+        "title": "Freya",
+        "description": "Lavender high-waist yoga pants, matching lavender crop sports top, barefoot",
+        "category": "sportswear"
+      },
+      "category": "sportswear",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, plus-size athletic woman, 30 years old, shoulder-length wavy blonde hair, blue-green eyes, fair Scandinavian skin, healthy curvy body with strong legs, standing relaxed on wooden deck in lush green garden, yoga mat rolled under left arm, serene confident smile, wearing lavender high-waist yoga pants, matching lavender crop sports top, barefoot, soft morning diffused light, plants and greenery around, photorealistic, extremely detailed skin texture, natural body, raw photo, 8k resolution, professional sportswear campaign photography, full body visible head to toe, body positive, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "sportswear-M006",
+      "metadata": {
+        "title": "Katarina",
+        "description": "Black trail running tights, forest green zip-up jacket half open over white base layer",
+        "category": "sportswear"
+      },
+      "category": "sportswear",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, athletic lean woman, 25 years old, long copper red hair in braid, hazel eyes, fair skin with freckles on cheeks, standing on mountain trail overlook, one foot resting on a rock, gazing at scenic valley below, wearing black trail running tights, forest green half-zip jacket open over white base layer, trail running shoes, small hydration vest, dramatic mountain landscape background, golden hour warm sunlight, photorealistic, extremely detailed skin texture, natural freckles, raw photo, 8k resolution, professional outdoor sportswear campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "swimwear-SW001",
+      "metadata": {
+        "title": "Bianca",
+        "description": "One-piece, elegant black, high-cut legs, open back",
+        "category": "swimwear"
+      },
+      "category": "swimwear",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, slim toned woman, 24 years old, long platinum blonde straight hair flowing in wind, ice blue eyes, fair skin with golden tan, standing at tropical beach shoreline, turquoise crystal clear water touching her ankles, looking over shoulder at camera with confident expression, wearing elegant black one-piece swimsuit with high-cut legs and open back, pristine white sand, palm trees in distance, bright sunny day, photorealistic, extremely detailed skin texture, natural sun-kissed glow, water droplets on legs, raw photo, 8k resolution, professional luxury swimwear campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, cheap fabric, wrinkled swimsuit, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "swimwear-SW002",
+      "metadata": {
+        "title": "Valentina",
+        "description": "Two-piece bikini, deep burgundy, triangle top, high-waist bottom",
+        "category": "swimwear"
+      },
+      "category": "swimwear",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, curvy hourglass woman, 27 years old, long dark brown wavy hair, dark brown eyes, deep olive Mediterranean skin, sitting on large flat sunlit rock on Mediterranean rocky coast, legs extended forward, leaning back on hands, relaxed elegant pose, wearing deep burgundy two-piece bikini with triangle top and high-waist bottom, premium fabric with clean lines, blue sea and rocky cliffs in background, warm golden afternoon light, photorealistic, extremely detailed skin texture, natural body curves, raw photo, 8k resolution, professional luxury swimwear campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, cheap fabric, wrinkled swimsuit, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "swimwear-SW003",
+      "metadata": {
+        "title": "Ingrid",
+        "description": "One-piece, crisp white, minimalist cut, square neckline",
+        "category": "swimwear"
+      },
+      "category": "swimwear",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, athletic tall woman, 26 years old, short blonde bob haircut, grey-blue eyes, Nordic fair skin with light freckles on shoulders, standing at the end of a rustic wooden dock on calm Scandinavian lake, hands relaxed at sides, facing camera with serene expression, wearing crisp white minimalist one-piece swimsuit with square neckline, still lake reflecting pine forest and mountains, soft overcast Scandinavian summer light, photorealistic, extremely detailed skin texture, subtle freckles, raw photo, 8k resolution, professional luxury swimwear campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, cheap fabric, wrinkled swimsuit, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "swimwear-SW004",
+      "metadata": {
+        "title": "Amara",
+        "description": "Two-piece bikini, emerald green, bandeau top, mid-rise bottom",
+        "category": "swimwear"
+      },
+      "category": "swimwear",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, lean athletic woman, 25 years old, long black curly hair wet and slicked back, dark brown eyes, rich dark brown glowing skin, walking out of natural tropical waterfall pool, water at mid-thigh level, one hand running through wet hair, confident radiant expression, wearing emerald green two-piece bikini with bandeau top and mid-rise bottom, premium matte fabric, lush tropical vegetation and small waterfall in background, dappled sunlight through canopy, photorealistic, extremely detailed skin texture, water droplets on skin, raw photo, 8k resolution, professional luxury swimwear campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, cheap fabric, wrinkled swimsuit, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "swimwear-SW005",
+      "metadata": {
+        "title": "Clara",
+        "description": "One-piece, navy blue, plunging V-neckline, gold accent clasp",
+        "category": "swimwear"
+      },
+      "category": "swimwear",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, petite toned woman, 23 years old, medium auburn wavy hair, hazel green eyes, light skin with warm undertone, standing at the edge of an infinity pool on Tuscan hillside, side profile turned slightly toward camera, gazing at vineyard landscape, wearing navy blue one-piece swimsuit with plunging V-neckline and small gold accent clasp, premium ribbed fabric, rolling Tuscan hills with cypress trees and vineyards in background, warm late afternoon golden light, photorealistic, extremely detailed skin texture, elegant pose, raw photo, 8k resolution, professional luxury swimwear campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, cheap fabric, wrinkled swimsuit, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "swimwear-SW006",
+      "metadata": {
+        "title": "Nadia",
+        "description": "Two-piece bikini, coral orange, halter top with support, classic bottom",
+        "category": "swimwear"
+      },
+      "category": "swimwear",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, plus-size curvy woman, 29 years old, long honey blonde highlighted brown hair flowing in sea breeze, amber eyes, warm beige Eastern European skin, walking along white sand Greek island beach, carrying straw sun hat in one hand, natural joyful smile, wearing coral orange two-piece bikini with halter top providing support and classic bottom, premium seamless fabric, blue Aegean sea and iconic white and blue Greek architecture in distance, bright Mediterranean sunlight, photorealistic, extremely detailed skin texture, natural body confidence, raw photo, 8k resolution, professional luxury swimwear campaign photography, full body visible head to toe, body positive, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, cheap fabric, wrinkled swimsuit, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "swimwear-SW007",
+      "metadata": {
+        "title": "Lena",
+        "description": "One-piece, deep red, cross-back straps, high-cut",
+        "category": "swimwear"
+      },
+      "category": "swimwear",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, slim tall model woman, 22 years old, long straight jet black hair, vivid green eyes, porcelain pale skin, standing on overwater bungalow wooden deck in Maldives, arms resting casually on wooden railing, looking at camera over shoulder, wearing deep red one-piece swimsuit with elegant cross-back straps and high-cut legs, premium satin finish fabric, crystal clear turquoise lagoon below, thatched roof bungalow, tropical paradise, bright midday sun, photorealistic, extremely detailed skin texture, contrast of pale skin and red swimsuit, raw photo, 8k resolution, professional luxury swimwear campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, cheap fabric, wrinkled swimsuit, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "swimwear-SW008",
+      "metadata": {
+        "title": "Maya",
+        "description": "Two-piece bikini, solid white, sporty cut top, cheeky bottom",
+        "category": "swimwear"
+      },
+      "category": "swimwear",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, athletic muscular woman, 28 years old, medium brown hair with caramel highlights in beach waves, brown eyes, golden tan skin, standing knee-deep in crystal clear alpine lake, hands pushing wet hair back, eyes closed enjoying the moment, wearing solid white two-piece bikini with sporty cut top and cheeky bottom, premium quick-dry fabric, dramatic snow-capped mountains and green meadow in background, bright clear sky, photorealistic, extremely detailed skin texture, water reflections on skin, toned abs and arms visible, raw photo, 8k resolution, professional luxury swimwear campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, cheap fabric, wrinkled swimsuit, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "casual_summer-CS001",
+      "metadata": {
+        "title": "Mia",
+        "description": "High-waist light wash denim shorts, white cropped linen top, white sneakers",
+        "category": "casual_summer"
+      },
+      "category": "casual_summer",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, slim petite young woman, 20 years old, long straight honey blonde hair, light blue eyes, fair porcelain skin, walking casually down cobblestone European old town street with cafe terraces, one hand in back pocket of shorts, natural genuine smile, wearing high-waist light wash denim shorts, white cropped linen top, white canvas sneakers, small crossbody bag, warm summer afternoon light, photorealistic, extremely detailed skin texture, youthful fresh look, raw photo, 8k resolution, professional fashion campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, vulgar, provocative, revealing, oversexualized, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "casual_summer-CS002",
+      "metadata": {
+        "title": "Camila",
+        "description": "Flowy midi sundress in terracotta with small white floral print, tan leather sandals",
+        "category": "casual_summer"
+      },
+      "category": "casual_summer",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, curvy soft young woman, 22 years old, long dark brown loose curls, warm brown eyes, warm caramel skin, standing at colorful outdoor flower market browsing flowers, holding small bouquet of wildflowers, looking at camera with warm smile, wearing flowy midi sundress in terracotta with small white floral print, tan leather sandals, gold hoop earrings, bright summer daylight with dappled shade, photorealistic, extremely detailed skin texture, soft natural curves, raw photo, 8k resolution, professional fashion campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, vulgar, provocative, revealing, oversexualized, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "casual_summer-CS003",
+      "metadata": {
+        "title": "Hana",
+        "description": "Olive cargo pants rolled at ankle, fitted white tank top, chunky platform sandals",
+        "category": "casual_summer"
+      },
+      "category": "casual_summer",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, slim athletic young woman, 21 years old, medium straight black hair with subtle caramel highlights, dark almond-shaped eyes, light golden skin, leaning against metal railing on urban rooftop terrace with city skyline in background, arms crossed casually, relaxed cool expression, wearing olive cargo pants rolled at ankle, fitted white tank top, chunky platform sandals, layered thin gold necklaces, golden hour rooftop light, photorealistic, extremely detailed skin texture, effortlessly stylish, raw photo, 8k resolution, professional fashion campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, vulgar, provocative, revealing, oversexualized, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "casual_summer-CS004",
+      "metadata": {
+        "title": "Isla",
+        "description": "Sage green linen wide-leg pants, cream knit crop cardigan over white camisole, espadrilles",
+        "category": "casual_summer"
+      },
+      "category": "casual_summer",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, average healthy build young woman, 23 years old, shoulder-length wavy auburn hair blowing in sea breeze, green eyes, light warm skin with natural freckles, walking along seaside promenade with pastel colored Mediterranean buildings, hand holding sunglasses, carefree happy expression, wearing sage green linen wide-leg pants, cream knit crop cardigan layered over white camisole, natural rope espadrilles, woven tote bag on shoulder, bright coastal summer light, photorealistic, extremely detailed skin texture, visible freckles, raw photo, 8k resolution, professional fashion campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, vulgar, provocative, revealing, oversexualized, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "casual_summer-CS005",
+      "metadata": {
+        "title": "Zara",
+        "description": "Oversized cream linen blazer, matching linen shorts, tan strappy heeled sandals",
+        "category": "casual_summer"
+      },
+      "category": "casual_summer",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, tall slim young woman, 24 years old, long wavy dark chestnut hair, honey amber eyes, warm olive skin, standing in elegant boutique hotel courtyard with white stucco walls and climbing green plants, one hand adjusting blazer lapel, editorial confident pose, wearing oversized cream linen blazer, matching cream linen shorts, tan strappy heeled sandals, minimalist gold bracelet, soft diffused courtyard light, photorealistic, extremely detailed skin texture, elegant and sophisticated, raw photo, 8k resolution, professional fashion campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, vulgar, provocative, revealing, oversexualized, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "casual_summer-CS006",
+      "metadata": {
+        "title": "Nora",
+        "description": "High-waist A-line denim skirt knee length, tucked-in coral linen button-up shirt, white platform sneakers",
+        "category": "casual_summer"
+      },
+      "category": "casual_summer",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, curvy plus-size young woman, 25 years old, long platinum silver blonde straight hair, blue-grey eyes, fair Scandinavian skin with light pink undertone, sitting on edge of park bench in sunny park with blooming colorful flower beds and stone fountain behind, legs crossed at ankle, laughing naturally with head slightly tilted, wearing high-waist A-line denim skirt to knee, tucked-in coral linen button-up shirt with sleeves rolled, white platform sneakers, straw basket bag beside her, bright warm summer midday light, photorealistic, extremely detailed skin texture, joyful and confident, raw photo, 8k resolution, professional fashion campaign photography, full body visible head to toe, body positive, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, vulgar, provocative, revealing, oversexualized, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "casual_summer-CS007",
+      "metadata": {
+        "title": "Priya",
+        "description": "Lilac wrap top, white high-waist straight-leg jeans, nude block heel sandals",
+        "category": "casual_summer"
+      },
+      "category": "casual_summer",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, slim toned young woman, 21 years old, very long straight black silky hair, deep dark brown eyes with long lashes, medium warm brown skin, standing against colorful artistic mural wall in trendy neighborhood, one knee bent with foot resting on wall behind, relaxed urban pose with subtle smile, wearing lilac wrap top, white high-waist straight-leg jeans, nude block heel sandals, delicate layered gold necklaces, vibrant mural colors in background, afternoon sunlight with soft shadows, photorealistic, extremely detailed skin texture, naturally beautiful, raw photo, 8k resolution, professional fashion campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, vulgar, provocative, revealing, oversexualized, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "casual_summer-CS008",
+      "metadata": {
+        "title": "Elise",
+        "description": "Denim cutoff shorts, oversized vintage band tee knotted at waist, leather slide sandals",
+        "category": "casual_summer"
+      },
+      "category": "casual_summer",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, athletic toned young woman, 22 years old, medium wavy sandy brown hair with natural sun-bleached lighter tips, hazel eyes, light tan skin with healthy surfer glow, walking on beach boardwalk lined with palm trees and small shops, holding iced coffee in one hand, sunglasses pushed up on head, effortless cool smile, wearing denim cutoff shorts, oversized vintage graphic tee knotted at waist, brown leather slide sandals, woven friendship bracelets on wrist, warm bright beach town summer light, photorealistic, extremely detailed skin texture, sun-kissed natural look, raw photo, 8k resolution, professional fashion campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, vulgar, provocative, revealing, oversexualized, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "casual_summer-CS009",
+      "metadata": {
+        "title": "Sofia B",
+        "description": "Yellow smocked off-shoulder top, white wide-leg linen trousers, tan wedge sandals",
+        "category": "casual_summer"
+      },
+      "category": "casual_summer",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, soft curvy young woman, 23 years old, short curly dark brown bob haircut, dark brown expressive eyes, light olive skin, standing near table at charming outdoor brunch restaurant with hanging plants and string lights, one hand resting on back of wicker chair, warm inviting smile, wearing yellow smocked off-shoulder top, white wide-leg linen trousers, tan wedge sandals, small pearl stud earrings, soft dappled shade with warm summer light filtering through plants, photorealistic, extremely detailed skin texture, approachable and stylish, raw photo, 8k resolution, professional fashion campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, vulgar, provocative, revealing, oversexualized, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "casual_summer-CS010",
+      "metadata": {
+        "title": "Anya",
+        "description": "White linen midi dress with thin spaghetti straps, brown leather belt at waist, tan leather ankle boots",
+        "category": "casual_summer"
+      },
+      "category": "casual_summer",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, tall athletic lean young woman, 24 years old, long straight strawberry blonde hair, light green eyes, fair skin with light golden tan, walking through rows of blooming purple lavender field in Provence France, one hand gently touching lavender flowers, serene peaceful expression, wearing white linen midi dress with thin spaghetti straps, brown leather belt cinched at waist, tan leather ankle boots, simple gold pendant necklace, warm Provencal golden hour sunlight, endless lavender field stretching to hills, photorealistic, extremely detailed skin texture, ethereal summer beauty, raw photo, 8k resolution, professional fashion campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, vulgar, provocative, revealing, oversexualized, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "casual_summer-CS011",
+      "metadata": {
+        "title": "Luna",
+        "description": "Pastel pink pleated midi skirt, white fitted crop polo top, white chunky sneakers",
+        "category": "casual_summer"
+      },
+      "category": "casual_summer",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, petite curvy young woman, 20 years old, long black hair with blue-black sheen and slight natural wave, dark brown round eyes, warm light tan skin, standing on steps of modern art museum with striking geometric white architecture, looking up with hand shielding eyes from sun, cheerful curious expression, wearing pastel pink pleated midi skirt, white fitted crop polo top, white chunky sneakers, small backpack purse, bright clean architectural daylight with blue sky, photorealistic, extremely detailed skin texture, youthful and trendy, raw photo, 8k resolution, professional fashion campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, vulgar, provocative, revealing, oversexualized, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "casual_summer-CS012",
+      "metadata": {
+        "title": "Tatiana",
+        "description": "Rust orange linen jumpsuit with wide legs, thin brown leather belt, tan mules",
+        "category": "casual_summer"
+      },
+      "category": "casual_summer",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, slim hourglass young woman, 25 years old, medium length copper red hair in loose waves, blue eyes, light warm Eastern European skin, leaning casually on rustic wooden fence at vineyard terrace, ankles crossed, holding wide-brim straw hat at her side, relaxed elegant smile, wearing rust orange linen jumpsuit with wide legs, thin brown leather belt at waist, tan leather mules, simple gold hoop earrings, wine country rolling hills and grapevines in background, warm late afternoon Tuscan golden light, photorealistic, extremely detailed skin texture, effortlessly chic, raw photo, 8k resolution, professional fashion campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, vulgar, provocative, revealing, oversexualized, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "intimates-IN001",
+      "metadata": {
+        "title": "Emma - Front - Bralette Set Blush",
+        "description": "Matching set",
+        "category": "intimates"
+      },
+      "category": "intimates",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, front view, slim toned young woman, 21 years old, long straight dark brown hair with center part perfectly sleek, fair warm skin, standing facing camera directly, relaxed natural pose, hands gently at sides, wearing a soft blush pink cotton bralette with thin straps and matching high-waist cotton bikini brief, premium ribbed cotton fabric texture visible, clean white studio background, soft diffused natural window light from the side, gentle shadows, skin looks natural and luminous, perfectly groomed hair, delicate and elegant mood, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium intimates campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, vulgar, harsh lighting, messy hair, wrinkled fabric, cheap fabric, shiny synthetic material, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "intimates-IN002",
+      "metadata": {
+        "title": "Emma - Side - Bralette Set Blush",
+        "description": "Matching set",
+        "category": "intimates"
+      },
+      "category": "intimates",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, side profile view, slim toned young woman, 21 years old, long straight dark brown hair with center part perfectly sleek, fair warm skin, standing in side profile facing left, arms relaxed, wearing a soft blush pink cotton bralette with thin straps and matching high-waist cotton bikini brief, premium ribbed cotton fabric texture visible, clean white studio background, soft diffused natural window light, gentle shadows accentuating body silhouette, skin looks natural and luminous, perfectly groomed hair, delicate and elegant mood, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium intimates campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, vulgar, harsh lighting, messy hair, wrinkled fabric, cheap fabric, shiny synthetic material, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "intimates-IN003",
+      "metadata": {
+        "title": "Emma - Back - Bralette Set Blush",
+        "description": "Matching set",
+        "category": "intimates"
+      },
+      "category": "intimates",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, back view from behind, slim toned young woman, 21 years old, long straight dark brown hair falling down her back perfectly sleek, fair warm skin, standing with back to camera, slight natural curve in spine, wearing a soft blush pink cotton bralette visible from back straps and matching high-waist cotton bikini brief, premium ribbed cotton fabric texture visible, clean white studio background, soft diffused natural window light, gentle shadows, skin looks natural and luminous, perfectly groomed hair, delicate and elegant mood, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium intimates campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, vulgar, harsh lighting, messy hair, wrinkled fabric, cheap fabric, shiny synthetic material, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "intimates-IN004",
+      "metadata": {
+        "title": "Lina - Front - Triangle Bra Set Sage",
+        "description": "Matching set",
+        "category": "intimates"
+      },
+      "category": "intimates",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, front view, athletic lean young woman, 23 years old, medium wavy honey blonde hair with soft layers perfectly styled, light golden tan skin, standing facing camera, one hand lightly touching hip, subtle confident smile, wearing a sage green cotton triangle bralette with adjustable straps and matching sage green cotton mid-rise hipster brief, soft matte cotton fabric, clean cream studio background, soft warm natural window light, gentle even lighting, skin looks healthy and sun-kissed, perfectly styled effortless hair, refined and youthful mood, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium intimates campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, vulgar, harsh lighting, messy hair, wrinkled fabric, cheap fabric, shiny synthetic material, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "intimates-IN005",
+      "metadata": {
+        "title": "Lina - Side - Triangle Bra Set Sage",
+        "description": "Matching set",
+        "category": "intimates"
+      },
+      "category": "intimates",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, side profile view, athletic lean young woman, 23 years old, medium wavy honey blonde hair with soft layers perfectly styled, light golden tan skin, standing in side profile facing right, one arm relaxed other slightly bent, wearing a sage green cotton triangle bralette and matching sage green cotton mid-rise hipster brief, soft matte cotton fabric, clean cream studio background, soft warm natural window light from behind, rim light on body, skin looks healthy and sun-kissed, perfectly styled effortless hair, refined and youthful mood, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium intimates campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, vulgar, harsh lighting, messy hair, wrinkled fabric, cheap fabric, shiny synthetic material, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "intimates-IN006",
+      "metadata": {
+        "title": "Lina - Back - Triangle Bra Set Sage",
+        "description": "Matching set",
+        "category": "intimates"
+      },
+      "category": "intimates",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, back view from behind, athletic lean young woman, 23 years old, medium wavy honey blonde hair falling over one shoulder perfectly styled, light golden tan skin, standing with back to camera, looking slightly over left shoulder, wearing a sage green cotton triangle bralette back straps visible and matching sage green cotton mid-rise hipster brief, soft matte cotton fabric, clean cream studio background, soft warm natural window light, skin looks healthy and sun-kissed, perfectly styled effortless hair, refined and youthful mood, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium intimates campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, vulgar, harsh lighting, messy hair, wrinkled fabric, cheap fabric, shiny synthetic material, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "intimates-IN007",
+      "metadata": {
+        "title": "Mira - Front - Cotton Pyjama Set Lavender",
+        "description": "Pyjama set",
+        "category": "intimates"
+      },
+      "category": "intimates",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, front view, soft curvy young woman, 22 years old, long loose curls dark auburn hair with side part perfectly styled, light olive warm skin, standing in bright airy bedroom, relaxed cozy pose, soft natural smile, wearing a lavender cotton pyjama set consisting of a button-front short sleeve top and matching lavender cotton drawstring shorts, soft brushed cotton fabric, bright white bedroom with linen bedding and natural wood accents, soft morning window light streaming in, warm cozy intimate mood, skin looks rested and natural, perfectly tousled curls, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium sleepwear campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, vulgar, harsh lighting, messy hair, wrinkled fabric, cheap fabric, shiny synthetic material, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "intimates-IN008",
+      "metadata": {
+        "title": "Mira - Side - Cotton Pyjama Set Lavender",
+        "description": "Pyjama set",
+        "category": "intimates"
+      },
+      "category": "intimates",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, side profile view, soft curvy young woman, 22 years old, long loose curls dark auburn hair with side part perfectly styled, light olive warm skin, standing in side profile in bright airy bedroom, holding a coffee mug in both hands near chest, gentle morning expression, wearing a lavender cotton pyjama set consisting of a button-front short sleeve top and matching lavender cotton drawstring shorts, soft brushed cotton fabric, bright white bedroom with soft curtains, soft morning window light, warm cozy intimate mood, skin looks rested and natural, perfectly tousled curls, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium sleepwear campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, vulgar, harsh lighting, messy hair, wrinkled fabric, cheap fabric, shiny synthetic material, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "intimates-IN009",
+      "metadata": {
+        "title": "Sophie - Front - Wireless Bra Set White",
+        "description": "Everyday bra set",
+        "category": "intimates"
+      },
+      "category": "intimates",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, front view, petite slim young woman, 20 years old, straight platinum blonde bob blunt cut above shoulders perfectly styled, porcelain fair Nordic skin, standing facing camera, arms at sides, serene minimalist expression, wearing a pure white cotton wireless scoop-neck bra with wide comfortable straps and matching white cotton high-cut brief, premium soft cotton fabric, clean light grey studio background, soft flat even studio lighting, ultra clean minimal aesthetic, skin looks porcelain smooth and natural, perfectly cut hair, Scandinavian minimalist mood, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium intimates campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, vulgar, harsh lighting, messy hair, wrinkled fabric, cheap fabric, shiny synthetic material, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "intimates-IN010",
+      "metadata": {
+        "title": "Sophie - Back - Wireless Bra Set White",
+        "description": "Everyday bra set",
+        "category": "intimates"
+      },
+      "category": "intimates",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, back view from behind, petite slim young woman, 20 years old, straight platinum blonde bob blunt cut above shoulders perfectly styled, porcelain fair Nordic skin, standing with back to camera, hands clasped gently behind lower back, wearing a pure white cotton wireless scoop-neck bra with wide back band and matching white cotton high-cut brief, premium soft cotton fabric, clean light grey studio background, soft flat even studio lighting, ultra clean minimal aesthetic, skin looks porcelain smooth and natural, perfectly cut hair showing nape of neck, Scandinavian minimalist mood, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium intimates campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, vulgar, harsh lighting, messy hair, wrinkled fabric, cheap fabric, shiny synthetic material, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "intimates-IN011",
+      "metadata": {
+        "title": "Aria - Front - Cotton Bikini Set Dusty Rose",
+        "description": "Cotton bikini set",
+        "category": "intimates"
+      },
+      "category": "intimates",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, front view, average healthy build young woman, 24 years old, long straight black silky hair with middle part perfectly sleek, medium warm tan skin, standing facing camera, natural relaxed pose, thumbs lightly hooked in waistband, wearing a dusty rose cotton scoop bralette and matching dusty rose cotton bikini bottom with thin elastic waistband, soft matte cotton, clean white studio background, soft natural diffused light, skin looks healthy and warm, perfectly groomed sleek hair, soft romantic yet modern mood, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium intimates campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, vulgar, harsh lighting, messy hair, wrinkled fabric, cheap fabric, shiny synthetic material, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "intimates-IN012",
+      "metadata": {
+        "title": "Aria - Three Quarter - Cotton Bikini Set Dusty Rose",
+        "description": "Cotton bikini set",
+        "category": "intimates"
+      },
+      "category": "intimates",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, three quarter angle view, average healthy build young woman, 24 years old, long straight black silky hair with middle part perfectly sleek, medium warm tan skin, standing at three quarter angle, one hand touching hair, gentle confident look, wearing a dusty rose cotton scoop bralette and matching dusty rose cotton bikini bottom with thin elastic waistband, soft matte cotton, clean white studio background, soft natural diffused light with gentle shadows, skin looks healthy and warm, perfectly groomed sleek hair, soft romantic yet modern mood, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium intimates campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, vulgar, harsh lighting, messy hair, wrinkled fabric, cheap fabric, shiny synthetic material, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "young_fashion-YF001",
+      "metadata": {
+        "title": "Lily - Summer Dress White",
+        "description": "Summer",
+        "category": "young_fashion"
+      },
+      "category": "young_fashion",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, slim teenage girl, 16 years old, long straight light brown hair in half up half down style with delicate white ribbon, fair soft skin, standing on sun-drenched Mediterranean white terrace with blue sky, hands clasped in front, gentle sweet smile, wearing a pure white cotton A-line mini dress with subtle eyelet embroidery detail, white leather platform sandals, small pearl stud earrings, clean bright summer daylight, premium fabric texture visible, hair perfectly styled and glossy, fresh youthful elegance, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium youth fashion campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy hair, wrinkled clothes, cheap fabric, dark colors, red, black, orange, yellow, green, brown, neon colors, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "young_fashion-YF002",
+      "metadata": {
+        "title": "Valentina - Sport Set Pink",
+        "description": "Sportswear",
+        "category": "young_fashion"
+      },
+      "category": "young_fashion",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, athletic toned young woman, 19 years old, long dark blonde hair in sleek high ponytail with perfect baby hairs, light golden skin, standing in modern minimalist white gym studio, one hand on hip confident pose, wearing a soft pink matching athletic set consisting of ribbed crop sports bra and high-waist biker shorts in soft pink, white training shoes, minimal gold chain necklace, clean bright studio light with soft shadows, premium technical fabric texture visible, hair immaculately styled, sporty chic premium mood, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium youth fashion campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy hair, wrinkled clothes, cheap fabric, dark colors, red, black, orange, yellow, green, brown, neon colors, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "young_fashion-YF003",
+      "metadata": {
+        "title": "Clara - Urban Outfit Celeste",
+        "description": "Urban",
+        "category": "young_fashion"
+      },
+      "category": "young_fashion",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, slim tall young woman, 22 years old, medium length layered blonde hair with curtain bangs in perfect salon blowout, fair skin with pink undertone, walking on clean modern city sidewalk, mid-stride natural movement, wearing light blue oversized linen button-down shirt tucked into white high-waist wide-leg trousers, white leather loafers, small white crossbody bag, delicate silver bracelet, bright clean urban daylight, crisp blue sky, hair perfectly bouncing with movement, elevated effortless urban style, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium youth fashion campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy hair, wrinkled clothes, cheap fabric, dark colors, red, black, orange, yellow, green, brown, neon colors, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "young_fashion-YF004",
+      "metadata": {
+        "title": "Nina - Elegant Lilac",
+        "description": "Elegant",
+        "category": "young_fashion"
+      },
+      "category": "young_fashion",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, slim hourglass young woman, 24 years old, long wavy dark brown hair with side part in perfect Hollywood waves, light olive Mediterranean skin, standing in elegant white marble interior with arched doorway, one hand lightly touching arm, composed graceful pose, wearing a lilac satin midi slip dress with delicate spaghetti straps, white strappy kitten heels, small pearl drop earrings, soft warm interior window light with gentle shadows, hair perfectly styled and shiny, refined feminine elegance, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium youth fashion campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy hair, wrinkled clothes, cheap fabric, dark colors, red, black, orange, yellow, green, brown, neon colors, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "young_fashion-YF005",
+      "metadata": {
+        "title": "Mika - Summer Shorts White Pink",
+        "description": "Summer",
+        "category": "young_fashion"
+      },
+      "category": "young_fashion",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, slim young teenage girl, 14 years old, long straight black silky hair in two neat low braids, light warm skin, standing in bright sunlit garden with white flowers, hands in pockets, cheerful bright smile, wearing white cotton shorts with drawstring waist and a soft pink cotton crew neck t-shirt, white canvas slip-on shoes, small friendship bracelet, bright clean summer garden light, lush green and white flower background, hair perfectly braided and neat, youthful innocent freshness, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium youth fashion campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy hair, wrinkled clothes, cheap fabric, dark colors, red, black, orange, yellow, green, brown, neon colors, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "young_fashion-YF006",
+      "metadata": {
+        "title": "Astrid - Sport Celeste",
+        "description": "Sportswear",
+        "category": "young_fashion"
+      },
+      "category": "young_fashion",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, athletic slim teenage girl, 17 years old, medium strawberry blonde hair in perfectly messy high bun with loose face-framing pieces, fair Nordic skin with cute freckles on cheeks and nose, standing on outdoor running track, holding water bottle, post-workout relaxed happy expression, wearing light blue racerback tank top and white running shorts with light blue stripe, white running shoes, small silver stud earrings, bright outdoor daylight with soft clouds, clean athletic facility background, hair perfectly arranged in effortless messy style, fresh sporty youth energy, photorealistic, extremely detailed skin texture, visible freckles, extremely detailed fabric texture, raw photo, 8k resolution, professional premium youth fashion campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy hair, wrinkled clothes, cheap fabric, dark colors, red, black, orange, yellow, green, brown, neon colors, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "young_fashion-YF007",
+      "metadata": {
+        "title": "Isabelle - Urban Lilac White",
+        "description": "Urban",
+        "category": "young_fashion"
+      },
+      "category": "young_fashion",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, average healthy build young woman, 20 years old, long auburn red hair straight with slight bend at ends and center part perfectly styled, fair skin with warm undertone, leaning against clean white wall on modern street, one knee bent foot on wall, arms crossed casually, cool confident expression, wearing lilac oversized hoodie and white pleated tennis skirt, white chunky platform sneakers, small white tote bag, delicate layered necklaces, bright overcast even daylight, clean minimalist urban background, hair perfectly smooth and glossy, modern street style premium mood, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium youth fashion campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy hair, wrinkled clothes, cheap fabric, dark colors, red, black, orange, yellow, green, brown, neon colors, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "young_fashion-YF008",
+      "metadata": {
+        "title": "Sofia - Elegant Pink White",
+        "description": "Elegant",
+        "category": "young_fashion"
+      },
+      "category": "young_fashion",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, slim toned young woman, 26 years old, long platinum blonde hair in sleek low bun with clean center part, porcelain fair skin, standing in bright modern gallery space with white walls, poised elegant stance, one arm at side other holding small white clutch bag, wearing a soft pink tailored blazer with no lapel over white silk camisole and white tailored cigarette pants, white pointed kitten heels, minimalist silver ring, soft even gallery lighting, hair immaculately styled, sophisticated modern femininity, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium youth fashion campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy hair, wrinkled clothes, cheap fabric, dark colors, red, black, orange, yellow, green, brown, neon colors, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "young_fashion-YF009",
+      "metadata": {
+        "title": "Zoe - Summer Celeste Beach",
+        "description": "Summer",
+        "category": "young_fashion"
+      },
+      "category": "young_fashion",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, slim teenage girl, 15 years old, long wavy sun-bleached light brown hair with natural beach waves perfectly tousled, light tan sun-kissed skin, standing on pristine white sand beach, wind gently blowing hair, bright natural smile, wearing a light blue cotton wrap top with tie at waist and white cotton flowy midi skirt, white leather flat sandals, small shell pendant necklace, bright sunny beach day with blue sky and gentle waves, hair perfectly tousled by wind, carefree summer youth beauty, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium youth fashion campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy hair, wrinkled clothes, cheap fabric, dark colors, red, black, orange, yellow, green, brown, neon colors, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "young_fashion-YF010",
+      "metadata": {
+        "title": "Ava - Sport Set Lilac",
+        "description": "Sportswear",
+        "category": "young_fashion"
+      },
+      "category": "young_fashion",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, curvy athletic young woman, 21 years old, long dark brown straight hair in slicked back low ponytail perfectly smooth, medium warm tan skin, standing in bright minimalist yoga studio with white walls and natural wood floor, balanced centered pose, calm focused expression, wearing lilac seamless high-neck sports bra and matching lilac high-waist leggings, white training shoes, small pearl stud earrings, soft natural studio light from large windows, hair immaculately slicked, premium athleisure elegance, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium youth fashion campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy hair, wrinkled clothes, cheap fabric, dark colors, red, black, orange, yellow, green, brown, neon colors, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "young_fashion-YF011",
+      "metadata": {
+        "title": "Lea - Urban White Total Look",
+        "description": "Urban",
+        "category": "young_fashion"
+      },
+      "category": "young_fashion",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, slim tall teenage girl, 18 years old, medium curly light brown hair with voluminous defined curls perfectly styled, light caramel warm skin, walking on clean modern pedestrian street, dynamic natural mid-stride pose, joyful confident expression, wearing all white outfit consisting of white cropped zip-up hoodie and white cargo jogger pants, white chunky sneakers, small white shoulder bag, thin gold hoop earrings, bright clean urban daylight with blue sky, modern clean architecture background, curls bouncing with movement perfectly defined, fresh urban youth energy, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium youth fashion campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy hair, wrinkled clothes, cheap fabric, dark colors, red, black, orange, yellow, green, brown, neon colors, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "young_fashion-YF012",
+      "metadata": {
+        "title": "Emma R - Elegant Celeste White",
+        "description": "Elegant",
+        "category": "young_fashion"
+      },
+      "category": "young_fashion",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, slim lean young woman, 25 years old, long honey brown hair in soft loose waves with side part perfectly styled, light golden warm European skin, standing on white stone balcony overlooking blue sea, wind gently in hair, serene poised expression, wearing a light blue silk midi wrap dress with flutter sleeves and white kitten heel mules, small white leather handbag, delicate gold pendant necklace, warm Mediterranean golden hour light, blue sea and sky background, hair perfectly flowing and glossy, timeless coastal elegance, photorealistic, extremely detailed skin texture, extremely detailed fabric texture, raw photo, 8k resolution, professional premium youth fashion campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy hair, wrinkled clothes, cheap fabric, dark colors, red, black, orange, yellow, green, brown, neon colors, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "accessories-AC001",
+      "metadata": {
+        "title": "Diana - Structured Tote Tan",
+        "description": "Structured leather tote bag, tan cognac",
+        "category": "accessories"
+      },
+      "category": "accessories",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, slim tall young woman, 25 years old, long straight dark brown hair in sleek blowout, light olive warm skin, standing on clean modern city sidewalk, one hand holding a structured tan cognac leather tote bag by the handles at her side, other arm relaxed, composed elegant expression, wearing a tailored cream wool coat over white silk blouse and black tailored trousers, black pointed-toe heels, the leather tote bag is the hero product with visible stitching and premium grain texture, bright clean daylight, modern architecture background, hair perfectly styled and glossy, photorealistic, extremely detailed leather texture on bag, extremely detailed skin texture, raw photo, 8k resolution, professional luxury accessories campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy hair, wrinkled clothes, cheap leather, fake leather, shiny plastic, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "accessories-AC002",
+      "metadata": {
+        "title": "Natasha - Crossbody Bag Black",
+        "description": "Small crossbody bag, black leather, gold chain strap",
+        "category": "accessories"
+      },
+      "category": "accessories",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, athletic lean young woman, 23 years old, medium wavy caramel blonde hair with soft layers perfectly styled, fair golden skin, walking through elegant European shopping arcade with marble floors, mid-stride dynamic pose, wearing a fitted black turtleneck dress to knee length, black ankle boots, wearing a small black leather crossbody bag with delicate gold chain strap across body, the bag sits at hip level as hero product with visible premium leather texture and gold hardware, warm interior arcade lighting, photorealistic, extremely detailed leather texture on bag, extremely detailed skin texture, raw photo, 8k resolution, professional luxury accessories campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy hair, wrinkled clothes, cheap leather, fake leather, shiny plastic, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "accessories-AC003",
+      "metadata": {
+        "title": "Camille - Leather Backpack Burgundy",
+        "description": "Mini leather backpack, burgundy",
+        "category": "accessories"
+      },
+      "category": "accessories",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, slim petite young woman, 21 years old, long dark auburn hair in elegant low messy bun with face-framing pieces, fair skin with light freckles, standing at entrance of university library with stone columns, relaxed intellectual pose, gentle confident smile, wearing oversized beige cashmere sweater over white collared shirt, dark navy trousers, white leather loafers, wearing a burgundy leather mini backpack on both shoulders as hero product with visible premium pebbled leather texture and gold zipper details, soft overcast academic daylight, photorealistic, extremely detailed leather texture on backpack, extremely detailed skin texture, raw photo, 8k resolution, professional luxury accessories campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy hair, wrinkled clothes, cheap leather, fake leather, shiny plastic, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "accessories-AC004",
+      "metadata": {
+        "title": "Helena - Wide Belt Camel",
+        "description": "Wide leather waist belt, camel, gold buckle",
+        "category": "accessories"
+      },
+      "category": "accessories",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, slim hourglass young woman, 27 years old, long straight jet black hair with center part ultra sleek and shiny, light warm Mediterranean skin, standing in bright modern loft apartment with white brick walls, hands at sides showing the belt clearly, poised elegant stance, wearing a loose white oversized button-down shirt dress cinched at the waist with a wide camel leather belt with brushed gold square buckle as hero product, nude pointed heels, the belt is clearly visible showing premium leather grain and gold hardware, soft natural loft window light, photorealistic, extremely detailed leather texture on belt, extremely detailed skin texture, raw photo, 8k resolution, professional luxury accessories campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy hair, wrinkled clothes, cheap leather, fake leather, shiny plastic, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "accessories-AC005",
+      "metadata": {
+        "title": "Vera - Saddle Bag Olive",
+        "description": "Saddle bag, olive green leather, shoulder strap",
+        "category": "accessories"
+      },
+      "category": "accessories",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, average healthy build young woman, 24 years old, medium length honey brown hair in loose waves with side part perfectly styled, warm beige skin, standing at outdoor cafe terrace in European city, one hand on hip other touching the bag strap, casual chic relaxed expression, wearing a white ribbed knit top tucked into camel high-waist straight trousers, tan suede ankle boots, an olive green leather saddle bag hanging from shoulder as hero product with visible hand-stitched details and premium leather patina, warm golden afternoon light, photorealistic, extremely detailed leather texture on bag, extremely detailed skin texture, raw photo, 8k resolution, professional luxury accessories campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy hair, wrinkled clothes, cheap leather, fake leather, shiny plastic, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "accessories-AC006",
+      "metadata": {
+        "title": "Lara - Clutch and Belt Set Black Gold",
+        "description": "Leather envelope clutch black + thin leather belt black with gold",
+        "category": "accessories"
+      },
+      "category": "accessories",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, slim toned young woman, 26 years old, long platinum blonde straight hair tucked behind ears showing gold drop earrings, porcelain Nordic skin, standing in modern art gallery with white walls, holding a black leather envelope clutch in one hand at her side, composed editorial pose, wearing a white fitted blazer over white camisole, black tailored high-waist cigarette pants with a thin black leather belt with small gold buckle, black pointed pumps, both the clutch and belt are hero products showing premium smooth calfskin leather and gold hardware details, soft even gallery lighting, photorealistic, extremely detailed leather texture on clutch and belt, extremely detailed skin texture, raw photo, 8k resolution, professional luxury accessories campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy hair, wrinkled clothes, cheap leather, fake leather, shiny plastic, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "accessories-AC007",
+      "metadata": {
+        "title": "Aisha - Bucket Bag Cream",
+        "description": "Leather bucket bag, cream, drawstring",
+        "category": "accessories"
+      },
+      "category": "accessories",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, curvy soft young woman, 22 years old, long dark brown wavy hair in voluminous blowout perfectly styled, medium warm brown skin, standing on bright white Mediterranean staircase with blue door, relaxed joyful smile, wearing a flowing white linen maxi dress with thin straps, tan leather flat sandals, carrying a cream leather bucket bag with drawstring closure on one shoulder as hero product with visible soft pebbled leather texture and tan leather drawstring details, bright Mediterranean summer sunlight, photorealistic, extremely detailed leather texture on bag, extremely detailed skin texture, raw photo, 8k resolution, professional luxury accessories campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy hair, wrinkled clothes, cheap leather, fake leather, shiny plastic, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "accessories-AC008",
+      "metadata": {
+        "title": "Elsa - Leather Woven Belt Brown",
+        "description": "Woven leather belt, warm brown, brass buckle",
+        "category": "accessories"
+      },
+      "category": "accessories",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, slim young woman, 19 years old, medium straight sandy blonde hair with center part tucked behind ears, fair Scandinavian skin, standing in bright airy boutique store with wooden shelves, relaxed natural pose thumbs hooked on belt, wearing a white oversized linen shirt tucked loosely into light wash straight-leg jeans, the warm brown woven leather belt with aged brass buckle is clearly visible at waist as hero product showing intricate woven leather strips, white canvas sneakers, minimal jewelry, soft boutique interior lighting, photorealistic, extremely detailed woven leather texture on belt, extremely detailed skin texture, raw photo, 8k resolution, professional luxury accessories campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy hair, wrinkled clothes, cheap leather, fake leather, shiny plastic, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "executive_gym-EG001",
+      "metadata": {
+        "title": "Victoria - Squats Front View",
+        "description": "Barbell squats",
+        "category": "executive_gym"
+      },
+      "category": "executive_gym",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, front view, toned athletic woman, 32 years old, long dark brown hair in sleek high ponytail, light olive skin, performing barbell back squat at bottom position with perfect form, thighs parallel to floor, barbell across upper back, focused determined expression, wearing black premium compression leggings and white seamless sports bra, white training shoes, in luxurious modern gym with dark floors and clean equipment, dramatic focused lighting, defined muscles visible on legs and arms, hair perfectly tied without flyaways, photorealistic, extremely detailed skin texture, detailed muscle definition, raw photo, 8k resolution, professional premium fitness campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy gym, dirty equipment, sweat stains, cheap fabric, men, male, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "executive_gym-EG002",
+      "metadata": {
+        "title": "Alexandra - Squats Side View",
+        "description": "Goblet squats",
+        "category": "executive_gym"
+      },
+      "category": "executive_gym",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, side profile view, slim toned woman, 29 years old, medium blonde hair in perfect French braid, fair warm skin, performing goblet squat holding dumbbell at chest level, deep squat with excellent form viewed from the side, focused expression, wearing charcoal grey premium high-waist leggings and matching charcoal grey racerback tank, grey training shoes, in bright modern boutique gym with floor-to-ceiling windows and natural light, muscle engagement visible in legs, hair perfectly braided, photorealistic, extremely detailed skin texture, raw photo, 8k resolution, professional premium fitness campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy gym, dirty equipment, sweat stains, cheap fabric, men, male, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "executive_gym-EG003",
+      "metadata": {
+        "title": "Monica - Stationary Bike",
+        "description": "Stationary cycling",
+        "category": "executive_gym"
+      },
+      "category": "executive_gym",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, three quarter view, athletic lean woman, 35 years old, short dark pixie cut perfectly styled, rich warm brown glowing skin, riding a premium stationary bike in spin class position, standing on pedals leaning forward on handlebars, intense focused expression, wearing deep navy premium cycling shorts and white performance crop top, cycling shoes, in sleek dark premium spin studio with moody purple accent lighting, sweat glistening on skin, defined arm and leg muscles, hair perfectly styled even while cycling, photorealistic, extremely detailed skin texture, raw photo, 8k resolution, professional premium fitness campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy gym, dirty equipment, sweat stains, cheap fabric, men, male, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "executive_gym-EG004",
+      "metadata": {
+        "title": "Catherine - Stretching Front",
+        "description": "Standing quad stretch",
+        "category": "executive_gym"
+      },
+      "category": "executive_gym",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, front view, flexible toned woman, 30 years old, long auburn red hair in elegant low bun, fair skin with light freckles, performing standing quad stretch pulling right foot behind to glutes with right hand, left arm extended for balance, graceful balanced pose, wearing dusty rose premium leggings and matching dusty rose longline sports bra, barefoot on dark yoga mat, in bright serene stretching area with white walls and bamboo accents, soft natural light, lean flexible physique visible, hair perfectly in bun with no flyaways, photorealistic, extremely detailed skin texture, raw photo, 8k resolution, professional premium fitness campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy gym, dirty equipment, sweat stains, cheap fabric, men, male, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "executive_gym-EG005",
+      "metadata": {
+        "title": "Catherine - Stretching Back View",
+        "description": "Standing forward fold",
+        "category": "executive_gym"
+      },
+      "category": "executive_gym",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, back view from behind, flexible toned woman, 30 years old, long auburn red hair in elegant low bun visible from back, fair skin with light freckles on shoulders, performing standing forward fold stretch, bending at waist with straight legs, hands touching floor, back muscles and hamstrings engaged, wearing dusty rose premium leggings and matching dusty rose longline sports bra, barefoot on dark yoga mat, in bright serene stretching area with white walls and bamboo accents, soft natural light, back muscles and spine visible, photorealistic, extremely detailed skin texture, raw photo, 8k resolution, professional premium fitness campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy gym, dirty equipment, sweat stains, cheap fabric, men, male, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "executive_gym-EG006",
+      "metadata": {
+        "title": "Sophia - Seated Cable Row",
+        "description": "Seated cable row",
+        "category": "executive_gym"
+      },
+      "category": "executive_gym",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, front three quarter view, strong athletic woman, 28 years old, long dark brown hair in sleek braid draped over one shoulder, medium olive skin, performing seated cable row at cable machine, seated on bench legs extended bracing on foot plates, pulling handle toward lower chest with engaged back muscles, determined focused expression, wearing black premium leggings and olive green fitted performance tank, training shoes, in premium modern gym with clean dark equipment, focused directional lighting, visible arm and back muscle engagement, hair perfectly braided, photorealistic, extremely detailed skin texture, detailed muscle definition, raw photo, 8k resolution, professional premium fitness campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy gym, dirty equipment, sweat stains, cheap fabric, men, male, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "executive_gym-EG007",
+      "metadata": {
+        "title": "Elena - Deadlift",
+        "description": "Romanian deadlift",
+        "category": "executive_gym"
+      },
+      "category": "executive_gym",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, side view, strong curvy woman, 31 years old, medium wavy dark blonde hair in neat high bun, light tan warm skin, performing Romanian deadlift with barbell at mid-shin level, hinging at hips with slight knee bend, back flat and straight viewed from side, focused downward gaze, wearing burgundy premium high-waist leggings and white fitted crop tank, training shoes, lifting gloves, in well-equipped premium gym with rubber flooring and clean racks, bright even gym lighting, glutes and hamstring engagement visible, hair perfectly in bun, photorealistic, extremely detailed skin texture, detailed muscle definition, raw photo, 8k resolution, professional premium fitness campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy gym, dirty equipment, sweat stains, cheap fabric, men, male, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "executive_gym-EG008",
+      "metadata": {
+        "title": "Isabelle - Floor Crunch",
+        "description": "Floor crunch",
+        "category": "executive_gym"
+      },
+      "category": "executive_gym",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, side view, toned slim woman, 27 years old, long platinum blonde hair in low ponytail, porcelain fair skin, lying on yoga mat performing crunch exercise, knees bent feet flat on floor, upper body curled up with hands behind head, abs engaged and defined, focused expression, wearing white premium high-waist leggings and light grey seamless sports bra, barefoot, in bright premium studio with white floor and soft natural light from large windows, clean minimal aesthetic, visible abdominal muscle engagement, hair neatly in ponytail, photorealistic, extremely detailed skin texture, raw photo, 8k resolution, professional premium fitness campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy gym, dirty equipment, sweat stains, cheap fabric, men, male, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "executive_gym-EG009",
+      "metadata": {
+        "title": "Maria - Yoga Warrior Pose",
+        "description": "Warrior III balance",
+        "category": "executive_gym"
+      },
+      "category": "executive_gym",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, side view, lean flexible woman, 33 years old, long black straight hair flowing loose, medium warm tan skin, performing warrior III yoga pose balancing on left leg with right leg extended straight behind parallel to floor, arms extended forward, body forming a T-shape viewed from the side, serene focused expression, wearing sage green premium leggings and matching sage green sports bra, barefoot on premium black yoga mat, in bright luxurious yoga studio with white walls and large windows overlooking garden, soft morning light, incredible balance and form, hair flowing behind with the pose, photorealistic, extremely detailed skin texture, raw photo, 8k resolution, professional premium fitness campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy gym, dirty equipment, sweat stains, cheap fabric, men, male, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "executive_gym-EG010",
+      "metadata": {
+        "title": "Laura - Lunge Front View",
+        "description": "Walking lunge with dumbbells",
+        "category": "executive_gym"
+      },
+      "category": "executive_gym",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, front view, athletic curvy woman, 29 years old, medium curly brown hair in high ponytail with volume, light caramel skin, performing walking lunge with dumbbells at sides, front knee at 90 degrees back knee nearly touching floor, upright torso, strong determined expression, wearing navy blue premium high-waist leggings and white performance crop top, training shoes, in spacious premium gym with clean modern equipment in background, bright professional gym lighting, quad and glute muscles engaged and defined, curly ponytail perfectly bouncy, photorealistic, extremely detailed skin texture, detailed muscle definition, raw photo, 8k resolution, professional premium fitness campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy gym, dirty equipment, sweat stains, cheap fabric, men, male, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "executive_gym-EG011",
+      "metadata": {
+        "title": "Francesca - TRX Row",
+        "description": "TRX suspension row",
+        "category": "executive_gym"
+      },
+      "category": "executive_gym",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, side view, toned athletic woman, 34 years old, long dark brown hair sleek with middle part tucked behind ears, light Mediterranean olive skin, performing TRX suspension row leaning back holding TRX handles with arms extended then pulling body forward, body at diagonal angle feet planted, engaged back muscles, intense focused expression, wearing all black premium leggings and black fitted performance tank, training shoes, in premium functional training area with TRX straps anchored to ceiling, clean industrial-chic gym aesthetic, defined arms and back, photorealistic, extremely detailed skin texture, raw photo, 8k resolution, professional premium fitness campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy gym, dirty equipment, sweat stains, cheap fabric, men, male, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "executive_gym-EG012",
+      "metadata": {
+        "title": "Anna - Post-Workout Standing",
+        "description": "Post-workout rest, drinking water",
+        "category": "executive_gym"
+      },
+      "category": "executive_gym",
+      "workflow_type": "t2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "Full body portrait, three quarter view, toned slim woman, 30 years old, long honey blonde hair in half up style with elegant claw clip, fair warm golden skin, standing in premium gym locker area, one hand holding stainless steel water bottle drinking, other hand on hip, relaxed accomplished post-workout expression, light perspiration glow on skin, wearing white premium matching set of high-waist leggings and longline sports bra with mesh panel details, white training shoes, premium gym towel draped over one shoulder, bright clean modern locker room with wooden lockers and marble accents, soft flattering lighting, toned physique visible, hair perfectly styled despite workout, photorealistic, extremely detailed skin texture, raw photo, 8k resolution, professional premium fitness campaign photography, full body visible head to toe, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy gym, dirty equipment, sweat stains, cheap fabric, men, male, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "CL01",
+      "metadata": {
+        "title": "Walking city streets",
+        "description": "Walking city streets",
+        "category": "casual_lifestyle"
+      },
+      "category": "casual_lifestyle",
+      "workflow_type": "i2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "The same woman walking down a vibrant city street, mid-stride dynamic pose, wearing ripped boyfriend jeans and a white oversized t-shirt, white sneakers, crossbody bag, hair flowing with movement, same face same eyes same skin, shop windows and pedestrians in background, natural street photography, photorealistic, full body head to toe, 8k, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, ugly, disfigured, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 8,
+          "cfg": 1.0,
+          "denoise": 0.72,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "CL02",
+      "metadata": {
+        "title": "Coffee shop",
+        "description": "Coffee shop",
+        "category": "casual_lifestyle"
+      },
+      "category": "casual_lifestyle",
+      "workflow_type": "i2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "The same woman sitting at a small round cafe table outdoors, legs crossed, holding a cappuccino cup with both hands, wearing a beige knit sweater and dark skinny jeans, ankle boots, same face same eyes same skin, cozy cafe terrace with plants, morning soft light, photorealistic, full body head to toe, 8k, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, ugly, disfigured, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 8,
+          "cfg": 1.0,
+          "denoise": 0.72,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "CL03",
+      "metadata": {
+        "title": "Shopping bags",
+        "description": "Shopping bags",
+        "category": "casual_lifestyle"
+      },
+      "category": "casual_lifestyle",
+      "workflow_type": "i2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "The same woman standing on sidewalk holding colorful shopping bags in both hands, happy excited expression, wearing a flowy midi skirt in dusty pink and a fitted white blouse, strappy sandals, same face same eyes same skin, luxury shopping district storefronts in background, bright afternoon, photorealistic, full body head to toe, 8k, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, ugly, disfigured, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 8,
+          "cfg": 1.0,
+          "denoise": 0.72,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "CL04",
+      "metadata": {
+        "title": "Sitting on bench reading",
+        "description": "Sitting on bench reading",
+        "category": "casual_lifestyle"
+      },
+      "category": "casual_lifestyle",
+      "workflow_type": "i2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "The same woman sitting on a wooden park bench, legs tucked to one side, reading a book, wearing a denim jacket over a floral dress, white canvas shoes, same face same eyes same skin, green park with trees and sunlight filtering through leaves, peaceful mood, photorealistic, full body head to toe, 8k, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, ugly, disfigured, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 8,
+          "cfg": 1.0,
+          "denoise": 0.72,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "CL05",
+      "metadata": {
+        "title": "Leaning on wall",
+        "description": "Leaning on wall",
+        "category": "casual_lifestyle"
+      },
+      "category": "casual_lifestyle",
+      "workflow_type": "i2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "The same woman leaning casually against a textured brick wall, one foot flat on the wall behind, arms crossed, wearing black leather jacket over white tee, dark jeans, black boots, same face same eyes same skin, urban alley with graffiti art, editorial street style, photorealistic, full body head to toe, 8k, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, ugly, disfigured, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 8,
+          "cfg": 1.0,
+          "denoise": 0.72,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "CL06",
+      "metadata": {
+        "title": "Crouching down",
+        "description": "Crouching down",
+        "category": "casual_lifestyle"
+      },
+      "category": "casual_lifestyle",
+      "workflow_type": "i2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "The same woman crouching down on her heels, knees together, reaching forward to pet a small dog, wearing a casual sundress in yellow, white sneakers, same face same eyes same skin, city park pathway, warm sunny day, photorealistic, full body head to toe, 8k, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, ugly, disfigured, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 8,
+          "cfg": 1.0,
+          "denoise": 0.72,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "BS01",
+      "metadata": {
+        "title": "Beach walking shoreline",
+        "description": "Beach walking shoreline",
+        "category": "beach_summer"
+      },
+      "category": "beach_summer",
+      "workflow_type": "i2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "The same woman walking along the beach shoreline, water touching her bare feet, wearing a flowing white beach cover-up over a turquoise bikini, carrying sandals in one hand, same face same eyes same skin, golden sunset light, waves and wet sand reflections, photorealistic, full body head to toe, 8k, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, ugly, disfigured, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 8,
+          "cfg": 1.0,
+          "denoise": 0.72,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "BS02",
+      "metadata": {
+        "title": "Pool lounging",
+        "description": "Pool lounging",
+        "category": "beach_summer"
+      },
+      "category": "beach_summer",
+      "workflow_type": "i2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "The same woman sitting on the edge of a turquoise infinity pool, legs dangling in water, leaning back on hands, wearing a coral one-piece swimsuit, sunglasses on head, same face same eyes same skin, tropical resort palm trees in background, bright midday sun, photorealistic, full body head to toe, 8k, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, ugly, disfigured, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 8,
+          "cfg": 1.0,
+          "denoise": 0.72,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "BS03",
+      "metadata": {
+        "title": "Beach lying down",
+        "description": "Beach lying down",
+        "category": "beach_summer"
+      },
+      "category": "beach_summer",
+      "workflow_type": "i2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "The same woman lying on a white beach towel on sand, propped up on elbows, looking at camera, wearing a black bikini, straw hat beside her, same face same eyes same skin, clear blue sky and ocean in background, warm sunlight, photorealistic, full body head to toe, 8k, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, ugly, disfigured, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 8,
+          "cfg": 1.0,
+          "denoise": 0.72,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "BS04",
+      "metadata": {
+        "title": "Looking at horizon",
+        "description": "Looking at horizon",
+        "category": "beach_summer"
+      },
+      "category": "beach_summer",
+      "workflow_type": "i2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "The same woman standing at the edge of a cliff overlooking the ocean, back slightly to camera, head turned to look at the horizon, wearing a loose white linen shirt and denim shorts, barefoot, same face same eyes same skin, dramatic ocean sunset with orange and pink sky, wind in hair, photorealistic, full body head to toe, 8k, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, ugly, disfigured, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 8,
+          "cfg": 1.0,
+          "denoise": 0.72,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "SA01",
+      "metadata": {
+        "title": "Yoga pose",
+        "description": "Yoga pose",
+        "category": "sports_active"
+      },
+      "category": "sports_active",
+      "workflow_type": "i2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "The same woman doing a warrior II yoga pose on a yoga mat in a serene garden, wearing black yoga leggings and a sage green sports bra, barefoot, focused calm expression, same face same eyes same skin, lush green garden with morning dew, soft natural light, photorealistic, full body head to toe, 8k, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, ugly, disfigured, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 8,
+          "cfg": 1.0,
+          "denoise": 0.72,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "SA02",
+      "metadata": {
+        "title": "Roller skating",
+        "description": "Roller skating",
+        "category": "sports_active"
+      },
+      "category": "sports_active",
+      "workflow_type": "i2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "The same woman roller skating on a boardwalk promenade, dynamic movement mid-stride, wearing high-waist denim shorts and a cropped pastel pink hoodie, white inline roller skates, same face same eyes same skin, palm-lined beachfront promenade, sunny day, motion and energy, photorealistic, full body head to toe, 8k, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, ugly, disfigured, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 8,
+          "cfg": 1.0,
+          "denoise": 0.72,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "SA03",
+      "metadata": {
+        "title": "Cycling",
+        "description": "Cycling",
+        "category": "sports_active"
+      },
+      "category": "sports_active",
+      "workflow_type": "i2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "The same woman riding a vintage pastel blue bicycle on a tree-lined path, wearing a white sundress and sneakers, basket with flowers on the handlebars, hair blowing in wind, same face same eyes same skin, dappled sunlight through trees, European countryside feel, photorealistic, full body head to toe, 8k, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, ugly, disfigured, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 8,
+          "cfg": 1.0,
+          "denoise": 0.72,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "SA04",
+      "metadata": {
+        "title": "Running in park",
+        "description": "Running in park",
+        "category": "sports_active"
+      },
+      "category": "sports_active",
+      "workflow_type": "i2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "The same woman jogging in a park, mid-stride captured in motion, wearing black running tights and a neon coral running top, running shoes, hair in ponytail bouncing, same face same eyes same skin, morning park path with trees, golden morning light, athletic energy, photorealistic, full body head to toe, 8k, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, ugly, disfigured, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 8,
+          "cfg": 1.0,
+          "denoise": 0.72,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "CA01",
+      "metadata": {
+        "title": "Side view walking",
+        "description": "Side view walking",
+        "category": "camera_angles"
+      },
+      "category": "camera_angles",
+      "workflow_type": "i2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "The same woman captured from the side in full profile, walking to the right, wearing a camel trench coat over black turtleneck and dark trousers, heels, same face same eyes same skin, clean minimalist urban background, side view 90 degrees, fashion editorial style, photorealistic, full body head to toe, 8k, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, ugly, disfigured, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 8,
+          "cfg": 1.0,
+          "denoise": 0.72,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "CA02",
+      "metadata": {
+        "title": "Back view looking over shoulder",
+        "description": "Back view looking over shoulder",
+        "category": "camera_angles"
+      },
+      "category": "camera_angles",
+      "workflow_type": "i2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "The same woman photographed from behind, looking over her right shoulder at camera, wearing a backless emerald green dress, heels, hair swept to one side, same face same eyes same skin, elegant marble staircase background, warm ambient lighting, photorealistic, full body head to toe, 8k, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, ugly, disfigured, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 8,
+          "cfg": 1.0,
+          "denoise": 0.72,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "CA03",
+      "metadata": {
+        "title": "Three quarter view",
+        "description": "Three quarter view",
+        "category": "camera_angles"
+      },
+      "category": "camera_angles",
+      "workflow_type": "i2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "The same woman standing at three quarter angle, one hand in pocket, relaxed confident pose, wearing a tailored light grey blazer suit with white sneakers, same face same eyes same skin, modern minimalist white gallery space, soft even lighting, fashion editorial, photorealistic, full body head to toe, 8k, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, ugly, disfigured, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 8,
+          "cfg": 1.0,
+          "denoise": 0.72,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "CA04",
+      "metadata": {
+        "title": "Low angle power shot",
+        "description": "Low angle power shot",
+        "category": "camera_angles"
+      },
+      "category": "camera_angles",
+      "workflow_type": "i2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "The same woman photographed from a low angle looking up, powerful stance with hands on hips, wearing a red power blazer and black fitted pants, pointed heels, same face same eyes same skin, dramatic sky with clouds behind, empowering editorial shot, photorealistic, full body head to toe, 8k, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, ugly, disfigured, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 8,
+          "cfg": 1.0,
+          "denoise": 0.72,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "EE01",
+      "metadata": {
+        "title": "Restaurant dinner",
+        "description": "Restaurant dinner",
+        "category": "evening_elegant"
+      },
+      "category": "evening_elegant",
+      "workflow_type": "i2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "The same woman sitting at an elegant restaurant table, one arm resting on table, holding wine glass, wearing a black off-shoulder cocktail dress, delicate gold jewelry, hair styled up, same face same eyes same skin, candlelit restaurant with warm ambient lighting, bokeh background, photorealistic, full body head to toe, 8k, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, ugly, disfigured, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 8,
+          "cfg": 1.0,
+          "denoise": 0.72,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    },
+    {
+      "id": "EE02",
+      "metadata": {
+        "title": "Rooftop evening",
+        "description": "Rooftop evening",
+        "category": "evening_elegant"
+      },
+      "category": "evening_elegant",
+      "workflow_type": "i2i",
+      "lora": null,
+      "workflow_params": {
+        "prompts": {
+          "positive": "The same woman standing on a rooftop terrace at twilight, leaning on glass railing, city lights twinkling behind, wearing a sleek silver satin slip dress and strappy heels, same face same eyes same skin, dramatic city skyline at blue hour, wind gently in hair, photorealistic, full body head to toe, 8k, vibrant natural colors, accurate color reproduction, neutral white balance",
+          "negative": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, ugly, disfigured, sepia, desaturated, muted colors, vintage filter, color cast, yellowed, faded colors"
+        },
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 8,
+          "cfg": 1.0,
+          "denoise": 0.72,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta"
+        }
+      }
+    }
+  ]
+}
