@@ -1,0 +1,129 @@
+{
+  "project": "i2i - Gimnasio Premium para Mujeres Ejecutivas",
+  "brand_style": "Ultra premium women-only executive gym, Equinox / Barry's Bootcamp / Alo Yoga aesthetic. Flawless women in premium activewear doing diverse exercises.",
+  "workflow": "workflow_t2i.json",
+  "negative_prompt_default": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy gym, dirty equipment, sweat stains, cheap fabric, men, male",
+
+  "models": [
+    {
+      "id": "EG001",
+      "name": "Victoria - Squats Front View",
+      "age": 32,
+      "body_type": "Toned athletic",
+      "hair": "Long dark brown, sleek high ponytail",
+      "skin": "Light olive",
+      "exercise": "Barbell squats",
+      "prompt": "Full body portrait, front view, toned athletic woman, 32 years old, long dark brown hair in sleek high ponytail, light olive skin, performing barbell back squat at bottom position with perfect form, thighs parallel to floor, barbell across upper back, focused determined expression, wearing black premium compression leggings and white seamless sports bra, white training shoes, in luxurious modern gym with dark floors and clean equipment, dramatic focused lighting, defined muscles visible on legs and arms, hair perfectly tied without flyaways, photorealistic, extremely detailed skin texture, detailed muscle definition, raw photo, 8k resolution, professional premium fitness campaign photography, full body visible head to toe"
+    },
+    {
+      "id": "EG002",
+      "name": "Alexandra - Squats Side View",
+      "age": 29,
+      "body_type": "Slim toned",
+      "hair": "Medium blonde, French braid",
+      "skin": "Fair warm",
+      "exercise": "Goblet squats",
+      "prompt": "Full body portrait, side profile view, slim toned woman, 29 years old, medium blonde hair in perfect French braid, fair warm skin, performing goblet squat holding dumbbell at chest level, deep squat with excellent form viewed from the side, focused expression, wearing charcoal grey premium high-waist leggings and matching charcoal grey racerback tank, grey training shoes, in bright modern boutique gym with floor-to-ceiling windows and natural light, muscle engagement visible in legs, hair perfectly braided, photorealistic, extremely detailed skin texture, raw photo, 8k resolution, professional premium fitness campaign photography, full body visible head to toe"
+    },
+    {
+      "id": "EG003",
+      "name": "Monica - Stationary Bike",
+      "age": 35,
+      "body_type": "Athletic lean",
+      "hair": "Short dark pixie cut, styled",
+      "skin": "Rich warm brown",
+      "exercise": "Stationary cycling",
+      "prompt": "Full body portrait, three quarter view, athletic lean woman, 35 years old, short dark pixie cut perfectly styled, rich warm brown glowing skin, riding a premium stationary bike in spin class position, standing on pedals leaning forward on handlebars, intense focused expression, wearing deep navy premium cycling shorts and white performance crop top, cycling shoes, in sleek dark premium spin studio with moody purple accent lighting, sweat glistening on skin, defined arm and leg muscles, hair perfectly styled even while cycling, photorealistic, extremely detailed skin texture, raw photo, 8k resolution, professional premium fitness campaign photography, full body visible head to toe"
+    },
+    {
+      "id": "EG004",
+      "name": "Catherine - Stretching Front",
+      "age": 30,
+      "body_type": "Flexible toned",
+      "hair": "Long auburn red, low bun",
+      "skin": "Fair with light freckles",
+      "exercise": "Standing quad stretch",
+      "prompt": "Full body portrait, front view, flexible toned woman, 30 years old, long auburn red hair in elegant low bun, fair skin with light freckles, performing standing quad stretch pulling right foot behind to glutes with right hand, left arm extended for balance, graceful balanced pose, wearing dusty rose premium leggings and matching dusty rose longline sports bra, barefoot on dark yoga mat, in bright serene stretching area with white walls and bamboo accents, soft natural light, lean flexible physique visible, hair perfectly in bun with no flyaways, photorealistic, extremely detailed skin texture, raw photo, 8k resolution, professional premium fitness campaign photography, full body visible head to toe"
+    },
+    {
+      "id": "EG005",
+      "name": "Catherine - Stretching Back View",
+      "age": 30,
+      "body_type": "Flexible toned",
+      "hair": "Long auburn red, low bun",
+      "skin": "Fair with light freckles",
+      "exercise": "Standing forward fold",
+      "prompt": "Full body portrait, back view from behind, flexible toned woman, 30 years old, long auburn red hair in elegant low bun visible from back, fair skin with light freckles on shoulders, performing standing forward fold stretch, bending at waist with straight legs, hands touching floor, back muscles and hamstrings engaged, wearing dusty rose premium leggings and matching dusty rose longline sports bra, barefoot on dark yoga mat, in bright serene stretching area with white walls and bamboo accents, soft natural light, back muscles and spine visible, photorealistic, extremely detailed skin texture, raw photo, 8k resolution, professional premium fitness campaign photography, full body visible head to toe"
+    },
+    {
+      "id": "EG006",
+      "name": "Sophia - Seated Cable Row",
+      "age": 28,
+      "body_type": "Strong athletic",
+      "hair": "Long dark brown, sleek braid over shoulder",
+      "skin": "Medium olive",
+      "exercise": "Seated cable row",
+      "prompt": "Full body portrait, front three quarter view, strong athletic woman, 28 years old, long dark brown hair in sleek braid draped over one shoulder, medium olive skin, performing seated cable row at cable machine, seated on bench legs extended bracing on foot plates, pulling handle toward lower chest with engaged back muscles, determined focused expression, wearing black premium leggings and olive green fitted performance tank, training shoes, in premium modern gym with clean dark equipment, focused directional lighting, visible arm and back muscle engagement, hair perfectly braided, photorealistic, extremely detailed skin texture, detailed muscle definition, raw photo, 8k resolution, professional premium fitness campaign photography, full body visible head to toe"
+    },
+    {
+      "id": "EG007",
+      "name": "Elena - Deadlift",
+      "age": 31,
+      "body_type": "Strong curvy",
+      "hair": "Medium wavy dark blonde, high bun",
+      "skin": "Light tan warm",
+      "exercise": "Romanian deadlift",
+      "prompt": "Full body portrait, side view, strong curvy woman, 31 years old, medium wavy dark blonde hair in neat high bun, light tan warm skin, performing Romanian deadlift with barbell at mid-shin level, hinging at hips with slight knee bend, back flat and straight viewed from side, focused downward gaze, wearing burgundy premium high-waist leggings and white fitted crop tank, training shoes, lifting gloves, in well-equipped premium gym with rubber flooring and clean racks, bright even gym lighting, glutes and hamstring engagement visible, hair perfectly in bun, photorealistic, extremely detailed skin texture, detailed muscle definition, raw photo, 8k resolution, professional premium fitness campaign photography, full body visible head to toe"
+    },
+    {
+      "id": "EG008",
+      "name": "Isabelle - Floor Crunch",
+      "age": 27,
+      "body_type": "Toned slim",
+      "hair": "Long platinum blonde, low ponytail",
+      "skin": "Porcelain fair",
+      "exercise": "Floor crunch",
+      "prompt": "Full body portrait, side view, toned slim woman, 27 years old, long platinum blonde hair in low ponytail, porcelain fair skin, lying on yoga mat performing crunch exercise, knees bent feet flat on floor, upper body curled up with hands behind head, abs engaged and defined, focused expression, wearing white premium high-waist leggings and light grey seamless sports bra, barefoot, in bright premium studio with white floor and soft natural light from large windows, clean minimal aesthetic, visible abdominal muscle engagement, hair neatly in ponytail, photorealistic, extremely detailed skin texture, raw photo, 8k resolution, professional premium fitness campaign photography, full body visible head to toe"
+    },
+    {
+      "id": "EG009",
+      "name": "Maria - Yoga Warrior Pose",
+      "age": 33,
+      "body_type": "Lean flexible",
+      "hair": "Long black straight, flowing loose",
+      "skin": "Medium warm tan",
+      "exercise": "Warrior III balance",
+      "prompt": "Full body portrait, side view, lean flexible woman, 33 years old, long black straight hair flowing loose, medium warm tan skin, performing warrior III yoga pose balancing on left leg with right leg extended straight behind parallel to floor, arms extended forward, body forming a T-shape viewed from the side, serene focused expression, wearing sage green premium leggings and matching sage green sports bra, barefoot on premium black yoga mat, in bright luxurious yoga studio with white walls and large windows overlooking garden, soft morning light, incredible balance and form, hair flowing behind with the pose, photorealistic, extremely detailed skin texture, raw photo, 8k resolution, professional premium fitness campaign photography, full body visible head to toe"
+    },
+    {
+      "id": "EG010",
+      "name": "Laura - Lunge Front View",
+      "age": 29,
+      "body_type": "Athletic curvy",
+      "hair": "Medium curly brown, high ponytail with volume",
+      "skin": "Light caramel",
+      "exercise": "Walking lunge with dumbbells",
+      "prompt": "Full body portrait, front view, athletic curvy woman, 29 years old, medium curly brown hair in high ponytail with volume, light caramel skin, performing walking lunge with dumbbells at sides, front knee at 90 degrees back knee nearly touching floor, upright torso, strong determined expression, wearing navy blue premium high-waist leggings and white performance crop top, training shoes, in spacious premium gym with clean modern equipment in background, bright professional gym lighting, quad and glute muscles engaged and defined, curly ponytail perfectly bouncy, photorealistic, extremely detailed skin texture, detailed muscle definition, raw photo, 8k resolution, professional premium fitness campaign photography, full body visible head to toe"
+    },
+    {
+      "id": "EG011",
+      "name": "Francesca - TRX Row",
+      "age": 34,
+      "body_type": "Toned athletic",
+      "hair": "Long dark brown, sleek middle part, behind ears",
+      "skin": "Light Mediterranean olive",
+      "exercise": "TRX suspension row",
+      "prompt": "Full body portrait, side view, toned athletic woman, 34 years old, long dark brown hair sleek with middle part tucked behind ears, light Mediterranean olive skin, performing TRX suspension row leaning back holding TRX handles with arms extended then pulling body forward, body at diagonal angle feet planted, engaged back muscles, intense focused expression, wearing all black premium leggings and black fitted performance tank, training shoes, in premium functional training area with TRX straps anchored to ceiling, clean industrial-chic gym aesthetic, defined arms and back, photorealistic, extremely detailed skin texture, raw photo, 8k resolution, professional premium fitness campaign photography, full body visible head to toe"
+    },
+    {
+      "id": "EG012",
+      "name": "Anna - Post-Workout Standing",
+      "age": 30,
+      "body_type": "Toned slim",
+      "hair": "Long honey blonde, half up with claw clip",
+      "skin": "Fair warm golden",
+      "exercise": "Post-workout rest, drinking water",
+      "prompt": "Full body portrait, three quarter view, toned slim woman, 30 years old, long honey blonde hair in half up style with elegant claw clip, fair warm golden skin, standing in premium gym locker area, one hand holding stainless steel water bottle drinking, other hand on hip, relaxed accomplished post-workout expression, light perspiration glow on skin, wearing white premium matching set of high-waist leggings and longline sports bra with mesh panel details, white training shoes, premium gym towel draped over one shoulder, bright clean modern locker room with wooden lockers and marble accents, soft flattering lighting, toned physique visible, hair perfectly styled despite workout, photorealistic, extremely detailed skin texture, raw photo, 8k resolution, professional premium fitness campaign photography, full body visible head to toe"
+    }
+  ]
+}

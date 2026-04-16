@@ -1,0 +1,89 @@
+{
+  "project": "i2i - Catálogo Accesorios de Cuero Premium",
+  "brand_style": "Premium leather accessories for young women, Polene / A.P.C. / Mansur Gavriel aesthetic, elegant styling, accessories as hero product",
+  "workflow": "workflow_t2i.json",
+  "negative_prompt_default": "deformed, watermark, low quality, bad anatomy, flat skin, plastic skin, blurry, artifacts, grid lines, ugly, disfigured, cropped, cut off legs, cut off feet, missing limbs, extra fingers, logo text, brand name visible, messy hair, wrinkled clothes, cheap leather, fake leather, shiny plastic",
+
+  "models": [
+    {
+      "id": "AC001",
+      "name": "Diana - Structured Tote Tan",
+      "age": 25,
+      "body_type": "Slim tall",
+      "hair": "Long straight dark brown, sleek blowout",
+      "skin": "Light olive warm",
+      "accessory": "Structured leather tote bag, tan cognac",
+      "prompt": "Full body portrait, slim tall young woman, 25 years old, long straight dark brown hair in sleek blowout, light olive warm skin, standing on clean modern city sidewalk, one hand holding a structured tan cognac leather tote bag by the handles at her side, other arm relaxed, composed elegant expression, wearing a tailored cream wool coat over white silk blouse and black tailored trousers, black pointed-toe heels, the leather tote bag is the hero product with visible stitching and premium grain texture, bright clean daylight, modern architecture background, hair perfectly styled and glossy, photorealistic, extremely detailed leather texture on bag, extremely detailed skin texture, raw photo, 8k resolution, professional luxury accessories campaign photography, full body visible head to toe"
+    },
+    {
+      "id": "AC002",
+      "name": "Natasha - Crossbody Bag Black",
+      "age": 23,
+      "body_type": "Athletic lean",
+      "hair": "Medium wavy caramel blonde, soft layers",
+      "skin": "Fair golden",
+      "accessory": "Small crossbody bag, black leather, gold chain strap",
+      "prompt": "Full body portrait, athletic lean young woman, 23 years old, medium wavy caramel blonde hair with soft layers perfectly styled, fair golden skin, walking through elegant European shopping arcade with marble floors, mid-stride dynamic pose, wearing a fitted black turtleneck dress to knee length, black ankle boots, wearing a small black leather crossbody bag with delicate gold chain strap across body, the bag sits at hip level as hero product with visible premium leather texture and gold hardware, warm interior arcade lighting, photorealistic, extremely detailed leather texture on bag, extremely detailed skin texture, raw photo, 8k resolution, professional luxury accessories campaign photography, full body visible head to toe"
+    },
+    {
+      "id": "AC003",
+      "name": "Camille - Leather Backpack Burgundy",
+      "age": 21,
+      "body_type": "Slim petite",
+      "hair": "Long dark auburn, low messy bun with face-framing pieces",
+      "skin": "Fair with freckles",
+      "accessory": "Mini leather backpack, burgundy",
+      "prompt": "Full body portrait, slim petite young woman, 21 years old, long dark auburn hair in elegant low messy bun with face-framing pieces, fair skin with light freckles, standing at entrance of university library with stone columns, relaxed intellectual pose, gentle confident smile, wearing oversized beige cashmere sweater over white collared shirt, dark navy trousers, white leather loafers, wearing a burgundy leather mini backpack on both shoulders as hero product with visible premium pebbled leather texture and gold zipper details, soft overcast academic daylight, photorealistic, extremely detailed leather texture on backpack, extremely detailed skin texture, raw photo, 8k resolution, professional luxury accessories campaign photography, full body visible head to toe"
+    },
+    {
+      "id": "AC004",
+      "name": "Helena - Wide Belt Camel",
+      "age": 27,
+      "body_type": "Slim hourglass",
+      "hair": "Long straight jet black, center part, ultra sleek",
+      "skin": "Light warm Mediterranean",
+      "accessory": "Wide leather waist belt, camel, gold buckle",
+      "prompt": "Full body portrait, slim hourglass young woman, 27 years old, long straight jet black hair with center part ultra sleek and shiny, light warm Mediterranean skin, standing in bright modern loft apartment with white brick walls, hands at sides showing the belt clearly, poised elegant stance, wearing a loose white oversized button-down shirt dress cinched at the waist with a wide camel leather belt with brushed gold square buckle as hero product, nude pointed heels, the belt is clearly visible showing premium leather grain and gold hardware, soft natural loft window light, photorealistic, extremely detailed leather texture on belt, extremely detailed skin texture, raw photo, 8k resolution, professional luxury accessories campaign photography, full body visible head to toe"
+    },
+    {
+      "id": "AC005",
+      "name": "Vera - Saddle Bag Olive",
+      "age": 24,
+      "body_type": "Average healthy",
+      "hair": "Medium length honey brown, loose waves, side part",
+      "skin": "Warm beige",
+      "accessory": "Saddle bag, olive green leather, shoulder strap",
+      "prompt": "Full body portrait, average healthy build young woman, 24 years old, medium length honey brown hair in loose waves with side part perfectly styled, warm beige skin, standing at outdoor cafe terrace in European city, one hand on hip other touching the bag strap, casual chic relaxed expression, wearing a white ribbed knit top tucked into camel high-waist straight trousers, tan suede ankle boots, an olive green leather saddle bag hanging from shoulder as hero product with visible hand-stitched details and premium leather patina, warm golden afternoon light, photorealistic, extremely detailed leather texture on bag, extremely detailed skin texture, raw photo, 8k resolution, professional luxury accessories campaign photography, full body visible head to toe"
+    },
+    {
+      "id": "AC006",
+      "name": "Lara - Clutch and Belt Set Black Gold",
+      "age": 26,
+      "body_type": "Slim toned",
+      "hair": "Long platinum blonde, straight, tucked behind ears",
+      "skin": "Porcelain Nordic",
+      "accessory": "Leather envelope clutch black + thin leather belt black with gold",
+      "prompt": "Full body portrait, slim toned young woman, 26 years old, long platinum blonde straight hair tucked behind ears showing gold drop earrings, porcelain Nordic skin, standing in modern art gallery with white walls, holding a black leather envelope clutch in one hand at her side, composed editorial pose, wearing a white fitted blazer over white camisole, black tailored high-waist cigarette pants with a thin black leather belt with small gold buckle, black pointed pumps, both the clutch and belt are hero products showing premium smooth calfskin leather and gold hardware details, soft even gallery lighting, photorealistic, extremely detailed leather texture on clutch and belt, extremely detailed skin texture, raw photo, 8k resolution, professional luxury accessories campaign photography, full body visible head to toe"
+    },
+    {
+      "id": "AC007",
+      "name": "Aisha - Bucket Bag Cream",
+      "age": 22,
+      "body_type": "Curvy soft",
+      "hair": "Long dark brown wavy, voluminous blowout",
+      "skin": "Medium warm brown",
+      "accessory": "Leather bucket bag, cream, drawstring",
+      "prompt": "Full body portrait, curvy soft young woman, 22 years old, long dark brown wavy hair in voluminous blowout perfectly styled, medium warm brown skin, standing on bright white Mediterranean staircase with blue door, relaxed joyful smile, wearing a flowing white linen maxi dress with thin straps, tan leather flat sandals, carrying a cream leather bucket bag with drawstring closure on one shoulder as hero product with visible soft pebbled leather texture and tan leather drawstring details, bright Mediterranean summer sunlight, photorealistic, extremely detailed leather texture on bag, extremely detailed skin texture, raw photo, 8k resolution, professional luxury accessories campaign photography, full body visible head to toe"
+    },
+    {
+      "id": "AC008",
+      "name": "Elsa - Leather Woven Belt Brown",
+      "age": 19,
+      "body_type": "Slim teen",
+      "hair": "Medium straight sandy blonde, center part, behind ears",
+      "skin": "Fair Scandinavian",
+      "accessory": "Woven leather belt, warm brown, brass buckle",
+      "prompt": "Full body portrait, slim young woman, 19 years old, medium straight sandy blonde hair with center part tucked behind ears, fair Scandinavian skin, standing in bright airy boutique store with wooden shelves, relaxed natural pose thumbs hooked on belt, wearing a white oversized linen shirt tucked loosely into light wash straight-leg jeans, the warm brown woven leather belt with aged brass buckle is clearly visible at waist as hero product showing intricate woven leather strips, white canvas sneakers, minimal jewelry, soft boutique interior lighting, photorealistic, extremely detailed woven leather texture on belt, extremely detailed skin texture, raw photo, 8k resolution, professional luxury accessories campaign photography, full body visible head to toe"
+    }
+  ]
+}
