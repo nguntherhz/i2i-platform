@@ -1,104 +1,91 @@
 {
-  "description": "Workflow templates listos para enviar a POST /api/prompt. Reemplazar los campos marcados con {{VARIABLE}}.",
+  "description": "Workflow builders que convierten un request de tu plataforma al JSON de ComfyUI. Uno por cada workflow_type.",
 
   "t2i": {
     "name": "Text to Image",
-    "params": {
-      "{{POSITIVE_PROMPT}}": "Descripción de la persona/escena",
-      "{{NEGATIVE_PROMPT}}": "Lo que no quieres (opcional, tiene default)",
-      "{{WIDTH}}": "768 (default)",
-      "{{HEIGHT}}": "1024 (default)",
-      "{{SEED}}": "0 para random, o número fijo para reproducir",
-      "{{STEPS}}": "6 (default)",
-      "{{DENOISE}}": "1.0 (siempre 1.0 para T2I)"
-    },
-    "workflow": {
-      "1": {"class_type": "CheckpointLoaderSimple", "inputs": {"ckpt_name": "Qwen-Rapid-AIO-NSFW-v18.1.safetensors"}},
-      "3": {"class_type": "TextEncodeQwenImageEditPlus", "inputs": {"clip": ["1", 1], "vae": ["1", 2], "prompt": "{{POSITIVE_PROMPT}}"}},
-      "4": {"class_type": "TextEncodeQwenImageEditPlus", "inputs": {"clip": ["1", 1], "vae": ["1", 2], "prompt": "{{NEGATIVE_PROMPT}}"}},
+    "pod": "image",
+    "builder": "buildComfyUIPayload",
+    "comfyui_workflow": {
+      "1": {"class_type": "CheckpointLoaderSimple", "inputs": {"ckpt_name": "{{MODEL}}"}},
+      "LORA_CHAIN": "Se insertan nodos 10, 11, 12... dinámicamente si loras.length > 0",
+      "3": {"class_type": "TextEncodeQwenImageEditPlus", "inputs": {"clip": ["{{LAST_CLIP_SOURCE}}", 1], "vae": ["1", 2], "prompt": "{{POSITIVE_PROMPT}}"}},
+      "4": {"class_type": "TextEncodeQwenImageEditPlus", "inputs": {"clip": ["{{LAST_CLIP_SOURCE}}", 1], "vae": ["1", 2], "prompt": "{{NEGATIVE_PROMPT}}"}},
       "9": {"class_type": "EmptyLatentImage", "inputs": {"width": "{{WIDTH}}", "height": "{{HEIGHT}}", "batch_size": 1}},
-      "2": {"class_type": "KSampler", "inputs": {"model": ["1", 0], "positive": ["3", 0], "negative": ["4", 0], "latent_image": ["9", 0], "seed": "{{SEED}}", "steps": "{{STEPS}}", "cfg": 1.0, "sampler_name": "euler_ancestral", "scheduler": "beta", "denoise": 1.0}},
+      "2": {"class_type": "KSampler", "inputs": {"model": ["{{LAST_MODEL_SOURCE}}", 0], "positive": ["3", 0], "negative": ["4", 0], "latent_image": ["9", 0], "seed": "{{SEED}}", "steps": "{{STEPS}}", "cfg": "{{CFG}}", "sampler_name": "{{SAMPLER}}", "scheduler": "{{SCHEDULER}}", "denoise": "{{DENOISE}}"}},
       "5": {"class_type": "VAEDecode", "inputs": {"samples": ["2", 0], "vae": ["1", 2]}},
-      "6": {"class_type": "SaveImage", "inputs": {"images": ["5", 0], "filename_prefix": "t2i_output"}}
+      "6": {"class_type": "SaveImage", "inputs": {"images": ["5", 0], "filename_prefix": "output"}}
     }
   },
 
-  "i2i_outfit": {
-    "name": "Change Outfit",
-    "params": {
-      "{{INPUT_IMAGE}}": "Nombre del archivo subido via /upload/image",
-      "{{OUTFIT_PROMPT}}": "Descripción de la nueva ropa. Incluir 'same face, same body'",
-      "{{SEED}}": "0 para random",
-      "{{DENOISE}}": "0.55 (default). 0.45-0.65 según intensidad del cambio"
-    },
-    "workflow": {
-      "1": {"class_type": "CheckpointLoaderSimple", "inputs": {"ckpt_name": "Qwen-Rapid-AIO-NSFW-v18.1.safetensors"}},
+  "i2i": {
+    "name": "Image to Image",
+    "pod": "image",
+    "builder": "buildComfyUIPayload",
+    "notes": "Mismo builder que T2I pero agrega nodo 7 (LoadImage) y conecta image1 al nodo 3",
+    "comfyui_workflow": {
+      "1": {"class_type": "CheckpointLoaderSimple", "inputs": {"ckpt_name": "{{MODEL}}"}},
+      "LORA_CHAIN": "Dinámico",
       "7": {"class_type": "LoadImage", "inputs": {"image": "{{INPUT_IMAGE}}", "upload": "image"}},
-      "3": {"class_type": "TextEncodeQwenImageEditPlus", "inputs": {"clip": ["1", 1], "vae": ["1", 2], "prompt": "{{OUTFIT_PROMPT}}", "image1": ["7", 0]}},
-      "4": {"class_type": "TextEncodeQwenImageEditPlus", "inputs": {"clip": ["1", 1], "vae": ["1", 2], "prompt": "different face, different person, different body, different skin tone, deformed, bad anatomy, blurry, low quality, watermark, artifacts"}},
-      "9": {"class_type": "EmptyLatentImage", "inputs": {"width": 768, "height": 1024, "batch_size": 1}},
-      "2": {"class_type": "KSampler", "inputs": {"model": ["1", 0], "positive": ["3", 0], "negative": ["4", 0], "latent_image": ["9", 0], "seed": "{{SEED}}", "steps": 6, "cfg": 1.0, "sampler_name": "euler_ancestral", "scheduler": "beta", "denoise": "{{DENOISE}}"}},
+      "3": {"class_type": "TextEncodeQwenImageEditPlus", "inputs": {"clip": ["{{LAST_CLIP_SOURCE}}", 1], "vae": ["1", 2], "prompt": "{{POSITIVE_PROMPT}}", "image1": ["7", 0]}},
+      "4": {"class_type": "TextEncodeQwenImageEditPlus", "inputs": {"clip": ["{{LAST_CLIP_SOURCE}}", 1], "vae": ["1", 2], "prompt": "{{NEGATIVE_PROMPT}}"}},
+      "9": {"class_type": "EmptyLatentImage", "inputs": {"width": "{{WIDTH}}", "height": "{{HEIGHT}}", "batch_size": 1}},
+      "2": {"class_type": "KSampler", "inputs": {"model": ["{{LAST_MODEL_SOURCE}}", 0], "positive": ["3", 0], "negative": ["4", 0], "latent_image": ["9", 0], "seed": "{{SEED}}", "steps": "{{STEPS}}", "cfg": "{{CFG}}", "sampler_name": "{{SAMPLER}}", "scheduler": "{{SCHEDULER}}", "denoise": "{{DENOISE}}"}},
       "5": {"class_type": "VAEDecode", "inputs": {"samples": ["2", 0], "vae": ["1", 2]}},
-      "6": {"class_type": "SaveImage", "inputs": {"images": ["5", 0], "filename_prefix": "i2i_outfit"}}
+      "6": {"class_type": "SaveImage", "inputs": {"images": ["5", 0], "filename_prefix": "output"}}
     }
   },
 
-  "i2i_hair": {
-    "name": "Change Hair",
-    "params": {
-      "{{INPUT_IMAGE}}": "Nombre del archivo subido",
-      "{{HAIR_PROMPT}}": "Descripción del nuevo pelo. Incluir 'same face, same outfit'",
-      "{{SEED}}": "0 para random",
-      "{{DENOISE}}": "0.45 (default)"
-    },
-    "workflow": {
-      "1": {"class_type": "CheckpointLoaderSimple", "inputs": {"ckpt_name": "Qwen-Rapid-AIO-NSFW-v18.1.safetensors"}},
-      "7": {"class_type": "LoadImage", "inputs": {"image": "{{INPUT_IMAGE}}", "upload": "image"}},
-      "3": {"class_type": "TextEncodeQwenImageEditPlus", "inputs": {"clip": ["1", 1], "vae": ["1", 2], "prompt": "{{HAIR_PROMPT}}", "image1": ["7", 0]}},
-      "4": {"class_type": "TextEncodeQwenImageEditPlus", "inputs": {"clip": ["1", 1], "vae": ["1", 2], "prompt": "different face, different person, different body, different outfit, different clothing, deformed, bad anatomy, blurry, low quality, watermark, artifacts"}},
-      "9": {"class_type": "EmptyLatentImage", "inputs": {"width": 768, "height": 1024, "batch_size": 1}},
-      "2": {"class_type": "KSampler", "inputs": {"model": ["1", 0], "positive": ["3", 0], "negative": ["4", 0], "latent_image": ["9", 0], "seed": "{{SEED}}", "steps": 6, "cfg": 1.0, "sampler_name": "euler_ancestral", "scheduler": "beta", "denoise": "{{DENOISE}}"}},
-      "5": {"class_type": "VAEDecode", "inputs": {"samples": ["2", 0], "vae": ["1", 2]}},
-      "6": {"class_type": "SaveImage", "inputs": {"images": ["5", 0], "filename_prefix": "i2i_hair"}}
+  "i2v": {
+    "name": "Image to Video",
+    "pod": "video",
+    "builder": "buildComfyUIPayloadI2V",
+    "notes": "Usa CheckpointLoaderSimple (modelo AIO incluye CLIP+VAE), CLIPVisionEncode, WanImageToVideo, ModelSamplingSD3, VHS_VideoCombine",
+    "comfyui_workflow": {
+      "1": {"class_type": "CheckpointLoaderSimple", "inputs": {"ckpt_name": "wan2.2-i2v-rapid-aio.safetensors"}},
+      "12": {"class_type": "CLIPVisionLoader", "inputs": {"clip_name": "clip-vision_vit-h.safetensors"}},
+      "10": {"class_type": "LoadImage", "inputs": {"image": "{{INPUT_IMAGE}}", "upload": "image"}},
+      "5": {"class_type": "CLIPTextEncode", "inputs": {"clip": ["1", 1], "text": "{{POSITIVE_PROMPT}}"}},
+      "4": {"class_type": "CLIPTextEncode", "inputs": {"clip": ["1", 1], "text": "{{NEGATIVE_PROMPT}}"}},
+      "11": {"class_type": "CLIPVisionEncode", "inputs": {"clip_vision": ["12", 0], "image": ["10", 0], "crop": "center"}},
+      "9": {"class_type": "WanImageToVideo", "inputs": {"positive": ["5", 0], "negative": ["4", 0], "vae": ["1", 2], "clip_vision_output": ["11", 0], "start_image": ["10", 0], "width": "{{WIDTH}}", "height": "{{HEIGHT}}", "length": "{{NUM_FRAMES}}", "batch_size": 1}},
+      "2": {"class_type": "ModelSamplingSD3", "inputs": {"model": ["1", 0], "shift": 8.0}},
+      "3": {"class_type": "KSampler", "inputs": {"model": ["2", 0], "positive": ["9", 0], "negative": ["9", 1], "latent_image": ["9", 2], "seed": "{{SEED}}", "steps": "{{STEPS}}", "cfg": "{{CFG}}", "sampler_name": "{{SAMPLER}}", "scheduler": "{{SCHEDULER}}", "denoise": "{{DENOISE}}"}},
+      "7": {"class_type": "VAEDecode", "inputs": {"samples": ["3", 0], "vae": ["1", 2]}},
+      "8": {"class_type": "VHS_VideoCombine", "inputs": {"images": ["7", 0], "frame_rate": "{{FPS}}", "loop_count": 0, "filename_prefix": "output", "format": "video/h264-mp4", "pix_fmt": "yuv420p", "crf": 19, "save_metadata": true, "trim_to_audio": false, "pingpong": false, "save_output": true}}
     }
   },
 
-  "i2i_restyle": {
-    "name": "Full Restyle (body + scene + outfit)",
-    "params": {
-      "{{INPUT_IMAGE}}": "Nombre del archivo subido",
-      "{{RESTYLE_PROMPT}}": "Descripción completa: nuevo cuerpo, ropa, escena. Incluir 'same face, same eyes, same skin tone'",
-      "{{SEED}}": "0 para random",
-      "{{DENOISE}}": "0.75 (default). 0.65-0.80 según intensidad"
+  "variable_map": {
+    "t2i_i2i": {
+      "{{MODEL}}": "request.model || 'Qwen-Rapid-AIO-NSFW-v18.1.safetensors'",
+      "{{POSITIVE_PROMPT}}": "request.prompts.positive",
+      "{{NEGATIVE_PROMPT}}": "request.prompts.negative",
+      "{{WIDTH}}": "request.image_config.width",
+      "{{HEIGHT}}": "request.image_config.height",
+      "{{STEPS}}": "request.image_config.steps",
+      "{{CFG}}": "request.image_config.cfg",
+      "{{DENOISE}}": "request.image_config.denoise",
+      "{{SAMPLER}}": "request.image_config.sampler",
+      "{{SCHEDULER}}": "request.image_config.scheduler",
+      "{{SEED}}": "request.image_config.seed || random",
+      "{{INPUT_IMAGE}}": "uploadedImageName (solo I2I)",
+      "{{LAST_MODEL_SOURCE}}": "'1' sin LoRA, '10','11'... con LoRAs",
+      "{{LAST_CLIP_SOURCE}}": "'1' sin LoRA, '10','11'... con LoRAs"
     },
-    "workflow": {
-      "1": {"class_type": "CheckpointLoaderSimple", "inputs": {"ckpt_name": "Qwen-Rapid-AIO-NSFW-v18.1.safetensors"}},
-      "7": {"class_type": "LoadImage", "inputs": {"image": "{{INPUT_IMAGE}}", "upload": "image"}},
-      "3": {"class_type": "TextEncodeQwenImageEditPlus", "inputs": {"clip": ["1", 1], "vae": ["1", 2], "prompt": "{{RESTYLE_PROMPT}}", "image1": ["7", 0]}},
-      "4": {"class_type": "TextEncodeQwenImageEditPlus", "inputs": {"clip": ["1", 1], "vae": ["1", 2], "prompt": "different face, different person, different eyes, different skin color, deformed, bad anatomy, blurry, low quality, watermark, artifacts, ugly, disfigured, extra limbs"}},
-      "9": {"class_type": "EmptyLatentImage", "inputs": {"width": 768, "height": 1024, "batch_size": 1}},
-      "2": {"class_type": "KSampler", "inputs": {"model": ["1", 0], "positive": ["3", 0], "negative": ["4", 0], "latent_image": ["9", 0], "seed": "{{SEED}}", "steps": 8, "cfg": 1.0, "sampler_name": "euler_ancestral", "scheduler": "beta", "denoise": "{{DENOISE}}"}},
-      "5": {"class_type": "VAEDecode", "inputs": {"samples": ["2", 0], "vae": ["1", 2]}},
-      "6": {"class_type": "SaveImage", "inputs": {"images": ["5", 0], "filename_prefix": "restyle"}}
-    }
-  },
-
-  "i2i_supercatalog": {
-    "name": "Super Catalog (pose + scene + outfit from image)",
-    "params": {
-      "{{INPUT_IMAGE}}": "Nombre del archivo subido",
-      "{{SCENE_PROMPT}}": "Descripción de la escena/pose/outfit deseada. Incluir 'same face same eyes same skin'",
-      "{{SEED}}": "0 para random"
-    },
-    "workflow": {
-      "1": {"class_type": "CheckpointLoaderSimple", "inputs": {"ckpt_name": "Qwen-Rapid-AIO-NSFW-v18.1.safetensors"}},
-      "7": {"class_type": "LoadImage", "inputs": {"image": "{{INPUT_IMAGE}}", "upload": "image"}},
-      "3": {"class_type": "TextEncodeQwenImageEditPlus", "inputs": {"clip": ["1", 1], "vae": ["1", 2], "prompt": "{{SCENE_PROMPT}}", "image1": ["7", 0]}},
-      "4": {"class_type": "TextEncodeQwenImageEditPlus", "inputs": {"clip": ["1", 1], "vae": ["1", 2], "prompt": "different face, different person, different eyes, different nose, different mouth, different skin color, different age, deformed, bad anatomy, bad proportions, blurry, low quality, watermark, artifacts, ugly, disfigured, extra limbs, missing limbs"}},
-      "9": {"class_type": "EmptyLatentImage", "inputs": {"width": 768, "height": 1024, "batch_size": 1}},
-      "2": {"class_type": "KSampler", "inputs": {"model": ["1", 0], "positive": ["3", 0], "negative": ["4", 0], "latent_image": ["9", 0], "seed": "{{SEED}}", "steps": 8, "cfg": 1.0, "sampler_name": "euler_ancestral", "scheduler": "beta", "denoise": 0.72}},
-      "5": {"class_type": "VAEDecode", "inputs": {"samples": ["2", 0], "vae": ["1", 2]}},
-      "6": {"class_type": "SaveImage", "inputs": {"images": ["5", 0], "filename_prefix": "catalog"}}
+    "i2v": {
+      "{{POSITIVE_PROMPT}}": "request.prompts.positive",
+      "{{NEGATIVE_PROMPT}}": "request.prompts.negative || ''",
+      "{{WIDTH}}": "request.video_config.width",
+      "{{HEIGHT}}": "request.video_config.height",
+      "{{NUM_FRAMES}}": "request.video_config.num_frames",
+      "{{FPS}}": "request.video_config.fps",
+      "{{STEPS}}": "request.video_config.steps",
+      "{{CFG}}": "request.video_config.cfg",
+      "{{DENOISE}}": "request.video_config.denoise",
+      "{{SAMPLER}}": "request.video_config.sampler",
+      "{{SCHEDULER}}": "request.video_config.scheduler",
+      "{{SEED}}": "request.video_config.seed || random",
+      "{{INPUT_IMAGE}}": "uploadedImageName"
     }
   }
 }

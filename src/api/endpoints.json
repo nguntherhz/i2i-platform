@@ -1,58 +1,214 @@
 {
-  "base_url": "https://t3a5h65dejiqek-8188.proxy.runpod.net",
-  "local_url": "http://localhost:8188",
+  "pods": {
+    "image": {
+      "base_url": "https://t3a5h65dejiqek-8188.proxy.runpod.net",
+      "local_url": "http://localhost:8188",
+      "description": "Pod de imágenes: T2I + I2I con Qwen",
+      "workflows": ["t2i", "i2i"]
+    },
+    "video": {
+      "base_url": "PENDIENTE",
+      "local_url": "http://localhost:8188",
+      "description": "Pod de video: I2V con Wan 2.2",
+      "workflows": ["i2v"]
+    }
+  },
+
+  "routing": {
+    "t2i": "image",
+    "i2i": "image",
+    "i2v": "video"
+  },
 
   "endpoints": {
     "system_stats": {
       "method": "GET",
       "path": "/api/system_stats",
-      "description": "Check system status, VRAM usage, ComfyUI version"
+      "description": "Health check. Funciona en ambos pods.",
+      "response": {
+        "system": {
+          "comfyui_version": "string",
+          "ram_total": "number",
+          "ram_free": "number",
+          "pytorch_version": "string"
+        }
+      }
     },
+
     "upload_image": {
       "method": "POST",
       "path": "/upload/image",
       "content_type": "multipart/form-data",
-      "description": "Upload an image for processing",
+      "description": "Subir imagen. Requerido para I2I e I2V.",
       "fields": {
         "image": "(binary file)",
         "type": "input",
         "overwrite": "true"
+      },
+      "response": {
+        "name": "filename.png",
+        "subfolder": "",
+        "type": "input"
       }
     },
+
     "queue_prompt": {
       "method": "POST",
       "path": "/api/prompt",
       "content_type": "application/json",
-      "description": "Queue a workflow for execution",
+      "description": "Ejecutar workflow. El JSON se construye según workflow_type.",
       "body": {
-        "prompt": "<workflow_json>",
-        "client_id": "<optional_client_id>"
+        "prompt": "<workflow_json>"
+      },
+      "response": {
+        "prompt_id": "uuid",
+        "number": "int",
+        "node_errors": {}
       }
     },
+
     "get_history": {
       "method": "GET",
       "path": "/api/history/{prompt_id}",
-      "description": "Get execution result and output filenames"
+      "description": "Obtener resultado. Polling hasta status=success.",
+      "response": {
+        "{prompt_id}": {
+          "status": {"status_str": "success | error", "completed": true},
+          "outputs": {
+            "6": {"images": [{"filename": "output.png", "type": "output"}]},
+            "8": {"gifs": [{"filename": "output.mp4", "type": "output"}]}
+          }
+        }
+      },
+      "notes": "Nodo '6' para imágenes (SaveImage), nodo '8' para video (VHS_VideoCombine). Si retorna {} vacío, sigue procesando."
     },
-    "view_image": {
+
+    "view_output": {
       "method": "GET",
       "path": "/view?filename={filename}&type=output",
-      "description": "Download output image or video"
+      "description": "Descargar archivo de salida (PNG para imagen, MP4 para video).",
+      "response": "binary (image/png o video/mp4)"
     },
+
     "free_memory": {
       "method": "POST",
       "path": "/api/free",
       "content_type": "application/json",
-      "description": "Free VRAM and unload models",
+      "description": "Liberar VRAM y descargar modelos.",
       "body": {
         "unload_models": true,
         "free_memory": true
       }
     },
+
     "get_queue": {
       "method": "GET",
       "path": "/api/queue",
-      "description": "Check current queue status"
+      "description": "Ver cola de ejecución actual.",
+      "response": {
+        "queue_running": [],
+        "queue_pending": []
+      }
     }
+  },
+
+  "workflow_builders": {
+    "t2i": {
+      "description": "Text to Image. Genera persona ficticia desde prompt.",
+      "pod": "image",
+      "requires_upload": false,
+      "output_node": "6",
+      "output_field": "images",
+      "output_format": "png",
+      "request_format": {
+        "workflow_type": "t2i",
+        "prompts": {"positive": "string", "negative": "string"},
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 6,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta",
+          "seed": 0
+        },
+        "loras": []
+      }
+    },
+
+    "i2i": {
+      "description": "Image to Image. Transforma imagen existente con prompt.",
+      "pod": "image",
+      "requires_upload": true,
+      "output_node": "6",
+      "output_field": "images",
+      "output_format": "png",
+      "request_format": {
+        "workflow_type": "i2i",
+        "prompts": {"positive": "string", "negative": "string"},
+        "image_config": {
+          "width": 768,
+          "height": 1024,
+          "steps": 8,
+          "cfg": 1.0,
+          "denoise": 0.72,
+          "sampler": "euler_ancestral",
+          "scheduler": "beta",
+          "seed": 0
+        },
+        "loras": []
+      }
+    },
+
+    "i2v": {
+      "description": "Image to Video. Genera video de 3-5s desde imagen estática.",
+      "pod": "video",
+      "requires_upload": true,
+      "output_node": "8",
+      "output_field": "gifs",
+      "output_format": "mp4",
+      "request_format": {
+        "workflow_type": "i2v",
+        "prompts": {"positive": "string", "negative": ""},
+        "video_config": {
+          "width": 640,
+          "height": 640,
+          "num_frames": 81,
+          "fps": 24,
+          "steps": 4,
+          "cfg": 1.0,
+          "denoise": 1.0,
+          "sampler": "sa_solver",
+          "scheduler": "beta",
+          "seed": 0
+        },
+        "loras": []
+      }
+    }
+  },
+
+  "loras_available": {
+    "image_pod": [
+      {"name": "Qwen-Image-Edit-F2P.safetensors", "description": "Face consistency", "default_strength": 0.7},
+      {"name": "Skin_Fix_rank64.safetensors", "description": "Skin texture fix", "default_strength": 0.5},
+      {"name": "consistence_edit_v2.safetensors", "description": "Edit consistency", "default_strength": 0.6},
+      {"name": "qwen_image_edit_remove-clothing_v1.0.safetensors", "description": "Clothing removal", "default_strength": 0.7},
+      {"name": "qwen_snofs.safetensors", "description": "NSFW enhancement", "default_strength": 0.5}
+    ],
+    "video_pod": []
+  },
+
+  "timeouts": {
+    "t2i_first_run": 120000,
+    "t2i_cached": 15000,
+    "i2i_first_run": 120000,
+    "i2i_cached": 15000,
+    "i2v_first_run": 300000,
+    "i2v_cached": 60000,
+    "upload": 10000,
+    "download": 10000,
+    "poll_interval_image": 2000,
+    "poll_interval_video": 3000
   }
 }
